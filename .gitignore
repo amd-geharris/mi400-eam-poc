@@ -1,0 +1,25 @@
+# Misc
+_artifacts/
+.cache/
+.vscode/
+compile_flags.txt
+compile_commands.json
+__pycache__/
+*.user
+*.srctrlbm
+*.srctrldb
+*.srctrlprj
+
+*.hw/
+*.cache/
+
+
+
+# Vivado Projects
+/proj/*/
+!/proj/*.gen/
+!/proj/*.hw/
+!/proj/*.srcs/
+*.log
+*.jou
+!*.xpr
