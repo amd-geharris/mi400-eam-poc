@@ -230,6 +230,24 @@
                 "HA": "0x00100FFF",
                 "BP": "C_BASEADDR",
                 "HP": "C_HIGHADDR",
+                "MA": "xPcieToDfx_AXI",
+                "MX": "/",
+                "MI": "xPcieToDfx_AXI",
+                "MS": "SEG_Axi4FabricBridge_0_reg0",
+                "MV": ":::",
+                "SX": "/Axi4FabricBridge_0",
+                "SI": "S_AXI",
+                "SS": "reg0",
+                "SV": "AMD:dc-gpu-fpga:Axi4FabricBridge:0.1",
+                "TM": "both",
+                "TU": "register"
+            },
+            "V6": {
+                "VT": "AC",
+                "BA": "0x00100000",
+                "HA": "0x00100FFF",
+                "BP": "C_BASEADDR",
+                "HP": "C_HIGHADDR",
                 "MA": "Data",
                 "MX": "/microblaze_0",
                 "MI": "M_AXI_DP",
@@ -242,7 +260,25 @@
                 "TM": "data",
                 "TU": "register"
             },
-            "V6": {
+            "V7": {
+                "VT": "AC",
+                "BA": "0x40600000",
+                "HA": "0x4060FFFF",
+                "BP": "C_BASEADDR",
+                "HP": "C_HIGHADDR",
+                "MA": "xPcieToDfx_AXI",
+                "MX": "/",
+                "MI": "xPcieToDfx_AXI",
+                "MS": "SEG_axi_uartlite_0_Reg",
+                "MV": ":::",
+                "SX": "/axi_uartlite_0",
+                "SI": "S_AXI",
+                "SS": "Reg",
+                "SV": "xilinx.com:ip:axi_uartlite:2.0",
+                "TM": "both",
+                "TU": "register"
+            },
+            "V8": {
                 "VT": "AC",
                 "BA": "0x40600000",
                 "HA": "0x4060FFFF",
@@ -260,7 +296,26 @@
                 "TM": "data",
                 "TU": "register"
             },
-            "V7": {
+            "V9": {
+                "VT": "AC",
+                "BA": "0x41200000",
+                "HA": "0x4120FFFF",
+                "BP": "C_BASEADDR",
+                "HP": "C_HIGHADDR",
+                "MA": "xPcieToDfx_AXI",
+                "MX": "/",
+                "MI": "xPcieToDfx_AXI",
+                "MS": "SEG_microblaze_0_axi_intc_Reg",
+                "MV": ":::",
+                "SX": "/microblaze_0_axi_intc",
+                "SI": "s_axi",
+                "MM": "S_AXI",
+                "SS": "Reg",
+                "SV": "xilinx.com:ip:axi_intc:4.1",
+                "TM": "both",
+                "TU": "register"
+            },
+            "V10": {
                 "VT": "AC",
                 "BA": "0x41200000",
                 "HA": "0x4120FFFF",
@@ -279,7 +334,25 @@
                 "TM": "data",
                 "TU": "register"
             },
-            "V8": {
+            "V11": {
+                "VT": "AC",
+                "BA": "0x41400000",
+                "HA": "0x41400FFF",
+                "BP": "C_BASEADDR",
+                "HP": "C_HIGHADDR",
+                "MA": "xPcieToDfx_AXI",
+                "MX": "/",
+                "MI": "xPcieToDfx_AXI",
+                "MS": "SEG_mdm_1_Reg",
+                "MV": ":::",
+                "SX": "/mdm_1",
+                "SI": "S_AXI",
+                "SS": "Reg",
+                "SV": "xilinx.com:ip:mdm:3.2",
+                "TM": "both",
+                "TU": "register"
+            },
+            "V12": {
                 "VT": "AC",
                 "BA": "0x41400000",
                 "HA": "0x41400FFF",
@@ -297,7 +370,25 @@
                 "TM": "data",
                 "TU": "register"
             },
-            "V9": {
+            "V13": {
+                "VT": "AC",
+                "BA": "0x41C00000",
+                "HA": "0x41C0FFFF",
+                "BP": "C_BASEADDR",
+                "HP": "C_HIGHADDR",
+                "MA": "xPcieToDfx_AXI",
+                "MX": "/",
+                "MI": "xPcieToDfx_AXI",
+                "MS": "SEG_axi_timer_0_Reg",
+                "MV": ":::",
+                "SX": "/axi_timer_0",
+                "SI": "S_AXI",
+                "SS": "Reg",
+                "SV": "xilinx.com:ip:axi_timer:2.0",
+                "TM": "both",
+                "TU": "register"
+            },
+            "V14": {
                 "VT": "AC",
                 "BA": "0x41C00000",
                 "HA": "0x41C0FFFF",
@@ -315,7 +406,25 @@
                 "TM": "data",
                 "TU": "register"
             },
-            "V10": {
+            "V15": {
+                "VT": "AC",
+                "BA": "0x41C10000",
+                "HA": "0x41C1FFFF",
+                "BP": "C_BASEADDR",
+                "HP": "C_HIGHADDR",
+                "MA": "xPcieToDfx_AXI",
+                "MX": "/",
+                "MI": "xPcieToDfx_AXI",
+                "MS": "SEG_axi_timer_1_Reg",
+                "MV": ":::",
+                "SX": "/axi_timer_1",
+                "SI": "S_AXI",
+                "SS": "Reg",
+                "SV": "xilinx.com:ip:axi_timer:2.0",
+                "TM": "both",
+                "TU": "register"
+            },
+            "V16": {
                 "VT": "AC",
                 "BA": "0x41C10000",
                 "HA": "0x41C1FFFF",
@@ -380,6 +489,36 @@
             },
             {
                 "src": "V10",
+                "trg": "V2",
+                "EH": "2"
+            },
+            {
+                "src": "V11",
+                "trg": "V2",
+                "EH": "2"
+            },
+            {
+                "src": "V12",
+                "trg": "V2",
+                "EH": "2"
+            },
+            {
+                "src": "V13",
+                "trg": "V2",
+                "EH": "2"
+            },
+            {
+                "src": "V14",
+                "trg": "V2",
+                "EH": "2"
+            },
+            {
+                "src": "V15",
+                "trg": "V2",
+                "EH": "2"
+            },
+            {
+                "src": "V16",
                 "trg": "V2",
                 "EH": "2"
             }

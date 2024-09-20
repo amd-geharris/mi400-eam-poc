@@ -4,8 +4,8 @@
 // Tool Version: Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
 // Date        : Fri Sep  6 10:11:05 2024
 // Host        : BDCGEHARRIS01 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               s:/projects/mi400-eam-poc/proj/mi400-eam-poc.gen/sources_1/bd/MicroBlazeCore/ip/MicroBlazeCore_Axi4FabricBridge_0_0/MicroBlazeCore_Axi4FabricBridge_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top MicroBlazeCore_Axi4FabricBridge_0_0 -prefix
+//               MicroBlazeCore_Axi4FabricBridge_0_0_ MicroBlazeCore_Axi4FabricBridge_0_0_sim_netlist.v
 // Design      : MicroBlazeCore_Axi4FabricBridge_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -13,133 +13,6 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "MicroBlazeCore_Axi4FabricBridge_0_0,Axi4FabricBridge,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "package_project" *) 
-(* X_CORE_INFO = "Axi4FabricBridge,Vivado 2024.1" *) 
-(* NotValidForBitStream *)
-module MicroBlazeCore_Axi4FabricBridge_0_0
-   (S_AXI_ACLK,
-    S_AXI_ARESETN,
-    S_AXI_AWADDR,
-    S_AXI_AWPROT,
-    S_AXI_AWVALID,
-    S_AXI_AWREADY,
-    S_AXI_WDATA,
-    S_AXI_WSTRB,
-    S_AXI_WVALID,
-    S_AXI_WREADY,
-    S_AXI_BRESP,
-    S_AXI_BVALID,
-    S_AXI_BREADY,
-    S_AXI_ARADDR,
-    S_AXI_ARPROT,
-    S_AXI_ARVALID,
-    S_AXI_ARREADY,
-    S_AXI_RDATA,
-    S_AXI_RRESP,
-    S_AXI_RVALID,
-    S_AXI_RREADY,
-    sMcuOutputControl,
-    sMcuInputControl);
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 S_AXI_ACLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S_AXI_ACLK, ASSOCIATED_BUSIF S_AXI, ASSOCIATED_RESET S_AXI_ARESETN, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN MicroBlazeCore_clk_wiz_1_0_clk_out1, INSERT_VIP 0" *) input S_AXI_ACLK;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 S_AXI_ARESETN RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S_AXI_ARESETN, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input S_AXI_ARESETN;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI AWADDR" *) input [3:0]S_AXI_AWADDR;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI AWPROT" *) input [2:0]S_AXI_AWPROT;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI AWVALID" *) input S_AXI_AWVALID;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI AWREADY" *) output S_AXI_AWREADY;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI WDATA" *) input [31:0]S_AXI_WDATA;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI WSTRB" *) input [3:0]S_AXI_WSTRB;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI WVALID" *) input S_AXI_WVALID;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI WREADY" *) output S_AXI_WREADY;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI BRESP" *) output [1:0]S_AXI_BRESP;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI BVALID" *) output S_AXI_BVALID;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI BREADY" *) input S_AXI_BREADY;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI ARADDR" *) input [3:0]S_AXI_ARADDR;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI ARPROT" *) input [2:0]S_AXI_ARPROT;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI ARVALID" *) input S_AXI_ARVALID;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI ARREADY" *) output S_AXI_ARREADY;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI RDATA" *) output [31:0]S_AXI_RDATA;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI RRESP" *) output [1:0]S_AXI_RRESP;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI RVALID" *) output S_AXI_RVALID;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI RREADY" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S_AXI, DATA_WIDTH 32, PROTOCOL AXI4LITE, ID_WIDTH 0, ADDR_WIDTH 4, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN MicroBlazeCore_clk_wiz_1_0_clk_out1, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) input S_AXI_RREADY;
-  input [31:0]sMcuOutputControl;
-  output [31:0]sMcuInputControl;
-
-  wire \<const0> ;
-  wire S_AXI_ACLK;
-  wire S_AXI_ARESETN;
-  wire S_AXI_ARREADY;
-  wire S_AXI_ARVALID;
-  wire [3:0]S_AXI_AWADDR;
-  wire S_AXI_AWREADY;
-  wire S_AXI_AWVALID;
-  wire S_AXI_BREADY;
-  wire S_AXI_BVALID;
-  wire S_AXI_RREADY;
-  wire S_AXI_RVALID;
-  wire [31:0]S_AXI_WDATA;
-  wire S_AXI_WREADY;
-  wire [3:0]S_AXI_WSTRB;
-  wire S_AXI_WVALID;
-  wire [31:0]sMcuInputControl;
-
-  assign S_AXI_BRESP[1] = \<const0> ;
-  assign S_AXI_BRESP[0] = \<const0> ;
-  assign S_AXI_RDATA[31] = \<const0> ;
-  assign S_AXI_RDATA[30] = \<const0> ;
-  assign S_AXI_RDATA[29] = \<const0> ;
-  assign S_AXI_RDATA[28] = \<const0> ;
-  assign S_AXI_RDATA[27] = \<const0> ;
-  assign S_AXI_RDATA[26] = \<const0> ;
-  assign S_AXI_RDATA[25] = \<const0> ;
-  assign S_AXI_RDATA[24] = \<const0> ;
-  assign S_AXI_RDATA[23] = \<const0> ;
-  assign S_AXI_RDATA[22] = \<const0> ;
-  assign S_AXI_RDATA[21] = \<const0> ;
-  assign S_AXI_RDATA[20] = \<const0> ;
-  assign S_AXI_RDATA[19] = \<const0> ;
-  assign S_AXI_RDATA[18] = \<const0> ;
-  assign S_AXI_RDATA[17] = \<const0> ;
-  assign S_AXI_RDATA[16] = \<const0> ;
-  assign S_AXI_RDATA[15] = \<const0> ;
-  assign S_AXI_RDATA[14] = \<const0> ;
-  assign S_AXI_RDATA[13] = \<const0> ;
-  assign S_AXI_RDATA[12] = \<const0> ;
-  assign S_AXI_RDATA[11] = \<const0> ;
-  assign S_AXI_RDATA[10] = \<const0> ;
-  assign S_AXI_RDATA[9] = \<const0> ;
-  assign S_AXI_RDATA[8] = \<const0> ;
-  assign S_AXI_RDATA[7] = \<const0> ;
-  assign S_AXI_RDATA[6] = \<const0> ;
-  assign S_AXI_RDATA[5] = \<const0> ;
-  assign S_AXI_RDATA[4] = \<const0> ;
-  assign S_AXI_RDATA[3] = \<const0> ;
-  assign S_AXI_RDATA[2] = \<const0> ;
-  assign S_AXI_RDATA[1] = \<const0> ;
-  assign S_AXI_RDATA[0] = \<const0> ;
-  assign S_AXI_RRESP[1] = \<const0> ;
-  assign S_AXI_RRESP[0] = \<const0> ;
-  GND GND
-       (.G(\<const0> ));
-  MicroBlazeCore_Axi4FabricBridge_0_0_Axi4FabricBridge inst
-       (.S_AXI_ACLK(S_AXI_ACLK),
-        .S_AXI_ARESETN(S_AXI_ARESETN),
-        .S_AXI_ARVALID(S_AXI_ARVALID),
-        .S_AXI_AWADDR(S_AXI_AWADDR[3:2]),
-        .S_AXI_AWVALID(S_AXI_AWVALID),
-        .S_AXI_BREADY(S_AXI_BREADY),
-        .S_AXI_BVALID(S_AXI_BVALID),
-        .S_AXI_RREADY(S_AXI_RREADY),
-        .S_AXI_WDATA(S_AXI_WDATA),
-        .S_AXI_WREADY(S_AXI_WREADY),
-        .S_AXI_WSTRB(S_AXI_WSTRB),
-        .S_AXI_WVALID(S_AXI_WVALID),
-        .axi_arready_reg_0(S_AXI_ARREADY),
-        .axi_awready_reg_0(S_AXI_AWREADY),
-        .axi_rvalid_reg_0(S_AXI_RVALID),
-        .sMcuInputControl(sMcuInputControl));
-endmodule
-
-(* ORIG_REF_NAME = "Axi4FabricBridge" *) 
 module MicroBlazeCore_Axi4FabricBridge_0_0_Axi4FabricBridge
    (sMcuInputControl,
     axi_awready_reg_0,
@@ -626,6 +499,132 @@ module MicroBlazeCore_Axi4FabricBridge_0_0_Axi4FabricBridge
         .D(S_AXI_WDATA[9]),
         .Q(sMcuInputControl[9]),
         .R(axi_awready_i_1_n_0));
+endmodule
+
+(* CHECK_LICENSE_TYPE = "MicroBlazeCore_Axi4FabricBridge_0_0,Axi4FabricBridge,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "package_project" *) 
+(* X_CORE_INFO = "Axi4FabricBridge,Vivado 2024.1" *) 
+(* NotValidForBitStream *)
+module MicroBlazeCore_Axi4FabricBridge_0_0
+   (S_AXI_ACLK,
+    S_AXI_ARESETN,
+    S_AXI_AWADDR,
+    S_AXI_AWPROT,
+    S_AXI_AWVALID,
+    S_AXI_AWREADY,
+    S_AXI_WDATA,
+    S_AXI_WSTRB,
+    S_AXI_WVALID,
+    S_AXI_WREADY,
+    S_AXI_BRESP,
+    S_AXI_BVALID,
+    S_AXI_BREADY,
+    S_AXI_ARADDR,
+    S_AXI_ARPROT,
+    S_AXI_ARVALID,
+    S_AXI_ARREADY,
+    S_AXI_RDATA,
+    S_AXI_RRESP,
+    S_AXI_RVALID,
+    S_AXI_RREADY,
+    sMcuOutputControl,
+    sMcuInputControl);
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 S_AXI_ACLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S_AXI_ACLK, ASSOCIATED_BUSIF S_AXI, ASSOCIATED_RESET S_AXI_ARESETN, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN MicroBlazeCore_clk_wiz_1_0_clk_out1, INSERT_VIP 0" *) input S_AXI_ACLK;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 S_AXI_ARESETN RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S_AXI_ARESETN, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input S_AXI_ARESETN;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI AWADDR" *) input [3:0]S_AXI_AWADDR;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI AWPROT" *) input [2:0]S_AXI_AWPROT;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI AWVALID" *) input S_AXI_AWVALID;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI AWREADY" *) output S_AXI_AWREADY;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI WDATA" *) input [31:0]S_AXI_WDATA;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI WSTRB" *) input [3:0]S_AXI_WSTRB;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI WVALID" *) input S_AXI_WVALID;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI WREADY" *) output S_AXI_WREADY;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI BRESP" *) output [1:0]S_AXI_BRESP;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI BVALID" *) output S_AXI_BVALID;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI BREADY" *) input S_AXI_BREADY;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI ARADDR" *) input [3:0]S_AXI_ARADDR;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI ARPROT" *) input [2:0]S_AXI_ARPROT;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI ARVALID" *) input S_AXI_ARVALID;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI ARREADY" *) output S_AXI_ARREADY;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI RDATA" *) output [31:0]S_AXI_RDATA;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI RRESP" *) output [1:0]S_AXI_RRESP;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI RVALID" *) output S_AXI_RVALID;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI RREADY" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S_AXI, DATA_WIDTH 32, PROTOCOL AXI4LITE, ID_WIDTH 0, ADDR_WIDTH 4, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN MicroBlazeCore_clk_wiz_1_0_clk_out1, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) input S_AXI_RREADY;
+  input [31:0]sMcuOutputControl;
+  output [31:0]sMcuInputControl;
+
+  wire \<const0> ;
+  wire S_AXI_ACLK;
+  wire S_AXI_ARESETN;
+  wire S_AXI_ARREADY;
+  wire S_AXI_ARVALID;
+  wire [3:0]S_AXI_AWADDR;
+  wire S_AXI_AWREADY;
+  wire S_AXI_AWVALID;
+  wire S_AXI_BREADY;
+  wire S_AXI_BVALID;
+  wire S_AXI_RREADY;
+  wire S_AXI_RVALID;
+  wire [31:0]S_AXI_WDATA;
+  wire S_AXI_WREADY;
+  wire [3:0]S_AXI_WSTRB;
+  wire S_AXI_WVALID;
+  wire [31:0]sMcuInputControl;
+
+  assign S_AXI_BRESP[1] = \<const0> ;
+  assign S_AXI_BRESP[0] = \<const0> ;
+  assign S_AXI_RDATA[31] = \<const0> ;
+  assign S_AXI_RDATA[30] = \<const0> ;
+  assign S_AXI_RDATA[29] = \<const0> ;
+  assign S_AXI_RDATA[28] = \<const0> ;
+  assign S_AXI_RDATA[27] = \<const0> ;
+  assign S_AXI_RDATA[26] = \<const0> ;
+  assign S_AXI_RDATA[25] = \<const0> ;
+  assign S_AXI_RDATA[24] = \<const0> ;
+  assign S_AXI_RDATA[23] = \<const0> ;
+  assign S_AXI_RDATA[22] = \<const0> ;
+  assign S_AXI_RDATA[21] = \<const0> ;
+  assign S_AXI_RDATA[20] = \<const0> ;
+  assign S_AXI_RDATA[19] = \<const0> ;
+  assign S_AXI_RDATA[18] = \<const0> ;
+  assign S_AXI_RDATA[17] = \<const0> ;
+  assign S_AXI_RDATA[16] = \<const0> ;
+  assign S_AXI_RDATA[15] = \<const0> ;
+  assign S_AXI_RDATA[14] = \<const0> ;
+  assign S_AXI_RDATA[13] = \<const0> ;
+  assign S_AXI_RDATA[12] = \<const0> ;
+  assign S_AXI_RDATA[11] = \<const0> ;
+  assign S_AXI_RDATA[10] = \<const0> ;
+  assign S_AXI_RDATA[9] = \<const0> ;
+  assign S_AXI_RDATA[8] = \<const0> ;
+  assign S_AXI_RDATA[7] = \<const0> ;
+  assign S_AXI_RDATA[6] = \<const0> ;
+  assign S_AXI_RDATA[5] = \<const0> ;
+  assign S_AXI_RDATA[4] = \<const0> ;
+  assign S_AXI_RDATA[3] = \<const0> ;
+  assign S_AXI_RDATA[2] = \<const0> ;
+  assign S_AXI_RDATA[1] = \<const0> ;
+  assign S_AXI_RDATA[0] = \<const0> ;
+  assign S_AXI_RRESP[1] = \<const0> ;
+  assign S_AXI_RRESP[0] = \<const0> ;
+  GND GND
+       (.G(\<const0> ));
+  MicroBlazeCore_Axi4FabricBridge_0_0_Axi4FabricBridge inst
+       (.S_AXI_ACLK(S_AXI_ACLK),
+        .S_AXI_ARESETN(S_AXI_ARESETN),
+        .S_AXI_ARVALID(S_AXI_ARVALID),
+        .S_AXI_AWADDR(S_AXI_AWADDR[3:2]),
+        .S_AXI_AWVALID(S_AXI_AWVALID),
+        .S_AXI_BREADY(S_AXI_BREADY),
+        .S_AXI_BVALID(S_AXI_BVALID),
+        .S_AXI_RREADY(S_AXI_RREADY),
+        .S_AXI_WDATA(S_AXI_WDATA),
+        .S_AXI_WREADY(S_AXI_WREADY),
+        .S_AXI_WSTRB(S_AXI_WSTRB),
+        .S_AXI_WVALID(S_AXI_WVALID),
+        .axi_arready_reg_0(S_AXI_ARREADY),
+        .axi_awready_reg_0(S_AXI_AWREADY),
+        .axi_rvalid_reg_0(S_AXI_RVALID),
+        .sMcuInputControl(sMcuInputControl));
 endmodule
 `ifndef GLBL
 `define GLBL

@@ -4,8 +4,8 @@
 -- Tool Version: Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
 -- Date        : Fri Sep  6 10:11:05 2024
 -- Host        : BDCGEHARRIS01 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub
---               s:/projects/mi400-eam-poc/proj/mi400-eam-poc.gen/sources_1/bd/MicroBlazeCore/ip/MicroBlazeCore_Axi4FabricBridge_0_0/MicroBlazeCore_Axi4FabricBridge_0_0_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top MicroBlazeCore_Axi4FabricBridge_0_0 -prefix
+--               MicroBlazeCore_Axi4FabricBridge_0_0_ MicroBlazeCore_Axi4FabricBridge_0_0_stub.vhdl
 -- Design      : MicroBlazeCore_Axi4FabricBridge_0_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xcau25p-ffvb676-2-e

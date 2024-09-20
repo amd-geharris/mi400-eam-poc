@@ -4,8 +4,8 @@
 -- Tool Version: Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
 -- Date        : Fri Sep  6 10:11:05 2024
 -- Host        : BDCGEHARRIS01 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               s:/projects/mi400-eam-poc/proj/mi400-eam-poc.gen/sources_1/bd/MicroBlazeCore/ip/MicroBlazeCore_Axi4FabricBridge_0_0/MicroBlazeCore_Axi4FabricBridge_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top MicroBlazeCore_Axi4FabricBridge_0_0 -prefix
+--               MicroBlazeCore_Axi4FabricBridge_0_0_ MicroBlazeCore_Axi4FabricBridge_0_0_sim_netlist.vhdl
 -- Design      : MicroBlazeCore_Axi4FabricBridge_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -34,8 +34,6 @@ entity MicroBlazeCore_Axi4FabricBridge_0_0_Axi4FabricBridge is
     S_AXI_ARESETN : in STD_LOGIC;
     S_AXI_BREADY : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of MicroBlazeCore_Axi4FabricBridge_0_0_Axi4FabricBridge : entity is "Axi4FabricBridge";
 end MicroBlazeCore_Axi4FabricBridge_0_0_Axi4FabricBridge;
 
 architecture STRUCTURE of MicroBlazeCore_Axi4FabricBridge_0_0_Axi4FabricBridge is

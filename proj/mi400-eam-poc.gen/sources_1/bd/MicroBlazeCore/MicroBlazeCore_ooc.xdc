@@ -6,6 +6,7 @@
 # This constraints file is not used in normal top-down synthesis (default flow
 # of Vivado)
 ################################################################################
-create_clock -name diff_MicroBlazeClock_clk_p -period 10 [get_ports diff_MicroBlazeClock_clk_p]
+create_clock -name Clock -period 10 [get_ports Clock]
+create_clock -name AxiBusClock -period 4 [get_ports AxiBusClock]
 
 ################################################################################
