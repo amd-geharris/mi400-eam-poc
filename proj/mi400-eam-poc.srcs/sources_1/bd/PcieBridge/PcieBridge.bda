@@ -190,6 +190,24 @@
             },
             "V3": {
                 "VT": "AC",
+                "BA": "0x0000",
+                "HA": "0x0FFF",
+                "BP": "C_BASEADDR",
+                "HP": "C_HIGHADDR",
+                "MA": "mDebugMcu_AXI",
+                "MX": "/",
+                "MI": "mDebugMcu_AXI",
+                "MS": "SEG_mdm_0_Reg",
+                "MV": ":::",
+                "SX": "/mdm_0",
+                "SI": "S_AXI",
+                "SS": "Reg",
+                "SV": "xilinx.com:ip:mdm:3.2",
+                "TM": "both",
+                "TU": "register"
+            },
+            "V4": {
+                "VT": "AC",
                 "BA": "0x44A00000",
                 "HA": "0x44A0FFFF",
                 "BP": "C_BASEADDR",
@@ -218,6 +236,11 @@
             },
             {
                 "src": "V3",
+                "trg": "V2",
+                "EH": "2"
+            },
+            {
+                "src": "V4",
                 "trg": "V2",
                 "EH": "2"
             }

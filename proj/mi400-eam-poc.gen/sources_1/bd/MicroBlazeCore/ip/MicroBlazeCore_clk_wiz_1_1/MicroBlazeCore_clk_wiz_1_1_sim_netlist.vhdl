@@ -2,7 +2,7 @@
 -- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
--- Date        : Thu Sep 19 14:30:08 2024
+-- Date        : Mon Sep 23 16:31:03 2024
 -- Host        : BDCGEHARRIS01 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               s:/projects/mi400-eam-poc/proj/mi400-eam-poc.gen/sources_1/bd/MicroBlazeCore/ip/MicroBlazeCore_clk_wiz_1_1/MicroBlazeCore_clk_wiz_1_1_sim_netlist.vhdl
@@ -20,7 +20,8 @@ entity MicroBlazeCore_clk_wiz_1_1_clk_wiz is
     clk_out1 : out STD_LOGIC;
     reset : in STD_LOGIC;
     locked : out STD_LOGIC;
-    clk_in1 : in STD_LOGIC
+    clk_in1_p : in STD_LOGIC;
+    clk_in1_n : in STD_LOGIC
   );
 end MicroBlazeCore_clk_wiz_1_1_clk_wiz;
 
@@ -47,13 +48,13 @@ architecture STRUCTURE of MicroBlazeCore_clk_wiz_1_1_clk_wiz is
   signal NLW_mmcme4_adv_inst_PSDONE_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcme4_adv_inst_DO_UNCONNECTED : STD_LOGIC_VECTOR ( 15 downto 0 );
   attribute BOX_TYPE : string;
-  attribute BOX_TYPE of clkin1_ibuf : label is "PRIMITIVE";
+  attribute BOX_TYPE of clkin1_ibufds : label is "PRIMITIVE";
   attribute CAPACITANCE : string;
-  attribute CAPACITANCE of clkin1_ibuf : label is "DONT_CARE";
+  attribute CAPACITANCE of clkin1_ibufds : label is "DONT_CARE";
   attribute IBUF_DELAY_VALUE : string;
-  attribute IBUF_DELAY_VALUE of clkin1_ibuf : label is "0";
+  attribute IBUF_DELAY_VALUE of clkin1_ibufds : label is "0";
   attribute IFD_DELAY_VALUE : string;
-  attribute IFD_DELAY_VALUE of clkin1_ibuf : label is "AUTO";
+  attribute IFD_DELAY_VALUE of clkin1_ibufds : label is "AUTO";
   attribute BOX_TYPE of clkout1_buf : label is "PRIMITIVE";
   attribute XILINX_LEGACY_PRIM : string;
   attribute XILINX_LEGACY_PRIM of clkout1_buf : label is "BUFG";
@@ -63,12 +64,14 @@ architecture STRUCTURE of MicroBlazeCore_clk_wiz_1_1_clk_wiz is
   attribute OPT_MODIFIED : string;
   attribute OPT_MODIFIED of mmcme4_adv_inst : label is "MLO";
 begin
-clkin1_ibuf: unisim.vcomponents.IBUF
+clkin1_ibufds: unisim.vcomponents.IBUFDS
     generic map(
+      DIFF_TERM => false,
       IOSTANDARD => "DEFAULT"
     )
         port map (
-      I => clk_in1,
+      I => clk_in1_p,
+      IB => clk_in1_n,
       O => clk_in1_MicroBlazeCore_clk_wiz_1_1
     );
 clkout1_buf: unisim.vcomponents.BUFGCE
@@ -182,7 +185,8 @@ entity MicroBlazeCore_clk_wiz_1_1 is
     clk_out1 : out STD_LOGIC;
     reset : in STD_LOGIC;
     locked : out STD_LOGIC;
-    clk_in1 : in STD_LOGIC
+    clk_in1_p : in STD_LOGIC;
+    clk_in1_n : in STD_LOGIC
   );
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of MicroBlazeCore_clk_wiz_1_1 : entity is true;
@@ -192,7 +196,8 @@ architecture STRUCTURE of MicroBlazeCore_clk_wiz_1_1 is
 begin
 inst: entity work.MicroBlazeCore_clk_wiz_1_1_clk_wiz
      port map (
-      clk_in1 => clk_in1,
+      clk_in1_n => clk_in1_n,
+      clk_in1_p => clk_in1_p,
       clk_out1 => clk_out1,
       locked => locked,
       reset => reset

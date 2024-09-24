@@ -2,7 +2,7 @@
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-//Date        : Fri Sep 20 11:59:36 2024
+//Date        : Mon Sep 23 16:29:50 2024
 //Host        : BDCGEHARRIS01 running 64-bit major release  (build 9200)
 //Command     : generate_target MicroBlazeCore_wrapper.bd
 //Design      : MicroBlazeCore_wrapper
@@ -12,10 +12,42 @@
 
 module MicroBlazeCore_wrapper
    (AxiBusClock,
-    Clock,
+    McuAxiClock,
     aUART_rxd,
     aUART_txd,
     dReset_n,
+    fixed_fabric_100mhz_clk_n,
+    fixed_fabric_100mhz_clk_p,
+    mDebugMcu_AXI_araddr,
+    mDebugMcu_AXI_arprot,
+    mDebugMcu_AXI_arready,
+    mDebugMcu_AXI_arvalid,
+    mDebugMcu_AXI_awaddr,
+    mDebugMcu_AXI_awprot,
+    mDebugMcu_AXI_awready,
+    mDebugMcu_AXI_awvalid,
+    mDebugMcu_AXI_bready,
+    mDebugMcu_AXI_bresp,
+    mDebugMcu_AXI_bvalid,
+    mDebugMcu_AXI_rdata,
+    mDebugMcu_AXI_rready,
+    mDebugMcu_AXI_rresp,
+    mDebugMcu_AXI_rvalid,
+    mDebugMcu_AXI_wdata,
+    mDebugMcu_AXI_wready,
+    mDebugMcu_AXI_wstrb,
+    mDebugMcu_AXI_wvalid,
+    mDebugPort_capture,
+    mDebugPort_clk,
+    mDebugPort_disable,
+    mDebugPort_reg_en,
+    mDebugPort_rst,
+    mDebugPort_shift,
+    mDebugPort_tdi,
+    mDebugPort_tdo,
+    mDebugPort_update,
+    mDebugSysRst,
+    mMcuAxiReset,
     sMcuInputControl,
     sMcuOutputControl,
     xAxiBusReset_n,
@@ -39,10 +71,42 @@ module MicroBlazeCore_wrapper
     xPcieToDfx_AXI_wstrb,
     xPcieToDfx_AXI_wvalid);
   input AxiBusClock;
-  input Clock;
+  output McuAxiClock;
   input aUART_rxd;
   output aUART_txd;
   input dReset_n;
+  input fixed_fabric_100mhz_clk_n;
+  input fixed_fabric_100mhz_clk_p;
+  output [31:0]mDebugMcu_AXI_araddr;
+  output [2:0]mDebugMcu_AXI_arprot;
+  input [0:0]mDebugMcu_AXI_arready;
+  output [0:0]mDebugMcu_AXI_arvalid;
+  output [31:0]mDebugMcu_AXI_awaddr;
+  output [2:0]mDebugMcu_AXI_awprot;
+  input [0:0]mDebugMcu_AXI_awready;
+  output [0:0]mDebugMcu_AXI_awvalid;
+  output [0:0]mDebugMcu_AXI_bready;
+  input [1:0]mDebugMcu_AXI_bresp;
+  input [0:0]mDebugMcu_AXI_bvalid;
+  input [31:0]mDebugMcu_AXI_rdata;
+  output [0:0]mDebugMcu_AXI_rready;
+  input [1:0]mDebugMcu_AXI_rresp;
+  input [0:0]mDebugMcu_AXI_rvalid;
+  output [31:0]mDebugMcu_AXI_wdata;
+  input [0:0]mDebugMcu_AXI_wready;
+  output [3:0]mDebugMcu_AXI_wstrb;
+  output [0:0]mDebugMcu_AXI_wvalid;
+  input mDebugPort_capture;
+  input mDebugPort_clk;
+  input mDebugPort_disable;
+  input [0:7]mDebugPort_reg_en;
+  input mDebugPort_rst;
+  input mDebugPort_shift;
+  input mDebugPort_tdi;
+  output mDebugPort_tdo;
+  input mDebugPort_update;
+  input mDebugSysRst;
+  output [0:0]mMcuAxiReset;
   output [31:0]sMcuInputControl;
   input [31:0]sMcuOutputControl;
   input xAxiBusReset_n;
@@ -67,10 +131,42 @@ module MicroBlazeCore_wrapper
   input xPcieToDfx_AXI_wvalid;
 
   wire AxiBusClock;
-  wire Clock;
+  wire McuAxiClock;
   wire aUART_rxd;
   wire aUART_txd;
   wire dReset_n;
+  wire fixed_fabric_100mhz_clk_n;
+  wire fixed_fabric_100mhz_clk_p;
+  wire [31:0]mDebugMcu_AXI_araddr;
+  wire [2:0]mDebugMcu_AXI_arprot;
+  wire [0:0]mDebugMcu_AXI_arready;
+  wire [0:0]mDebugMcu_AXI_arvalid;
+  wire [31:0]mDebugMcu_AXI_awaddr;
+  wire [2:0]mDebugMcu_AXI_awprot;
+  wire [0:0]mDebugMcu_AXI_awready;
+  wire [0:0]mDebugMcu_AXI_awvalid;
+  wire [0:0]mDebugMcu_AXI_bready;
+  wire [1:0]mDebugMcu_AXI_bresp;
+  wire [0:0]mDebugMcu_AXI_bvalid;
+  wire [31:0]mDebugMcu_AXI_rdata;
+  wire [0:0]mDebugMcu_AXI_rready;
+  wire [1:0]mDebugMcu_AXI_rresp;
+  wire [0:0]mDebugMcu_AXI_rvalid;
+  wire [31:0]mDebugMcu_AXI_wdata;
+  wire [0:0]mDebugMcu_AXI_wready;
+  wire [3:0]mDebugMcu_AXI_wstrb;
+  wire [0:0]mDebugMcu_AXI_wvalid;
+  wire mDebugPort_capture;
+  wire mDebugPort_clk;
+  wire mDebugPort_disable;
+  wire [0:7]mDebugPort_reg_en;
+  wire mDebugPort_rst;
+  wire mDebugPort_shift;
+  wire mDebugPort_tdi;
+  wire mDebugPort_tdo;
+  wire mDebugPort_update;
+  wire mDebugSysRst;
+  wire [0:0]mMcuAxiReset;
   wire [31:0]sMcuInputControl;
   wire [31:0]sMcuOutputControl;
   wire xAxiBusReset_n;
@@ -96,10 +192,42 @@ module MicroBlazeCore_wrapper
 
   MicroBlazeCore MicroBlazeCore_i
        (.AxiBusClock(AxiBusClock),
-        .Clock(Clock),
+        .McuAxiClock(McuAxiClock),
         .aUART_rxd(aUART_rxd),
         .aUART_txd(aUART_txd),
         .dReset_n(dReset_n),
+        .fixed_fabric_100mhz_clk_n(fixed_fabric_100mhz_clk_n),
+        .fixed_fabric_100mhz_clk_p(fixed_fabric_100mhz_clk_p),
+        .mDebugMcu_AXI_araddr(mDebugMcu_AXI_araddr),
+        .mDebugMcu_AXI_arprot(mDebugMcu_AXI_arprot),
+        .mDebugMcu_AXI_arready(mDebugMcu_AXI_arready),
+        .mDebugMcu_AXI_arvalid(mDebugMcu_AXI_arvalid),
+        .mDebugMcu_AXI_awaddr(mDebugMcu_AXI_awaddr),
+        .mDebugMcu_AXI_awprot(mDebugMcu_AXI_awprot),
+        .mDebugMcu_AXI_awready(mDebugMcu_AXI_awready),
+        .mDebugMcu_AXI_awvalid(mDebugMcu_AXI_awvalid),
+        .mDebugMcu_AXI_bready(mDebugMcu_AXI_bready),
+        .mDebugMcu_AXI_bresp(mDebugMcu_AXI_bresp),
+        .mDebugMcu_AXI_bvalid(mDebugMcu_AXI_bvalid),
+        .mDebugMcu_AXI_rdata(mDebugMcu_AXI_rdata),
+        .mDebugMcu_AXI_rready(mDebugMcu_AXI_rready),
+        .mDebugMcu_AXI_rresp(mDebugMcu_AXI_rresp),
+        .mDebugMcu_AXI_rvalid(mDebugMcu_AXI_rvalid),
+        .mDebugMcu_AXI_wdata(mDebugMcu_AXI_wdata),
+        .mDebugMcu_AXI_wready(mDebugMcu_AXI_wready),
+        .mDebugMcu_AXI_wstrb(mDebugMcu_AXI_wstrb),
+        .mDebugMcu_AXI_wvalid(mDebugMcu_AXI_wvalid),
+        .mDebugPort_capture(mDebugPort_capture),
+        .mDebugPort_clk(mDebugPort_clk),
+        .mDebugPort_disable(mDebugPort_disable),
+        .mDebugPort_reg_en(mDebugPort_reg_en),
+        .mDebugPort_rst(mDebugPort_rst),
+        .mDebugPort_shift(mDebugPort_shift),
+        .mDebugPort_tdi(mDebugPort_tdi),
+        .mDebugPort_tdo(mDebugPort_tdo),
+        .mDebugPort_update(mDebugPort_update),
+        .mDebugSysRst(mDebugSysRst),
+        .mMcuAxiReset(mMcuAxiReset),
         .sMcuInputControl(sMcuInputControl),
         .sMcuOutputControl(sMcuOutputControl),
         .xAxiBusReset_n(xAxiBusReset_n),

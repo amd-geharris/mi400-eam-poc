@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x7C8F5DC2185729AF",
+      "boundary_crc": "0x12F4831BB402F97E",
       "device": "xcau25p-ffvb676-2-e",
       "gen_directory": "../../../../mi400-eam-poc.gen/sources_1/bd/PcieBridge",
       "name": "PcieBridge",
@@ -12,7 +12,9 @@
     },
     "design_tree": {
       "xdma_0": "",
-      "axis_dwidth_converter_0": ""
+      "axis_dwidth_converter_0": "",
+      "mdm_0": "",
+      "util_ds_buf": ""
     },
     "interface_ports": {
       "aPCIE": {
@@ -350,6 +352,273 @@
             "direction": "O"
           }
         }
+      },
+      "mDebugMcu_AXI": {
+        "mode": "Slave",
+        "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+        "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+        "parameters": {
+          "ADDR_WIDTH": {
+            "value": "16"
+          },
+          "ARUSER_WIDTH": {
+            "value": "0"
+          },
+          "AWUSER_WIDTH": {
+            "value": "0"
+          },
+          "BUSER_WIDTH": {
+            "value": "0"
+          },
+          "CLK_DOMAIN": {
+            "value": "PcieBridge_McuAxiClock",
+            "value_src": "default"
+          },
+          "DATA_WIDTH": {
+            "value": "32"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "HAS_BRESP": {
+            "value": "1"
+          },
+          "HAS_BURST": {
+            "value": "0"
+          },
+          "HAS_CACHE": {
+            "value": "0"
+          },
+          "HAS_LOCK": {
+            "value": "0"
+          },
+          "HAS_PROT": {
+            "value": "0"
+          },
+          "HAS_QOS": {
+            "value": "0"
+          },
+          "HAS_REGION": {
+            "value": "0"
+          },
+          "HAS_RRESP": {
+            "value": "1"
+          },
+          "HAS_WSTRB": {
+            "value": "1"
+          },
+          "ID_WIDTH": {
+            "value": "0"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "MAX_BURST_LENGTH": {
+            "value": "1"
+          },
+          "NUM_READ_OUTSTANDING": {
+            "value": "1"
+          },
+          "NUM_READ_THREADS": {
+            "value": "1"
+          },
+          "NUM_WRITE_OUTSTANDING": {
+            "value": "1"
+          },
+          "NUM_WRITE_THREADS": {
+            "value": "1"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          },
+          "PROTOCOL": {
+            "value": "AXI4LITE"
+          },
+          "READ_WRITE_MODE": {
+            "value": "READ_WRITE"
+          },
+          "RUSER_BITS_PER_BYTE": {
+            "value": "0"
+          },
+          "RUSER_WIDTH": {
+            "value": "0"
+          },
+          "SUPPORTS_NARROW_BURST": {
+            "value": "0"
+          },
+          "WUSER_BITS_PER_BYTE": {
+            "value": "0"
+          },
+          "WUSER_WIDTH": {
+            "value": "0"
+          }
+        },
+        "address_space_ref": "mDebugMcu_AXI",
+        "base_address": {
+          "minimum": "0x00000000",
+          "maximum": "0x0000FFFF",
+          "width": "16"
+        },
+        "port_maps": {
+          "ARADDR": {
+            "physical_name": "mDebugMcu_AXI_araddr",
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "ARREADY": {
+            "physical_name": "mDebugMcu_AXI_arready",
+            "direction": "O"
+          },
+          "ARVALID": {
+            "physical_name": "mDebugMcu_AXI_arvalid",
+            "direction": "I"
+          },
+          "AWADDR": {
+            "physical_name": "mDebugMcu_AXI_awaddr",
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "AWREADY": {
+            "physical_name": "mDebugMcu_AXI_awready",
+            "direction": "O"
+          },
+          "AWVALID": {
+            "physical_name": "mDebugMcu_AXI_awvalid",
+            "direction": "I"
+          },
+          "BREADY": {
+            "physical_name": "mDebugMcu_AXI_bready",
+            "direction": "I"
+          },
+          "BRESP": {
+            "physical_name": "mDebugMcu_AXI_bresp",
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          },
+          "BVALID": {
+            "physical_name": "mDebugMcu_AXI_bvalid",
+            "direction": "O"
+          },
+          "RDATA": {
+            "physical_name": "mDebugMcu_AXI_rdata",
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "RREADY": {
+            "physical_name": "mDebugMcu_AXI_rready",
+            "direction": "I"
+          },
+          "RRESP": {
+            "physical_name": "mDebugMcu_AXI_rresp",
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          },
+          "RVALID": {
+            "physical_name": "mDebugMcu_AXI_rvalid",
+            "direction": "O"
+          },
+          "WDATA": {
+            "physical_name": "mDebugMcu_AXI_wdata",
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "WREADY": {
+            "physical_name": "mDebugMcu_AXI_wready",
+            "direction": "O"
+          },
+          "WSTRB": {
+            "physical_name": "mDebugMcu_AXI_wstrb",
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "WVALID": {
+            "physical_name": "mDebugMcu_AXI_wvalid",
+            "direction": "I"
+          }
+        }
+      },
+      "mDebugPort": {
+        "mode": "Master",
+        "vlnv_bus_definition": "xilinx.com:interface:mbdebug:3.0",
+        "vlnv": "xilinx.com:interface:mbdebug_rtl:3.0",
+        "port_maps": {
+          "CAPTURE": {
+            "physical_name": "mDebugPort_capture",
+            "direction": "O"
+          },
+          "CLK": {
+            "physical_name": "mDebugPort_clk",
+            "direction": "O"
+          },
+          "DISABLE": {
+            "physical_name": "mDebugPort_disable",
+            "direction": "O"
+          },
+          "REG_EN": {
+            "physical_name": "mDebugPort_reg_en",
+            "direction": "O",
+            "left": "0",
+            "right": "7"
+          },
+          "RST": {
+            "physical_name": "mDebugPort_rst",
+            "direction": "O"
+          },
+          "SHIFT": {
+            "physical_name": "mDebugPort_shift",
+            "direction": "O"
+          },
+          "TDI": {
+            "physical_name": "mDebugPort_tdi",
+            "direction": "O"
+          },
+          "TDO": {
+            "physical_name": "mDebugPort_tdo",
+            "direction": "I"
+          },
+          "UPDATE": {
+            "physical_name": "mDebugPort_update",
+            "direction": "O"
+          }
+        }
+      },
+      "PCIE_CLOCK": {
+        "mode": "Slave",
+        "vlnv_bus_definition": "xilinx.com:interface:diff_clock:1.0",
+        "vlnv": "xilinx.com:interface:diff_clock_rtl:1.0",
+        "parameters": {
+          "CAN_DEBUG": {
+            "value": "false",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000"
+          }
+        },
+        "port_maps": {
+          "CLK_P": {
+            "physical_name": "PCIE_CLOCK_clk_p",
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "CLK_N": {
+            "physical_name": "PCIE_CLOCK_clk_n",
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          }
+        }
       }
     },
     "ports": {
@@ -363,56 +632,6 @@
           },
           "POLARITY": {
             "value": "ACTIVE_LOW"
-          }
-        }
-      },
-      "PcieSysClock": {
-        "type": "clk",
-        "direction": "I",
-        "parameters": {
-          "CLK_DOMAIN": {
-            "value": "PcieBridge_PcieSysClock",
-            "value_src": "default"
-          },
-          "FREQ_HZ": {
-            "value": "100000000"
-          },
-          "FREQ_TOLERANCE_HZ": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "INSERT_VIP": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "PHASE": {
-            "value": "0.0",
-            "value_src": "default"
-          }
-        }
-      },
-      "PcieClock": {
-        "type": "clk",
-        "direction": "I",
-        "parameters": {
-          "CLK_DOMAIN": {
-            "value": "PcieBridge_PcieClock",
-            "value_src": "default"
-          },
-          "FREQ_HZ": {
-            "value": "100000000"
-          },
-          "FREQ_TOLERANCE_HZ": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "INSERT_VIP": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "PHASE": {
-            "value": "0.0",
-            "value_src": "default"
           }
         }
       },
@@ -461,6 +680,67 @@
       },
       "pPcieLinkUp": {
         "direction": "O"
+      },
+      "McuAxiClock": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "ASSOCIATED_BUSIF": {
+            "value": "mDebugMcu_AXI",
+            "value_src": "default"
+          },
+          "ASSOCIATED_RESET": {
+            "value": "mMcuAxiReset",
+            "value_src": "default"
+          },
+          "CLK_DOMAIN": {
+            "value": "PcieBridge_McuAxiClock",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          }
+        }
+      },
+      "mMcuAxiReset": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      },
+      "mDebugSysRst": {
+        "type": "rst",
+        "direction": "O",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_HIGH",
+            "value_src": "const_prop"
+          }
+        }
       }
     },
     "components": {
@@ -482,6 +762,9 @@
           },
           "pl_link_cap_max_link_speed": {
             "value": "8.0_GT/s"
+          },
+          "ref_clk_freq": {
+            "value": "100_MHz"
           },
           "xdma_axi_intf_mm": {
             "value": "AXI_Stream"
@@ -528,13 +811,64 @@
             ]
           }
         }
+      },
+      "mdm_0": {
+        "vlnv": "xilinx.com:ip:mdm:3.2",
+        "ip_revision": "26",
+        "xci_name": "PcieBridge_mdm_0_0",
+        "xci_path": "ip\\PcieBridge_mdm_0_0\\PcieBridge_mdm_0_0.xci",
+        "inst_hier_path": "mdm_0",
+        "parameters": {
+          "C_TRACE_OUTPUT": {
+            "value": "0"
+          },
+          "C_USE_UART": {
+            "value": "1"
+          }
+        }
+      },
+      "util_ds_buf": {
+        "vlnv": "xilinx.com:ip:util_ds_buf:2.2",
+        "ip_revision": "32",
+        "xci_name": "PcieBridge_util_ds_buf_0",
+        "xci_path": "ip\\PcieBridge_util_ds_buf_0\\PcieBridge_util_ds_buf_0.xci",
+        "inst_hier_path": "util_ds_buf",
+        "parameters": {
+          "C_BUF_TYPE": {
+            "value": "IBUFDSGTE"
+          },
+          "DIFF_CLK_IN_BOARD_INTERFACE": {
+            "value": "Custom"
+          },
+          "USE_BOARD_FLOW": {
+            "value": "true"
+          }
+        }
       }
     },
     "interface_nets": {
+      "PCIE_CLOCK": {
+        "interface_ports": [
+          "PCIE_CLOCK",
+          "util_ds_buf/CLK_IN_D"
+        ]
+      },
       "axis_dwidth_converter_0_M_AXIS": {
         "interface_ports": [
           "xPcieToICAP_AXI",
           "axis_dwidth_converter_0/M_AXIS"
+        ]
+      },
+      "mDebugMcu_AXI_1": {
+        "interface_ports": [
+          "mdm_0/S_AXI",
+          "mDebugMcu_AXI"
+        ]
+      },
+      "mdm_0_MBDEBUG_0": {
+        "interface_ports": [
+          "mdm_0/MBDEBUG_0",
+          "mDebugPort"
         ]
       },
       "xdma_0_M_AXIS_H2C_0": {
@@ -564,16 +898,22 @@
           "axis_dwidth_converter_0/aclk"
         ]
       },
-      "PcieClock_1": {
+      "McuAxiClock_1": {
         "ports": [
-          "PcieClock",
-          "xdma_0/sys_clk_gt"
+          "McuAxiClock",
+          "mdm_0/S_AXI_ACLK"
         ]
       },
-      "PcieSysClock_1": {
+      "mMcuAxiReset_1": {
         "ports": [
-          "PcieSysClock",
-          "xdma_0/sys_clk"
+          "mMcuAxiReset",
+          "mdm_0/S_AXI_ARESETN"
+        ]
+      },
+      "mdm_0_Debug_SYS_Rst": {
+        "ports": [
+          "mdm_0/Debug_SYS_Rst",
+          "mDebugSysRst"
         ]
       },
       "pPcieLinkUp": {
@@ -588,6 +928,18 @@
           "xdma_0/sys_rst_n"
         ]
       },
+      "util_ds_buf_IBUF_DS_ODIV2": {
+        "ports": [
+          "util_ds_buf/IBUF_DS_ODIV2",
+          "xdma_0/sys_clk"
+        ]
+      },
+      "util_ds_buf_IBUF_OUT": {
+        "ports": [
+          "util_ds_buf/IBUF_OUT",
+          "xdma_0/sys_clk_gt"
+        ]
+      },
       "xAxiBusReset_n": {
         "ports": [
           "xdma_0/axi_aresetn",
@@ -598,6 +950,19 @@
     },
     "addressing": {
       "/": {
+        "address_spaces": {
+          "mDebugMcu_AXI": {
+            "range": "64K",
+            "width": "16",
+            "segments": {
+              "SEG_mdm_0_Reg": {
+                "address_block": "/mdm_0/S_AXI/Reg",
+                "offset": "0x0000",
+                "range": "4K"
+              }
+            }
+          }
+        },
         "memory_maps": {
           "xPcieToDfx_AXI": {
             "address_blocks": {

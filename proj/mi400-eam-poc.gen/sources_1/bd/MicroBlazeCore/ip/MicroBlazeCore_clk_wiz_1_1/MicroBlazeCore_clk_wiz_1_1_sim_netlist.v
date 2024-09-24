@@ -2,7 +2,7 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-// Date        : Thu Sep 19 14:30:08 2024
+// Date        : Mon Sep 23 16:31:03 2024
 // Host        : BDCGEHARRIS01 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               s:/projects/mi400-eam-poc/proj/mi400-eam-poc.gen/sources_1/bd/MicroBlazeCore/ip/MicroBlazeCore_clk_wiz_1_1/MicroBlazeCore_clk_wiz_1_1_sim_netlist.v
@@ -18,19 +18,23 @@ module MicroBlazeCore_clk_wiz_1_1
    (clk_out1,
     reset,
     locked,
-    clk_in1);
+    clk_in1_p,
+    clk_in1_n);
   output clk_out1;
   input reset;
   output locked;
-  input clk_in1;
+  input clk_in1_p;
+  input clk_in1_n;
 
-  (* IBUF_LOW_PWR *) wire clk_in1;
+  (* IBUF_LOW_PWR *) (* RTL_KEEP = "yes" *) wire clk_in1_n;
+  (* IBUF_LOW_PWR *) (* RTL_KEEP = "yes" *) wire clk_in1_p;
   wire clk_out1;
   wire locked;
   wire reset;
 
   MicroBlazeCore_clk_wiz_1_1_clk_wiz inst
-       (.clk_in1(clk_in1),
+       (.clk_in1_n(clk_in1_n),
+        .clk_in1_p(clk_in1_p),
         .clk_out1(clk_out1),
         .locked(locked),
         .reset(reset));
@@ -40,14 +44,17 @@ module MicroBlazeCore_clk_wiz_1_1_clk_wiz
    (clk_out1,
     reset,
     locked,
-    clk_in1);
+    clk_in1_p,
+    clk_in1_n);
   output clk_out1;
   input reset;
   output locked;
-  input clk_in1;
+  input clk_in1_p;
+  input clk_in1_n;
 
-  wire clk_in1;
   wire clk_in1_MicroBlazeCore_clk_wiz_1_1;
+  wire clk_in1_n;
+  wire clk_in1_p;
   wire clk_out1;
   wire clk_out1_MicroBlazeCore_clk_wiz_1_1;
   wire locked;
@@ -76,10 +83,12 @@ module MicroBlazeCore_clk_wiz_1_1_clk_wiz
   (* CAPACITANCE = "DONT_CARE" *) 
   (* IBUF_DELAY_VALUE = "0" *) 
   (* IFD_DELAY_VALUE = "AUTO" *) 
-  IBUF #(
+  IBUFDS #(
+    .DIFF_TERM("FALSE"),
     .IOSTANDARD("DEFAULT")) 
-    clkin1_ibuf
-       (.I(clk_in1),
+    clkin1_ibufds
+       (.I(clk_in1_p),
+        .IB(clk_in1_n),
         .O(clk_in1_MicroBlazeCore_clk_wiz_1_1));
   (* BOX_TYPE = "PRIMITIVE" *) 
   (* XILINX_LEGACY_PRIM = "BUFG" *) 

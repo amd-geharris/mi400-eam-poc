@@ -6,7 +6,7 @@
 # This constraints file is not used in normal top-down synthesis (default flow
 # of Vivado)
 ################################################################################
-create_clock -name PcieSysClock -period 10 [get_ports PcieSysClock]
-create_clock -name PcieClock -period 10 [get_ports PcieClock]
+create_clock -name McuAxiClock -period 10 [get_ports McuAxiClock]
+create_clock -name PCIE_CLOCK_clk_p -period 10 [get_ports PCIE_CLOCK_clk_p]
 
 ################################################################################

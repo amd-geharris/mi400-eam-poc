@@ -2,7 +2,7 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-// Date        : Thu Sep 19 14:36:55 2024
+// Date        : Fri Sep 20 16:32:47 2024
 // Host        : BDCGEHARRIS01 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
 //               s:/projects/mi400-eam-poc/proj/mi400-eam-poc.gen/sources_1/bd/MicroBlazeCore/ip/MicroBlazeCore_xbar_1/MicroBlazeCore_xbar_1_stub.v

@@ -14,7 +14,8 @@
 module TopMi400EamPoc
 (
     // CORE
-    input   wire    FPGA_CLK_100MHZ,
+    input   wire    FPGA_CLK_100MHZ_P,
+    input   wire    FPGA_CLK_100MHZ_N,
     input   wire    uMicroBlazeRst_n,
 
 
@@ -70,6 +71,38 @@ module TopMi400EamPoc
     wire xPcieToICAP_AXI_tlast;
     wire xPcieToICAP_AXI_tready;
     wire xPcieToICAP_AXI_tvalid;
+
+    wire [31:0]mDebugMcu_AXI_araddr;
+    wire [2:0]mDebugMcu_AXI_arprot;
+    wire [0:0]mDebugMcu_AXI_arready;
+    wire [0:0]mDebugMcu_AXI_arvalid;
+    wire [31:0]mDebugMcu_AXI_awaddr;
+    wire [2:0]mDebugMcu_AXI_awprot;
+    wire [0:0]mDebugMcu_AXI_awready;
+    wire [0:0]mDebugMcu_AXI_awvalid;
+    wire [0:0]mDebugMcu_AXI_bready;
+    wire [1:0]mDebugMcu_AXI_bresp;
+    wire [0:0]mDebugMcu_AXI_bvalid;
+    wire [31:0]mDebugMcu_AXI_rdata;
+    wire [0:0]mDebugMcu_AXI_rready;
+    wire [1:0]mDebugMcu_AXI_rresp;
+    wire [0:0]mDebugMcu_AXI_rvalid;
+    wire [31:0]mDebugMcu_AXI_wdata;
+    wire [0:0]mDebugMcu_AXI_wready;
+    wire [3:0]mDebugMcu_AXI_wstrb;
+    wire [0:0]mDebugMcu_AXI_wvalid;
+    wire mDebugPort_capture;
+    wire mDebugPort_clk;
+    wire mDebugPort_disable;
+    wire [0:7]mDebugPort_reg_en;
+    wire mDebugPort_rst;
+    wire mDebugPort_shift;
+    wire mDebugPort_tdi;
+    wire mDebugPort_tdo;
+    wire mDebugPort_update;
+    wire mDebugSysRst;
+    wire [0:0]mMcuAxiReset;
+    wire    Clock_DiffOut;
 //=====================================================================================================================
 //                                      X.X -- Module Parameters
 //=====================================================================================================================
@@ -80,17 +113,18 @@ module TopMi400EamPoc
     //############################################################
     // Core Clock
     //############################################################
-    BUFG (.I(FPGA_CLK_100MHZ), .O(Clock));
+    // IBUFDS CORE_IBUFDS (.I(FPGA_CLK_100MHZ_P), .IB(FPGA_CLK_100MHZ_N), .O(Clock_DiffOut));
+    // BUFG CORE_BUFG (.I(Clock_DiffOut), .O(Clock));
     //############################################################
     // PCIe Clock Buffer
     //############################################################
-    IBUFDS_GTE4 #(.REFCLK_HROW_CK_SEL(2'b00)) PCIeClockBuffer(
-        .I      (PCIE_CLOCK_P),
-        .IB     (PCIE_CLOCK_N),
-        .CEB    (1'b0),
-        .O      (PcieClock),
-        .ODIV2  (PcieSysClock)
-    );
+    // IBUFDS_GTE4 #(.REFCLK_HROW_CK_SEL(2'b00)) PCIeClockBuffer(
+    //     .I      (PCIE_CLOCK_P),
+    //     .IB     (PCIE_CLOCK_N),
+    //     .CEB    (1'b0),
+    //     .O      (PcieClock),
+    //     .ODIV2  (PcieSysClock)
+    // );
     //############################################################
     // PCIe System Clock Reset
     //############################################################
@@ -102,91 +136,133 @@ module TopMi400EamPoc
     // Top DFX Main
     //############################################################
     Top_DFX_Main  Top_DFX_Main_inst (
-        
-        // Clocks
-        .AxiBusClock(AxiBusClock),  // input
-        .Clock(Clock),  // input
-
-        // UART
-        .aUART_rxd(MICROBLAZE_UART_RX), // input
-        .aUART_txd(MICROBLAZE_UART_TX), // output
-
-        // Resets
-        .dReset_n(uMicroBlazeRst_n),    // input
-
-        // FPGA Fabric
-        .sMcuInputControl(sMcuInputControl[31:0]),  // output
-        .sMcuOutputControl(sMcuOutputControl[31:0]),    // input
-
-        // PCIe to DFX
-        .xAxiBusReset_n(xAxiBusReset_n),    // input
-        .xPcieToDfx_AXI_araddr(xPcieToDfx_AXI_araddr[31:0]),    // input
-        .xPcieToDfx_AXI_arprot(xPcieToDfx_AXI_arprot[2:0]), // input
-        .xPcieToDfx_AXI_arready(xPcieToDfx_AXI_arready),    // output
-        .xPcieToDfx_AXI_arvalid(xPcieToDfx_AXI_arvalid),    // input
-        .xPcieToDfx_AXI_awaddr(xPcieToDfx_AXI_awaddr[31:0]),    // input
-        .xPcieToDfx_AXI_awprot(xPcieToDfx_AXI_awprot[2:0]), // input
-        .xPcieToDfx_AXI_awready(xPcieToDfx_AXI_awready),    // output
-        .xPcieToDfx_AXI_awvalid(xPcieToDfx_AXI_awvalid),    // input
-        .xPcieToDfx_AXI_bready(xPcieToDfx_AXI_bready),  // input
-        .xPcieToDfx_AXI_bresp(xPcieToDfx_AXI_bresp[1:0]),   // output
-        .xPcieToDfx_AXI_bvalid(xPcieToDfx_AXI_bvalid),  // output
-        .xPcieToDfx_AXI_rdata(xPcieToDfx_AXI_rdata[31:0]),  // output
-        .xPcieToDfx_AXI_rready(xPcieToDfx_AXI_rready),  // input
-        .xPcieToDfx_AXI_rresp(xPcieToDfx_AXI_rresp[1:0]),   // output
-        .xPcieToDfx_AXI_rvalid(xPcieToDfx_AXI_rvalid),  // output
-        .xPcieToDfx_AXI_wdata(xPcieToDfx_AXI_wdata[31:0]),  // input
-        .xPcieToDfx_AXI_wready(xPcieToDfx_AXI_wready),  // output
-        .xPcieToDfx_AXI_wstrb(xPcieToDfx_AXI_wstrb[3:0]),   // input
-        .xPcieToDfx_AXI_wvalid(xPcieToDfx_AXI_wvalid)   // input
+        .AxiBusClock(AxiBusClock),
+        .fixed_fabric_100mhz_clk_p(FPGA_CLK_100MHZ_P),
+        .fixed_fabric_100mhz_clk_n(FPGA_CLK_100MHZ_N),
+        .McuAxiClock(McuAxiClock),
+        .aUART_rxd(MICROBLAZE_UART_RX),
+        .aUART_txd(MICROBLAZE_UART_TX),
+        .dReset_n(1'b1),
+        .mDebugMcu_AXI_araddr(mDebugMcu_AXI_araddr),
+        .mDebugMcu_AXI_arprot(mDebugMcu_AXI_arprot),
+        .mDebugMcu_AXI_arready(mDebugMcu_AXI_arready),
+        .mDebugMcu_AXI_arvalid(mDebugMcu_AXI_arvalid),
+        .mDebugMcu_AXI_awaddr(mDebugMcu_AXI_awaddr),
+        .mDebugMcu_AXI_awprot(mDebugMcu_AXI_awprot),
+        .mDebugMcu_AXI_awready(mDebugMcu_AXI_awready),
+        .mDebugMcu_AXI_awvalid(mDebugMcu_AXI_awvalid),
+        .mDebugMcu_AXI_bready(mDebugMcu_AXI_bready),
+        .mDebugMcu_AXI_bresp(mDebugMcu_AXI_bresp),
+        .mDebugMcu_AXI_bvalid(mDebugMcu_AXI_bvalid),
+        .mDebugMcu_AXI_rdata(mDebugMcu_AXI_rdata),
+        .mDebugMcu_AXI_rready(mDebugMcu_AXI_rready),
+        .mDebugMcu_AXI_rresp(mDebugMcu_AXI_rresp),
+        .mDebugMcu_AXI_rvalid(mDebugMcu_AXI_rvalid),
+        .mDebugMcu_AXI_wdata(mDebugMcu_AXI_wdata),
+        .mDebugMcu_AXI_wready(mDebugMcu_AXI_wready),
+        .mDebugMcu_AXI_wstrb(mDebugMcu_AXI_wstrb),
+        .mDebugMcu_AXI_wvalid(mDebugMcu_AXI_wvalid),
+        .mDebugPort_capture(mDebugPort_capture),
+        .mDebugPort_clk(mDebugPort_clk),
+        .mDebugPort_disable(mDebugPort_disable),
+        .mDebugPort_reg_en(mDebugPort_reg_en),
+        .mDebugPort_rst(mDebugPort_rst),
+        .mDebugPort_shift(mDebugPort_shift),
+        .mDebugPort_tdi(mDebugPort_tdi),
+        .mDebugPort_tdo(mDebugPort_tdo),
+        .mDebugPort_update(mDebugPort_update),
+        .mDebugSysRst(mDebugSysRst),
+        .mMcuAxiReset(mMcuAxiReset),
+        .sMcuInputControl(sMcuInputControl),
+        .sMcuOutputControl(sMcuOutputControl),
+        .xAxiBusReset_n(xAxiBusReset_n),
+        .xPcieToDfx_AXI_araddr(xPcieToDfx_AXI_araddr),
+        .xPcieToDfx_AXI_arprot(xPcieToDfx_AXI_arprot),
+        .xPcieToDfx_AXI_arready(xPcieToDfx_AXI_arready),
+        .xPcieToDfx_AXI_arvalid(xPcieToDfx_AXI_arvalid),
+        .xPcieToDfx_AXI_awaddr(xPcieToDfx_AXI_awaddr),
+        .xPcieToDfx_AXI_awprot(xPcieToDfx_AXI_awprot),
+        .xPcieToDfx_AXI_awready(xPcieToDfx_AXI_awready),
+        .xPcieToDfx_AXI_awvalid(xPcieToDfx_AXI_awvalid),
+        .xPcieToDfx_AXI_bready(xPcieToDfx_AXI_bready),
+        .xPcieToDfx_AXI_bresp(xPcieToDfx_AXI_bresp),
+        .xPcieToDfx_AXI_bvalid(xPcieToDfx_AXI_bvalid),
+        .xPcieToDfx_AXI_rdata(xPcieToDfx_AXI_rdata),
+        .xPcieToDfx_AXI_rready(xPcieToDfx_AXI_rready),
+        .xPcieToDfx_AXI_rresp(xPcieToDfx_AXI_rresp),
+        .xPcieToDfx_AXI_rvalid(xPcieToDfx_AXI_rvalid),
+        .xPcieToDfx_AXI_wdata(xPcieToDfx_AXI_wdata),
+        .xPcieToDfx_AXI_wready(xPcieToDfx_AXI_wready),
+        .xPcieToDfx_AXI_wstrb(xPcieToDfx_AXI_wstrb),
+        .xPcieToDfx_AXI_wvalid(xPcieToDfx_AXI_wvalid)
     );
     //############################################################
     // PCIe Bridge
     //############################################################
     PcieBridge_wrapper  PcieBridge_wrapper_inst (
-        // Clocks
-        .AxiBusClock(AxiBusClock),  // output
-        .PcieClock(PcieClock),  // input
-        .PcieSysClock(PcieSysClock),    // input
-        
-        // PCIe
-        .aPCIE_rxn(PCIE_RXN),   // input
-        .aPCIE_rxp(PCIE_RXP),   // input
-        .aPCIE_txn(PCIE_TXN),   // output
-        .aPCIE_txp(PCIE_TXP),   // output
-        .pPcieLinkUp(pPcieLinkUp),  // output
-        
-        // Resets
-        .pPcieSysRst_n(pPcieSysRst_n),  // input
-        .xAxiBusReset_n(xAxiBusReset_n),    // output
-        
-        // PCIe to DFX
-        .xPcieToDfx_AXI_araddr(xPcieToDfx_AXI_araddr[31:0]),    // output
-        .xPcieToDfx_AXI_arprot(xPcieToDfx_AXI_arprot[2:0]), // output
-        .xPcieToDfx_AXI_arready(xPcieToDfx_AXI_arready),    // input
-        .xPcieToDfx_AXI_arvalid(xPcieToDfx_AXI_arvalid),    // output
-        .xPcieToDfx_AXI_awaddr(xPcieToDfx_AXI_awaddr[31:0]),    // output
-        .xPcieToDfx_AXI_awprot(xPcieToDfx_AXI_awprot[2:0]), // output
-        .xPcieToDfx_AXI_awready(xPcieToDfx_AXI_awready),    // input
-        .xPcieToDfx_AXI_awvalid(xPcieToDfx_AXI_awvalid),    // output
-        .xPcieToDfx_AXI_bready(xPcieToDfx_AXI_bready),  // output
-        .xPcieToDfx_AXI_bresp(xPcieToDfx_AXI_bresp[1:0]),   // input
-        .xPcieToDfx_AXI_bvalid(xPcieToDfx_AXI_bvalid),  // input
-        .xPcieToDfx_AXI_rdata(xPcieToDfx_AXI_rdata[31:0]),  // input
-        .xPcieToDfx_AXI_rready(xPcieToDfx_AXI_rready),  // output
-        .xPcieToDfx_AXI_rresp(xPcieToDfx_AXI_rresp[1:0]),   // input
-        .xPcieToDfx_AXI_rvalid(xPcieToDfx_AXI_rvalid),  // input
-        .xPcieToDfx_AXI_wdata(xPcieToDfx_AXI_wdata[31:0]),  // output
-        .xPcieToDfx_AXI_wready(xPcieToDfx_AXI_wready),  // input
-        .xPcieToDfx_AXI_wstrb(xPcieToDfx_AXI_wstrb[3:0]),   // output
-        .xPcieToDfx_AXI_wvalid(xPcieToDfx_AXI_wvalid),  // output
-
-        // PCIe to ICAP
-        .xPcieToICAP_AXI_tdata(xPcieToICAP_AXI_tdata[31:0]),    // output
-        .xPcieToICAP_AXI_tkeep(xPcieToICAP_AXI_tkeep[7:0]), // output
-        .xPcieToICAP_AXI_tlast(xPcieToICAP_AXI_tlast),  // output
-        .xPcieToICAP_AXI_tready(xPcieToICAP_AXI_tready),    // input
-        .xPcieToICAP_AXI_tvalid(xPcieToICAP_AXI_tvalid) // output
+        .AxiBusClock(AxiBusClock),
+        .McuAxiClock(McuAxiClock),
+        .PCIE_CLOCK_clk_n(PCIE_CLOCK_N),
+        .PCIE_CLOCK_clk_p(PCIE_CLOCK_P),
+        .aPCIE_rxn(PCIE_RXN),
+        .aPCIE_rxp(PCIE_RXP),
+        .aPCIE_txn(PCIE_TXN),
+        .aPCIE_txp(PCIE_TXP),
+        .mDebugMcu_AXI_araddr(mDebugMcu_AXI_araddr),
+        .mDebugMcu_AXI_arready(mDebugMcu_AXI_arready),
+        .mDebugMcu_AXI_arvalid(mDebugMcu_AXI_arvalid),
+        .mDebugMcu_AXI_awaddr(mDebugMcu_AXI_awaddr),
+        .mDebugMcu_AXI_awready(mDebugMcu_AXI_awready),
+        .mDebugMcu_AXI_awvalid(mDebugMcu_AXI_awvalid),
+        .mDebugMcu_AXI_bready(mDebugMcu_AXI_bready),
+        .mDebugMcu_AXI_bresp(mDebugMcu_AXI_bresp),
+        .mDebugMcu_AXI_bvalid(mDebugMcu_AXI_bvalid),
+        .mDebugMcu_AXI_rdata(mDebugMcu_AXI_rdata),
+        .mDebugMcu_AXI_rready(mDebugMcu_AXI_rready),
+        .mDebugMcu_AXI_rresp(mDebugMcu_AXI_rresp),
+        .mDebugMcu_AXI_rvalid(mDebugMcu_AXI_rvalid),
+        .mDebugMcu_AXI_wdata(mDebugMcu_AXI_wdata),
+        .mDebugMcu_AXI_wready(mDebugMcu_AXI_wready),
+        .mDebugMcu_AXI_wstrb(mDebugMcu_AXI_wstrb),
+        .mDebugMcu_AXI_wvalid(mDebugMcu_AXI_wvalid),
+        .mDebugPort_capture(mDebugPort_capture),
+        .mDebugPort_clk(mDebugPort_clk),
+        .mDebugPort_disable(mDebugPort_disable),
+        .mDebugPort_reg_en(mDebugPort_reg_en),
+        .mDebugPort_rst(mDebugPort_rst),
+        .mDebugPort_shift(mDebugPort_shift),
+        .mDebugPort_tdi(mDebugPort_tdi),
+        .mDebugPort_tdo(mDebugPort_tdo),
+        .mDebugPort_update(mDebugPort_update),
+        .mDebugSysRst(mDebugSysRst),
+        .mMcuAxiReset(mMcuAxiReset),
+        .pPcieLinkUp(pPcieLinkUp),
+        .pPcieSysRst_n(pPcieSysRst_n),
+        .xAxiBusReset_n(xAxiBusReset_n),
+        .xPcieToDfx_AXI_araddr(xPcieToDfx_AXI_araddr),
+        .xPcieToDfx_AXI_arprot(xPcieToDfx_AXI_arprot),
+        .xPcieToDfx_AXI_arready(xPcieToDfx_AXI_arready),
+        .xPcieToDfx_AXI_arvalid(xPcieToDfx_AXI_arvalid),
+        .xPcieToDfx_AXI_awaddr(xPcieToDfx_AXI_awaddr),
+        .xPcieToDfx_AXI_awprot(xPcieToDfx_AXI_awprot),
+        .xPcieToDfx_AXI_awready(xPcieToDfx_AXI_awready),
+        .xPcieToDfx_AXI_awvalid(xPcieToDfx_AXI_awvalid),
+        .xPcieToDfx_AXI_bready(xPcieToDfx_AXI_bready),
+        .xPcieToDfx_AXI_bresp(xPcieToDfx_AXI_bresp),
+        .xPcieToDfx_AXI_bvalid(xPcieToDfx_AXI_bvalid),
+        .xPcieToDfx_AXI_rdata(xPcieToDfx_AXI_rdata),
+        .xPcieToDfx_AXI_rready(xPcieToDfx_AXI_rready),
+        .xPcieToDfx_AXI_rresp(xPcieToDfx_AXI_rresp),
+        .xPcieToDfx_AXI_rvalid(xPcieToDfx_AXI_rvalid),
+        .xPcieToDfx_AXI_wdata(xPcieToDfx_AXI_wdata),
+        .xPcieToDfx_AXI_wready(xPcieToDfx_AXI_wready),
+        .xPcieToDfx_AXI_wstrb(xPcieToDfx_AXI_wstrb),
+        .xPcieToDfx_AXI_wvalid(xPcieToDfx_AXI_wvalid),
+        .xPcieToICAP_AXI_tdata(xPcieToICAP_AXI_tdata),
+        .xPcieToICAP_AXI_tkeep(xPcieToICAP_AXI_tkeep),
+        .xPcieToICAP_AXI_tlast(xPcieToICAP_AXI_tlast),
+        .xPcieToICAP_AXI_tready(xPcieToICAP_AXI_tready),
+        .xPcieToICAP_AXI_tvalid(xPcieToICAP_AXI_tvalid)
     );
     //############################################################
     // Security
