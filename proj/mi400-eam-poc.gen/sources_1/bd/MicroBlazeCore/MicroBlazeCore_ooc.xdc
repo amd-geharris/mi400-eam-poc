@@ -7,7 +7,7 @@
 # of Vivado)
 ################################################################################
 create_clock -name AxiBusClock -period 4 [get_ports AxiBusClock]
+create_clock -name McuClock -period 10 [get_ports McuClock]
 create_clock -name mDebugPort_clk -period 10 [get_ports mDebugPort_clk]
-create_clock -name fixed_fabric_100mhz_clk_p -period 10 [get_ports fixed_fabric_100mhz_clk_p]
 
 ################################################################################

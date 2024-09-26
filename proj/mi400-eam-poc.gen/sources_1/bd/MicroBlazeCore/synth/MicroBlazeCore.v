@@ -2,7 +2,7 @@
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-//Date        : Mon Sep 23 16:29:50 2024
+//Date        : Tue Sep 24 16:09:37 2024
 //Host        : BDCGEHARRIS01 running 64-bit major release  (build 9200)
 //Command     : generate_target MicroBlazeCore.bd
 //Design      : MicroBlazeCore
@@ -10,15 +10,14 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "MicroBlazeCore,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=MicroBlazeCore,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=26,numReposBlks=16,numNonXlnxBlks=1,numHierBlks=10,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=2,da_board_cnt=4,da_xdma_cnt=1,synth_mode=Hierarchical}" *) (* HW_HANDOFF = "MicroBlazeCore.hwdef" *) 
+(* CORE_GENERATION_INFO = "MicroBlazeCore,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=MicroBlazeCore,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=25,numReposBlks=15,numNonXlnxBlks=1,numHierBlks=10,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=2,da_board_cnt=4,da_xdma_cnt=1,synth_mode=Hierarchical}" *) (* HW_HANDOFF = "MicroBlazeCore.hwdef" *) 
 module MicroBlazeCore
    (AxiBusClock,
     McuAxiClock,
+    McuClock,
     aUART_rxd,
     aUART_txd,
     dReset_n,
-    fixed_fabric_100mhz_clk_n,
-    fixed_fabric_100mhz_clk_p,
     mDebugMcu_AXI_araddr,
     mDebugMcu_AXI_arprot,
     mDebugMcu_AXI_arready,
@@ -49,6 +48,7 @@ module MicroBlazeCore
     mDebugPort_update,
     mDebugSysRst,
     mMcuAxiReset,
+    mPllLocked,
     sMcuInputControl,
     sMcuOutputControl,
     xAxiBusReset_n,
@@ -72,13 +72,12 @@ module MicroBlazeCore
     xPcieToDfx_AXI_wstrb,
     xPcieToDfx_AXI_wvalid);
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.AXIBUSCLOCK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.AXIBUSCLOCK, ASSOCIATED_BUSIF xPcieToDfx_AXI, ASSOCIATED_RESET xAxiBusReset_n, CLK_DOMAIN MicroBlazeCore_AxiBusClock, FREQ_HZ 250000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) input AxiBusClock;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.MCUAXICLOCK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.MCUAXICLOCK, ASSOCIATED_BUSIF mDebugMcu_AXI, CLK_DOMAIN MicroBlazeCore_clk_wiz_1_1_clk_out1, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) output McuAxiClock;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.MCUAXICLOCK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.MCUAXICLOCK, ASSOCIATED_BUSIF mDebugMcu_AXI, CLK_DOMAIN MicroBlazeCore_McuClock, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) output McuAxiClock;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.MCUCLOCK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.MCUCLOCK, CLK_DOMAIN MicroBlazeCore_McuClock, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) input McuClock;
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 aUART RxD" *) input aUART_rxd;
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 aUART TxD" *) output aUART_txd;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.DRESET_N RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.DRESET_N, INSERT_VIP 0, POLARITY ACTIVE_LOW" *) input dReset_n;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 fixed_fabric_100mhz CLK_N" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME fixed_fabric_100mhz, CAN_DEBUG false, FREQ_HZ 100000000" *) input fixed_fabric_100mhz_clk_n;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 fixed_fabric_100mhz CLK_P" *) input fixed_fabric_100mhz_clk_p;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 mDebugMcu_AXI ARADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME mDebugMcu_AXI, ADDR_WIDTH 32, ARUSER_WIDTH 0, AWUSER_WIDTH 0, BUSER_WIDTH 0, CLK_DOMAIN MicroBlazeCore_clk_wiz_1_1_clk_out1, DATA_WIDTH 32, FREQ_HZ 100000000, HAS_BRESP 1, HAS_BURST 0, HAS_CACHE 0, HAS_LOCK 0, HAS_PROT 1, HAS_QOS 0, HAS_REGION 0, HAS_RRESP 1, HAS_WSTRB 1, ID_WIDTH 0, INSERT_VIP 0, MAX_BURST_LENGTH 1, NUM_READ_OUTSTANDING 2, NUM_READ_THREADS 1, NUM_WRITE_OUTSTANDING 2, NUM_WRITE_THREADS 1, PHASE 0.0, PROTOCOL AXI4LITE, READ_WRITE_MODE READ_WRITE, RUSER_BITS_PER_BYTE 0, RUSER_WIDTH 0, SUPPORTS_NARROW_BURST 0, WUSER_BITS_PER_BYTE 0, WUSER_WIDTH 0" *) output [31:0]mDebugMcu_AXI_araddr;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 mDebugMcu_AXI ARADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME mDebugMcu_AXI, ADDR_WIDTH 32, ARUSER_WIDTH 0, AWUSER_WIDTH 0, BUSER_WIDTH 0, CLK_DOMAIN MicroBlazeCore_McuClock, DATA_WIDTH 32, FREQ_HZ 100000000, HAS_BRESP 1, HAS_BURST 0, HAS_CACHE 0, HAS_LOCK 0, HAS_PROT 1, HAS_QOS 0, HAS_REGION 0, HAS_RRESP 1, HAS_WSTRB 1, ID_WIDTH 0, INSERT_VIP 0, MAX_BURST_LENGTH 1, NUM_READ_OUTSTANDING 2, NUM_READ_THREADS 1, NUM_WRITE_OUTSTANDING 2, NUM_WRITE_THREADS 1, PHASE 0.0, PROTOCOL AXI4LITE, READ_WRITE_MODE READ_WRITE, RUSER_BITS_PER_BYTE 0, RUSER_WIDTH 0, SUPPORTS_NARROW_BURST 0, WUSER_BITS_PER_BYTE 0, WUSER_WIDTH 0" *) output [31:0]mDebugMcu_AXI_araddr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 mDebugMcu_AXI ARPROT" *) output [2:0]mDebugMcu_AXI_arprot;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 mDebugMcu_AXI ARREADY" *) input [0:0]mDebugMcu_AXI_arready;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 mDebugMcu_AXI ARVALID" *) output [0:0]mDebugMcu_AXI_arvalid;
@@ -108,6 +107,7 @@ module MicroBlazeCore
   (* X_INTERFACE_INFO = "xilinx.com:interface:mbdebug:3.0 mDebugPort UPDATE" *) input mDebugPort_update;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.MDEBUGSYSRST RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.MDEBUGSYSRST, INSERT_VIP 0, POLARITY ACTIVE_HIGH" *) input mDebugSysRst;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.MMCUAXIRESET RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.MMCUAXIRESET, INSERT_VIP 0, POLARITY ACTIVE_LOW" *) output [0:0]mMcuAxiReset;
+  input mPllLocked;
   (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 DATA.SMCUINPUTCONTROL DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DATA.SMCUINPUTCONTROL, LAYERED_METADATA undef" *) output [31:0]sMcuInputControl;
   (* X_INTERFACE_INFO = "xilinx.com:signal:data:1.0 DATA.SMCUOUTPUTCONTROL DATA" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DATA.SMCUOUTPUTCONTROL, LAYERED_METADATA undef" *) input [31:0]sMcuOutputControl;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.XAXIBUSRESET_N RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.XAXIBUSRESET_N, INSERT_VIP 0, POLARITY ACTIVE_LOW" *) input xAxiBusReset_n;
@@ -157,10 +157,7 @@ module MicroBlazeCore
   wire axi_uartlite_0_UART_RxD;
   wire axi_uartlite_0_UART_TxD;
   wire axi_uartlite_0_interrupt;
-  wire clk_wiz_1_locked;
   wire dReset_n;
-  wire fixed_fabric_100mhz_1_CLK_N;
-  wire fixed_fabric_100mhz_1_CLK_P;
   wire mDebugPort_1_CAPTURE;
   wire mDebugPort_1_CLK;
   wire mDebugPort_1_DISABLE;
@@ -171,6 +168,7 @@ module MicroBlazeCore
   wire mDebugPort_1_TDO;
   wire mDebugPort_1_UPDATE;
   wire mDebugSysRst_1;
+  wire mPllLocked_1;
   wire microblaze_0_Clk;
   wire [31:0]microblaze_0_axi_dp_ARADDR;
   wire [2:0]microblaze_0_axi_dp_ARPROT;
@@ -340,8 +338,6 @@ module MicroBlazeCore
   assign S01_AXI_1_WVALID = xPcieToDfx_AXI_wvalid;
   assign aUART_txd = axi_uartlite_0_UART_TxD;
   assign axi_uartlite_0_UART_RxD = aUART_rxd;
-  assign fixed_fabric_100mhz_1_CLK_N = fixed_fabric_100mhz_clk_n;
-  assign fixed_fabric_100mhz_1_CLK_P = fixed_fabric_100mhz_clk_p;
   assign mDebugMcu_AXI_araddr[31:0] = microblaze_0_axi_periph_M01_AXI_ARADDR;
   assign mDebugMcu_AXI_arprot[2:0] = microblaze_0_axi_periph_M01_AXI_ARPROT;
   assign mDebugMcu_AXI_arvalid[0] = microblaze_0_axi_periph_M01_AXI_ARVALID;
@@ -364,6 +360,8 @@ module MicroBlazeCore
   assign mDebugPort_tdo = mDebugPort_1_TDO;
   assign mDebugSysRst_1 = mDebugSysRst;
   assign mMcuAxiReset[0] = rst_clk_wiz_1_100M_peripheral_aresetn;
+  assign mPllLocked_1 = mPllLocked;
+  assign microblaze_0_Clk = McuClock;
   assign microblaze_0_axi_periph_M01_AXI_ARREADY = mDebugMcu_AXI_arready[0];
   assign microblaze_0_axi_periph_M01_AXI_AWREADY = mDebugMcu_AXI_awready[0];
   assign microblaze_0_axi_periph_M01_AXI_BRESP = mDebugMcu_AXI_bresp[1:0];
@@ -477,12 +475,6 @@ module MicroBlazeCore
         .s_axi_wstrb(microblaze_0_axi_periph_M04_AXI_WSTRB),
         .s_axi_wvalid(microblaze_0_axi_periph_M04_AXI_WVALID),
         .tx(axi_uartlite_0_UART_TxD));
-  MicroBlazeCore_clk_wiz_1_1 clk_wiz_1
-       (.clk_in1_n(fixed_fabric_100mhz_1_CLK_N),
-        .clk_in1_p(fixed_fabric_100mhz_1_CLK_P),
-        .clk_out1(microblaze_0_Clk),
-        .locked(clk_wiz_1_locked),
-        .reset(mDebugSysRst_1));
   (* BMM_INFO_PROCESSOR = "microblaze-le > MicroBlazeCore microblaze_0_local_memory/dlmb_bram_if_cntlr" *) 
   (* KEEP_HIERARCHY = "yes" *) 
   MicroBlazeCore_microblaze_0_1 microblaze_0
@@ -757,7 +749,7 @@ module MicroBlazeCore
   MicroBlazeCore_rst_clk_wiz_1_100M_1 rst_clk_wiz_1_100M
        (.aux_reset_in(1'b1),
         .bus_struct_reset(rst_clk_wiz_1_100M_bus_struct_reset),
-        .dcm_locked(clk_wiz_1_locked),
+        .dcm_locked(mPllLocked_1),
         .ext_reset_in(dReset_n),
         .mb_debug_sys_rst(mDebugSysRst_1),
         .mb_reset(rst_clk_wiz_1_100M_mb_reset),

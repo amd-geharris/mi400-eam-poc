@@ -195,7 +195,7 @@ void MicroBlazeCore_auto_cc_0::before_end_of_elaboration()
     M_AXI_transactor_param_props.addFloat("PHASE", "0.0");
     M_AXI_transactor_param_props.addString("PROTOCOL", "AXI4LITE");
     M_AXI_transactor_param_props.addString("READ_WRITE_MODE", "READ_WRITE");
-    M_AXI_transactor_param_props.addString("CLK_DOMAIN", "MicroBlazeCore_clk_wiz_1_1_clk_out1");
+    M_AXI_transactor_param_props.addString("CLK_DOMAIN", "MicroBlazeCore_McuClock");
 
     mp_M_AXI_transactor = new xtlm::xaximm_xtlm2pin_t<32,32,1,1,1,1,1,1>("M_AXI_transactor", M_AXI_transactor_param_props);
 
@@ -374,7 +374,7 @@ void MicroBlazeCore_auto_cc_0::before_end_of_elaboration()
     M_AXI_transactor_param_props.addFloat("PHASE", "0.0");
     M_AXI_transactor_param_props.addString("PROTOCOL", "AXI4LITE");
     M_AXI_transactor_param_props.addString("READ_WRITE_MODE", "READ_WRITE");
-    M_AXI_transactor_param_props.addString("CLK_DOMAIN", "MicroBlazeCore_clk_wiz_1_1_clk_out1");
+    M_AXI_transactor_param_props.addString("CLK_DOMAIN", "MicroBlazeCore_McuClock");
 
     mp_M_AXI_transactor = new xtlm::xaximm_xtlm2pin_t<32,32,1,1,1,1,1,1>("M_AXI_transactor", M_AXI_transactor_param_props);
 
@@ -553,7 +553,7 @@ void MicroBlazeCore_auto_cc_0::before_end_of_elaboration()
     M_AXI_transactor_param_props.addFloat("PHASE", "0.0");
     M_AXI_transactor_param_props.addString("PROTOCOL", "AXI4LITE");
     M_AXI_transactor_param_props.addString("READ_WRITE_MODE", "READ_WRITE");
-    M_AXI_transactor_param_props.addString("CLK_DOMAIN", "MicroBlazeCore_clk_wiz_1_1_clk_out1");
+    M_AXI_transactor_param_props.addString("CLK_DOMAIN", "MicroBlazeCore_McuClock");
 
     mp_M_AXI_transactor = new xtlm::xaximm_xtlm2pin_t<32,32,1,1,1,1,1,1>("M_AXI_transactor", M_AXI_transactor_param_props);
 
@@ -702,7 +702,7 @@ MicroBlazeCore_auto_cc_0::MicroBlazeCore_auto_cc_0(const sc_core::sc_module_name
     M_AXI_transactor_param_props.addFloat("PHASE", "0.0");
     M_AXI_transactor_param_props.addString("PROTOCOL", "AXI4LITE");
     M_AXI_transactor_param_props.addString("READ_WRITE_MODE", "READ_WRITE");
-    M_AXI_transactor_param_props.addString("CLK_DOMAIN", "MicroBlazeCore_clk_wiz_1_1_clk_out1");
+    M_AXI_transactor_param_props.addString("CLK_DOMAIN", "MicroBlazeCore_McuClock");
 
     mp_M_AXI_transactor = new xtlm::xaximm_xtlm2pin_t<32,32,1,1,1,1,1,1>("M_AXI_transactor", M_AXI_transactor_param_props);
   mp_M_AXI_transactor->AWADDR(m_axi_awaddr);
@@ -881,7 +881,7 @@ MicroBlazeCore_auto_cc_0::MicroBlazeCore_auto_cc_0(const sc_core::sc_module_name
     M_AXI_transactor_param_props.addFloat("PHASE", "0.0");
     M_AXI_transactor_param_props.addString("PROTOCOL", "AXI4LITE");
     M_AXI_transactor_param_props.addString("READ_WRITE_MODE", "READ_WRITE");
-    M_AXI_transactor_param_props.addString("CLK_DOMAIN", "MicroBlazeCore_clk_wiz_1_1_clk_out1");
+    M_AXI_transactor_param_props.addString("CLK_DOMAIN", "MicroBlazeCore_McuClock");
 
     mp_M_AXI_transactor = new xtlm::xaximm_xtlm2pin_t<32,32,1,1,1,1,1,1>("M_AXI_transactor", M_AXI_transactor_param_props);
   mp_M_AXI_transactor->AWADDR(m_axi_awaddr);

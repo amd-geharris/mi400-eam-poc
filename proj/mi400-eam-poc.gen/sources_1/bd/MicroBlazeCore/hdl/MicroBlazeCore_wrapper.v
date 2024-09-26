@@ -2,7 +2,7 @@
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-//Date        : Mon Sep 23 16:29:50 2024
+//Date        : Tue Sep 24 16:09:38 2024
 //Host        : BDCGEHARRIS01 running 64-bit major release  (build 9200)
 //Command     : generate_target MicroBlazeCore_wrapper.bd
 //Design      : MicroBlazeCore_wrapper
@@ -13,11 +13,10 @@
 module MicroBlazeCore_wrapper
    (AxiBusClock,
     McuAxiClock,
+    McuClock,
     aUART_rxd,
     aUART_txd,
     dReset_n,
-    fixed_fabric_100mhz_clk_n,
-    fixed_fabric_100mhz_clk_p,
     mDebugMcu_AXI_araddr,
     mDebugMcu_AXI_arprot,
     mDebugMcu_AXI_arready,
@@ -48,6 +47,7 @@ module MicroBlazeCore_wrapper
     mDebugPort_update,
     mDebugSysRst,
     mMcuAxiReset,
+    mPllLocked,
     sMcuInputControl,
     sMcuOutputControl,
     xAxiBusReset_n,
@@ -72,11 +72,10 @@ module MicroBlazeCore_wrapper
     xPcieToDfx_AXI_wvalid);
   input AxiBusClock;
   output McuAxiClock;
+  input McuClock;
   input aUART_rxd;
   output aUART_txd;
   input dReset_n;
-  input fixed_fabric_100mhz_clk_n;
-  input fixed_fabric_100mhz_clk_p;
   output [31:0]mDebugMcu_AXI_araddr;
   output [2:0]mDebugMcu_AXI_arprot;
   input [0:0]mDebugMcu_AXI_arready;
@@ -107,6 +106,7 @@ module MicroBlazeCore_wrapper
   input mDebugPort_update;
   input mDebugSysRst;
   output [0:0]mMcuAxiReset;
+  input mPllLocked;
   output [31:0]sMcuInputControl;
   input [31:0]sMcuOutputControl;
   input xAxiBusReset_n;
@@ -132,11 +132,10 @@ module MicroBlazeCore_wrapper
 
   wire AxiBusClock;
   wire McuAxiClock;
+  wire McuClock;
   wire aUART_rxd;
   wire aUART_txd;
   wire dReset_n;
-  wire fixed_fabric_100mhz_clk_n;
-  wire fixed_fabric_100mhz_clk_p;
   wire [31:0]mDebugMcu_AXI_araddr;
   wire [2:0]mDebugMcu_AXI_arprot;
   wire [0:0]mDebugMcu_AXI_arready;
@@ -167,6 +166,7 @@ module MicroBlazeCore_wrapper
   wire mDebugPort_update;
   wire mDebugSysRst;
   wire [0:0]mMcuAxiReset;
+  wire mPllLocked;
   wire [31:0]sMcuInputControl;
   wire [31:0]sMcuOutputControl;
   wire xAxiBusReset_n;
@@ -193,11 +193,10 @@ module MicroBlazeCore_wrapper
   MicroBlazeCore MicroBlazeCore_i
        (.AxiBusClock(AxiBusClock),
         .McuAxiClock(McuAxiClock),
+        .McuClock(McuClock),
         .aUART_rxd(aUART_rxd),
         .aUART_txd(aUART_txd),
         .dReset_n(dReset_n),
-        .fixed_fabric_100mhz_clk_n(fixed_fabric_100mhz_clk_n),
-        .fixed_fabric_100mhz_clk_p(fixed_fabric_100mhz_clk_p),
         .mDebugMcu_AXI_araddr(mDebugMcu_AXI_araddr),
         .mDebugMcu_AXI_arprot(mDebugMcu_AXI_arprot),
         .mDebugMcu_AXI_arready(mDebugMcu_AXI_arready),
@@ -228,6 +227,7 @@ module MicroBlazeCore_wrapper
         .mDebugPort_update(mDebugPort_update),
         .mDebugSysRst(mDebugSysRst),
         .mMcuAxiReset(mMcuAxiReset),
+        .mPllLocked(mPllLocked),
         .sMcuInputControl(sMcuInputControl),
         .sMcuOutputControl(sMcuOutputControl),
         .xAxiBusReset_n(xAxiBusReset_n),

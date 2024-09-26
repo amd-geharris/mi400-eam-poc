@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x7A5704545AD744DB",
+      "boundary_crc": "0x22763153112EF06D",
       "device": "xcau25p-ffvb676-2-e",
       "gen_directory": "../../../../mi400-eam-poc.gen/sources_1/bd/MicroBlazeCore",
       "name": "MicroBlazeCore",
@@ -37,7 +37,6 @@
       },
       "microblaze_0_axi_intc": "",
       "microblaze_0_xlconcat": "",
-      "clk_wiz_1": "",
       "rst_clk_wiz_1_100M": "",
       "Axi4FabricBridge_0": ""
     },
@@ -328,14 +327,15 @@
             "value_src": "default"
           },
           "CLK_DOMAIN": {
-            "value": "MicroBlazeCore_clk_wiz_1_1_clk_out1"
+            "value": "MicroBlazeCore_McuClock",
+            "value_src": "default_prop"
           },
           "DATA_WIDTH": {
             "value": "32"
           },
           "FREQ_HZ": {
             "value": "100000000",
-            "value_src": "ip_prop"
+            "value_src": "user_prop"
           },
           "HAS_BRESP": {
             "value": "1",
@@ -396,7 +396,7 @@
           },
           "PHASE": {
             "value": "0.0",
-            "value_src": "ip_prop"
+            "value_src": "default"
           },
           "PROTOCOL": {
             "value": "AXI4LITE"
@@ -543,30 +543,6 @@
             "right": "0"
           }
         }
-      },
-      "fixed_fabric_100mhz": {
-        "mode": "Slave",
-        "vlnv_bus_definition": "xilinx.com:interface:diff_clock:1.0",
-        "vlnv": "xilinx.com:interface:diff_clock_rtl:1.0",
-        "parameters": {
-          "CAN_DEBUG": {
-            "value": "false",
-            "value_src": "default"
-          },
-          "FREQ_HZ": {
-            "value": "100000000"
-          }
-        },
-        "port_maps": {
-          "CLK_N": {
-            "physical_name": "fixed_fabric_100mhz_clk_n",
-            "direction": "I"
-          },
-          "CLK_P": {
-            "physical_name": "fixed_fabric_100mhz_clk_p",
-            "direction": "I"
-          }
-        }
       }
     },
     "ports": {
@@ -674,12 +650,12 @@
             "value": "mDebugMcu_AXI"
           },
           "CLK_DOMAIN": {
-            "value": "MicroBlazeCore_clk_wiz_1_1_clk_out1",
+            "value": "MicroBlazeCore_McuClock",
             "value_src": "default_prop"
           },
           "FREQ_HZ": {
             "value": "100000000",
-            "value_src": "ip_prop"
+            "value_src": "user_prop"
           },
           "FREQ_TOLERANCE_HZ": {
             "value": "0",
@@ -691,7 +667,7 @@
           },
           "PHASE": {
             "value": "0.0",
-            "value_src": "ip_prop"
+            "value_src": "default"
           }
         }
       },
@@ -708,6 +684,34 @@
           "POLARITY": {
             "value": "ACTIVE_LOW",
             "value_src": "const_prop"
+          }
+        }
+      },
+      "mPllLocked": {
+        "direction": "I"
+      },
+      "McuClock": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "MicroBlazeCore_McuClock",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
           }
         }
       }
@@ -1025,7 +1029,7 @@
             "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
             "parameters": {
               "CLK_DOMAIN": {
-                "value": "MicroBlazeCore_clk_wiz_1_1_clk_out1",
+                "value": "MicroBlazeCore_McuClock",
                 "value_src": "undefined"
               }
             }
@@ -1992,24 +1996,6 @@
           }
         }
       },
-      "clk_wiz_1": {
-        "vlnv": "xilinx.com:ip:clk_wiz:6.0",
-        "ip_revision": "14",
-        "xci_name": "MicroBlazeCore_clk_wiz_1_1",
-        "xci_path": "ip\\MicroBlazeCore_clk_wiz_1_1\\MicroBlazeCore_clk_wiz_1_1.xci",
-        "inst_hier_path": "clk_wiz_1",
-        "parameters": {
-          "CLK_IN1_BOARD_INTERFACE": {
-            "value": "fixed_fabric_100mhz"
-          },
-          "PRIM_SOURCE": {
-            "value": "Differential_clock_capable_pin"
-          },
-          "USE_BOARD_FLOW": {
-            "value": "true"
-          }
-        }
-      },
       "rst_clk_wiz_1_100M": {
         "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
         "ip_revision": "15",
@@ -2043,12 +2029,6 @@
         "interface_ports": [
           "aUART",
           "axi_uartlite_0/UART"
-        ]
-      },
-      "fixed_fabric_100mhz_1": {
-        "interface_ports": [
-          "fixed_fabric_100mhz",
-          "clk_wiz_1/CLK_IN1_D"
         ]
       },
       "mDebugPort_1": {
@@ -2149,12 +2129,6 @@
           "microblaze_0_xlconcat/In2"
         ]
       },
-      "clk_wiz_1_locked": {
-        "ports": [
-          "clk_wiz_1/locked",
-          "rst_clk_wiz_1_100M/dcm_locked"
-        ]
-      },
       "dReset_n": {
         "ports": [
           "dReset_n",
@@ -2164,13 +2138,18 @@
       "mDebugSysRst_1": {
         "ports": [
           "mDebugSysRst",
-          "clk_wiz_1/reset",
           "rst_clk_wiz_1_100M/mb_debug_sys_rst"
+        ]
+      },
+      "mPllLocked_1": {
+        "ports": [
+          "mPllLocked",
+          "rst_clk_wiz_1_100M/dcm_locked"
         ]
       },
       "microblaze_0_Clk": {
         "ports": [
-          "clk_wiz_1/clk_out1",
+          "McuClock",
           "microblaze_0/Clk",
           "microblaze_0_axi_periph/ACLK",
           "microblaze_0_axi_periph/S00_ACLK",

@@ -16,7 +16,7 @@ module TopMi400EamPoc
     // CORE
     input   wire    FPGA_CLK_100MHZ_P,
     input   wire    FPGA_CLK_100MHZ_N,
-    input   wire    uMicroBlazeRst_n,
+    // input   wire    uMicroBlazeRst_n,
 
 
     // PCIe
@@ -140,8 +140,8 @@ module TopMi400EamPoc
         .fixed_fabric_100mhz_clk_p(FPGA_CLK_100MHZ_P),
         .fixed_fabric_100mhz_clk_n(FPGA_CLK_100MHZ_N),
         .McuAxiClock(McuAxiClock),
-        .aUART_rxd(MICROBLAZE_UART_RX),
-        .aUART_txd(MICROBLAZE_UART_TX),
+        .aUART_rxd(aMICROBLAZE_UART_RX),
+        .aUART_txd(aMICROBLAZE_UART_TX),
         .dReset_n(1'b1),
         .mDebugMcu_AXI_araddr(mDebugMcu_AXI_araddr),
         .mDebugMcu_AXI_arprot(mDebugMcu_AXI_arprot),
@@ -295,12 +295,23 @@ module TopMi400EamPoc
 //=====================================================================================================================
 //                                      X.X -- Input Buffers
 //=====================================================================================================================
-
+    //############################################################
+    // UART
+    //############################################################
+    IBUF I_MICROBLAZE_UART_RX (
+        .I(MICROBLAZE_UART_RX),
+        .O(aMICROBLAZE_UART_RX)
+    );
 //=====================================================================================================================
 //                                      X.X -- Output Assignments
 //=====================================================================================================================
-
-
+    //############################################################
+    // UART
+    //############################################################
+    OBUF O_MICROBLAZE_UART_TX (
+        .I(aMICROBLAZE_UART_TX),
+        .O(MICROBLAZE_UART_TX)
+    );
 
 //=====================================================================================================================
 endmodule
