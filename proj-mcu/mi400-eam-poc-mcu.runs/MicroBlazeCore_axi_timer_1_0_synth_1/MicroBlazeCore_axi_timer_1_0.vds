@@ -1,0 +1,37 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Wed Oct  2 16:46:29 2024
+# Process ID: 69992
+# Current directory: S:/projects/mi400-eam-poc/proj-mcu/mi400-eam-poc-mcu.runs/MicroBlazeCore_axi_timer_1_0_synth_1
+# Command line: vivado.exe -log MicroBlazeCore_axi_timer_1_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source MicroBlazeCore_axi_timer_1_0.tcl
+# Log file: S:/projects/mi400-eam-poc/proj-mcu/mi400-eam-poc-mcu.runs/MicroBlazeCore_axi_timer_1_0_synth_1/MicroBlazeCore_axi_timer_1_0.vds
+# Journal file: S:/projects/mi400-eam-poc/proj-mcu/mi400-eam-poc-mcu.runs/MicroBlazeCore_axi_timer_1_0_synth_1\vivado.jou
+# Running On        :BDCGEHARRIS01
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :22621
+# Processor Detail  :AMD Ryzen 7 PRO 7840U w/ Radeon 780M Graphics  
+# CPU Frequency     :3294 MHz
+# CPU Physical cores:8
+# CPU Logical cores :16
+# Host memory       :33585 MB
+# Swap memory       :38875 MB
+# Total Virtual     :72460 MB
+# Available Virtual :18344 MB
+#-----------------------------------------------------------
+source MicroBlazeCore_axi_timer_1_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 556.535 ; gain = 198.820
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 's:/projects/mi400-eam-poc/source/Axi4FabricBridge.ipgen'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2024.1/data/ip'.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: MicroBlazeCore_axi_timer_1_0
+INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry b53bb92cbb625d40 to dir: S:/projects/mi400-eam-poc/proj-mcu/mi400-eam-poc-mcu.runs/MicroBlazeCore_axi_timer_1_0_synth_1
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file s:/projects/mi400-eam-poc/proj-mcu/mi400-eam-poc-mcu.cache/ip/2024.1/b/5/b53bb92cbb625d40/MicroBlazeCore_axi_timer_0_0.dcp to S:/projects/mi400-eam-poc/proj-mcu/mi400-eam-poc-mcu.runs/MicroBlazeCore_axi_timer_1_0_synth_1/MicroBlazeCore_axi_timer_1_0.dcp.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file s:/projects/mi400-eam-poc/proj-mcu/mi400-eam-poc-mcu.cache/ip/2024.1/b/5/b53bb92cbb625d40/MicroBlazeCore_axi_timer_0_0_sim_netlist.v to S:/projects/mi400-eam-poc/proj-mcu/mi400-eam-poc-mcu.runs/MicroBlazeCore_axi_timer_1_0_synth_1/MicroBlazeCore_axi_timer_1_0_sim_netlist.v.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file s:/projects/mi400-eam-poc/proj-mcu/mi400-eam-poc-mcu.cache/ip/2024.1/b/5/b53bb92cbb625d40/MicroBlazeCore_axi_timer_0_0_sim_netlist.vhdl to S:/projects/mi400-eam-poc/proj-mcu/mi400-eam-poc-mcu.runs/MicroBlazeCore_axi_timer_1_0_synth_1/MicroBlazeCore_axi_timer_1_0_sim_netlist.vhdl.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file s:/projects/mi400-eam-poc/proj-mcu/mi400-eam-poc-mcu.cache/ip/2024.1/b/5/b53bb92cbb625d40/MicroBlazeCore_axi_timer_0_0_stub.v to S:/projects/mi400-eam-poc/proj-mcu/mi400-eam-poc-mcu.runs/MicroBlazeCore_axi_timer_1_0_synth_1/MicroBlazeCore_axi_timer_1_0_stub.v.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file s:/projects/mi400-eam-poc/proj-mcu/mi400-eam-poc-mcu.cache/ip/2024.1/b/5/b53bb92cbb625d40/MicroBlazeCore_axi_timer_0_0_stub.vhdl to S:/projects/mi400-eam-poc/proj-mcu/mi400-eam-poc-mcu.runs/MicroBlazeCore_axi_timer_1_0_synth_1/MicroBlazeCore_axi_timer_1_0_stub.vhdl.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP MicroBlazeCore_axi_timer_1_0, cache-ID = b53bb92cbb625d40.
+INFO: [Common 17-206] Exiting Vivado at Wed Oct  2 16:46:48 2024...

@@ -1,0 +1,366 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Wed Oct  2 16:41:15 2024
+# Process ID: 77812
+# Current directory: S:/projects/mi400-eam-poc/proj-mcu/mi400-eam-poc-mcu.runs/MicroBlazeCore_Axi4FabricBridge_0_0_synth_1
+# Command line: vivado.exe -log MicroBlazeCore_Axi4FabricBridge_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source MicroBlazeCore_Axi4FabricBridge_0_0.tcl
+# Log file: S:/projects/mi400-eam-poc/proj-mcu/mi400-eam-poc-mcu.runs/MicroBlazeCore_Axi4FabricBridge_0_0_synth_1/MicroBlazeCore_Axi4FabricBridge_0_0.vds
+# Journal file: S:/projects/mi400-eam-poc/proj-mcu/mi400-eam-poc-mcu.runs/MicroBlazeCore_Axi4FabricBridge_0_0_synth_1\vivado.jou
+# Running On        :BDCGEHARRIS01
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :22621
+# Processor Detail  :AMD Ryzen 7 PRO 7840U w/ Radeon 780M Graphics  
+# CPU Frequency     :3294 MHz
+# CPU Physical cores:8
+# CPU Logical cores :16
+# Host memory       :33585 MB
+# Swap memory       :21474 MB
+# Total Virtual     :55060 MB
+# Available Virtual :10848 MB
+#-----------------------------------------------------------
+source MicroBlazeCore_Axi4FabricBridge_0_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:04 ; elapsed = 00:00:15 . Memory (MB): peak = 557.641 ; gain = 200.086
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 's:/projects/mi400-eam-poc/source/Axi4FabricBridge.ipgen'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2024.1/data/ip'.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: MicroBlazeCore_Axi4FabricBridge_0_0
+Command: synth_design -top MicroBlazeCore_Axi4FabricBridge_0_0 -part xcau25p-ffvb676-2-e -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xcau25p'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xcau25p'
+INFO: [Device 21-403] Loading part xcau25p-ffvb676-2-e
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 76332
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 2075.832 ; gain = 436.895
+---------------------------------------------------------------------------------
+INFO: [Synth 8-11241] undeclared symbol 'sAxiReadData', assumed default net type 'wire' [s:/projects/mi400-eam-poc/proj-mcu/mi400-eam-poc-mcu.gen/sources_1/bd/MicroBlazeCore/ipshared/cbb1/src/Axi4FabricBridge.v:154]
+INFO: [Synth 8-6157] synthesizing module 'MicroBlazeCore_Axi4FabricBridge_0_0' [s:/projects/mi400-eam-poc/proj-mcu/mi400-eam-poc-mcu.gen/sources_1/bd/MicroBlazeCore/ip/MicroBlazeCore_Axi4FabricBridge_0_0/synth/MicroBlazeCore_Axi4FabricBridge_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'Axi4FabricBridge' [s:/projects/mi400-eam-poc/proj-mcu/mi400-eam-poc-mcu.gen/sources_1/bd/MicroBlazeCore/ipshared/cbb1/src/Axi4FabricBridge.v:14]
+INFO: [Synth 8-155] case statement is not full and has no default [s:/projects/mi400-eam-poc/proj-mcu/mi400-eam-poc-mcu.gen/sources_1/bd/MicroBlazeCore/ipshared/cbb1/src/Axi4FabricBridge.v:178]
+INFO: [Synth 8-226] default block is never used [s:/projects/mi400-eam-poc/proj-mcu/mi400-eam-poc-mcu.gen/sources_1/bd/MicroBlazeCore/ipshared/cbb1/src/Axi4FabricBridge.v:248]
+INFO: [Synth 8-155] case statement is not full and has no default [s:/projects/mi400-eam-poc/proj-mcu/mi400-eam-poc-mcu.gen/sources_1/bd/MicroBlazeCore/ipshared/cbb1/src/Axi4FabricBridge.v:307]
+INFO: [Synth 8-6155] done synthesizing module 'Axi4FabricBridge' (0#1) [s:/projects/mi400-eam-poc/proj-mcu/mi400-eam-poc-mcu.gen/sources_1/bd/MicroBlazeCore/ipshared/cbb1/src/Axi4FabricBridge.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'MicroBlazeCore_Axi4FabricBridge_0_0' (0#1) [s:/projects/mi400-eam-poc/proj-mcu/mi400-eam-poc-mcu.gen/sources_1/bd/MicroBlazeCore/ip/MicroBlazeCore_Axi4FabricBridge_0_0/synth/MicroBlazeCore_Axi4FabricBridge_0_0.v:53]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg1_reg was removed.  [s:/projects/mi400-eam-poc/proj-mcu/mi400-eam-poc-mcu.gen/sources_1/bd/MicroBlazeCore/ipshared/cbb1/src/Axi4FabricBridge.v:155]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg2_reg was removed.  [s:/projects/mi400-eam-poc/proj-mcu/mi400-eam-poc-mcu.gen/sources_1/bd/MicroBlazeCore/ipshared/cbb1/src/Axi4FabricBridge.v:156]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg3_reg was removed.  [s:/projects/mi400-eam-poc/proj-mcu/mi400-eam-poc-mcu.gen/sources_1/bd/MicroBlazeCore/ipshared/cbb1/src/Axi4FabricBridge.v:244]
+WARNING: [Synth 8-6014] Unused sequential element axi_araddr_reg was removed.  [s:/projects/mi400-eam-poc/proj-mcu/mi400-eam-poc-mcu.gen/sources_1/bd/MicroBlazeCore/ipshared/cbb1/src/Axi4FabricBridge.v:154]
+WARNING: [Synth 8-3848] Net S_AXI_RDATA in module/entity Axi4FabricBridge does not have driver. [s:/projects/mi400-eam-poc/proj-mcu/mi400-eam-poc-mcu.gen/sources_1/bd/MicroBlazeCore/ipshared/cbb1/src/Axi4FabricBridge.v:81]
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[31] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[30] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[29] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[28] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[27] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[26] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[25] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[24] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[23] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[22] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[21] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[20] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[19] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[18] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[17] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[16] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[15] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[14] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[13] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[12] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[11] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[10] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[9] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[8] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[7] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[6] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[5] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[4] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[3] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[2] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[1] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[0] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWPROT[2] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWPROT[1] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWPROT[0] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_ARADDR[3] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_ARADDR[2] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_ARADDR[1] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_ARADDR[0] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_ARPROT[2] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_ARPROT[1] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_ARPROT[0] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sMcuOutputControl[31] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sMcuOutputControl[30] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sMcuOutputControl[29] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sMcuOutputControl[28] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sMcuOutputControl[27] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sMcuOutputControl[26] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sMcuOutputControl[25] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sMcuOutputControl[24] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sMcuOutputControl[23] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sMcuOutputControl[22] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sMcuOutputControl[21] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sMcuOutputControl[20] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sMcuOutputControl[19] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sMcuOutputControl[18] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sMcuOutputControl[17] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sMcuOutputControl[16] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sMcuOutputControl[15] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sMcuOutputControl[14] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sMcuOutputControl[13] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sMcuOutputControl[12] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sMcuOutputControl[11] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sMcuOutputControl[10] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sMcuOutputControl[9] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sMcuOutputControl[8] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sMcuOutputControl[7] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sMcuOutputControl[6] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sMcuOutputControl[5] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sMcuOutputControl[4] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sMcuOutputControl[3] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sMcuOutputControl[2] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sMcuOutputControl[1] in module Axi4FabricBridge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sMcuOutputControl[0] in module Axi4FabricBridge is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 2191.281 ; gain = 552.344
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:19 . Memory (MB): peak = 2191.281 ; gain = 552.344
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:19 . Memory (MB): peak = 2191.281 ; gain = 552.344
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 2191.281 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2255.676 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.069 . Memory (MB): peak = 2273.820 ; gain = 17.941
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:00:37 . Memory (MB): peak = 2273.820 ; gain = 634.883
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xcau25p-ffvb676-2-e
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:23 ; elapsed = 00:00:37 . Memory (MB): peak = 2273.820 ; gain = 634.883
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:37 . Memory (MB): peak = 2273.820 ; gain = 634.883
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_write_reg' in module 'Axi4FabricBridge'
+INFO: [Synth 8-802] inferred FSM for state register 'state_read_reg' in module 'Axi4FabricBridge'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    Idle |                               00 |                               00
+                   Waddr |                               01 |                               10
+                   Wdata |                               10 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_write_reg' using encoding 'sequential' in module 'Axi4FabricBridge'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    Idle |                               00 |                               00
+                   Raddr |                               01 |                               10
+                   Rdata |                               10 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_read_reg' using encoding 'sequential' in module 'Axi4FabricBridge'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:24 ; elapsed = 00:00:38 . Memory (MB): peak = 2273.820 ; gain = 634.883
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 1     
+	   4 Input   32 Bit        Muxes := 1     
+	   3 Input    2 Bit        Muxes := 2     
+	   2 Input    2 Bit        Muxes := 6     
+	   2 Input    1 Bit        Muxes := 2     
+	   3 Input    1 Bit        Muxes := 12    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 1200 (col length:96)
+BRAMs: 600 (col length: RAMB18 96 RAMB36 48)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[31] in module MicroBlazeCore_Axi4FabricBridge_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[30] in module MicroBlazeCore_Axi4FabricBridge_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[29] in module MicroBlazeCore_Axi4FabricBridge_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[28] in module MicroBlazeCore_Axi4FabricBridge_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[27] in module MicroBlazeCore_Axi4FabricBridge_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[26] in module MicroBlazeCore_Axi4FabricBridge_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[25] in module MicroBlazeCore_Axi4FabricBridge_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[24] in module MicroBlazeCore_Axi4FabricBridge_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[23] in module MicroBlazeCore_Axi4FabricBridge_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[22] in module MicroBlazeCore_Axi4FabricBridge_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[21] in module MicroBlazeCore_Axi4FabricBridge_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[20] in module MicroBlazeCore_Axi4FabricBridge_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[19] in module MicroBlazeCore_Axi4FabricBridge_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[18] in module MicroBlazeCore_Axi4FabricBridge_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[17] in module MicroBlazeCore_Axi4FabricBridge_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[16] in module MicroBlazeCore_Axi4FabricBridge_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[15] in module MicroBlazeCore_Axi4FabricBridge_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[14] in module MicroBlazeCore_Axi4FabricBridge_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[13] in module MicroBlazeCore_Axi4FabricBridge_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[12] in module MicroBlazeCore_Axi4FabricBridge_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[11] in module MicroBlazeCore_Axi4FabricBridge_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[10] in module MicroBlazeCore_Axi4FabricBridge_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[9] in module MicroBlazeCore_Axi4FabricBridge_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[8] in module MicroBlazeCore_Axi4FabricBridge_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[7] in module MicroBlazeCore_Axi4FabricBridge_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_RDATA[6] in module MicroBlazeCore_Axi4FabricBridge_0_0 is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:41 . Memory (MB): peak = 2273.820 ; gain = 634.883
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:01:00 . Memory (MB): peak = 2599.109 ; gain = 960.172
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:32 ; elapsed = 00:01:00 . Memory (MB): peak = 2599.109 ; gain = 960.172
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:32 ; elapsed = 00:01:00 . Memory (MB): peak = 2609.191 ; gain = 970.254
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:38 ; elapsed = 00:01:12 . Memory (MB): peak = 2624.008 ; gain = 985.070
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:38 ; elapsed = 00:01:12 . Memory (MB): peak = 2624.008 ; gain = 985.070
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:38 ; elapsed = 00:01:12 . Memory (MB): peak = 2624.008 ; gain = 985.070
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:38 ; elapsed = 00:01:12 . Memory (MB): peak = 2624.008 ; gain = 985.070
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:38 ; elapsed = 00:01:12 . Memory (MB): peak = 2624.008 ; gain = 985.070
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:38 ; elapsed = 00:01:12 . Memory (MB): peak = 2624.008 ; gain = 985.070
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |LUT1 |     1|
+|2     |LUT2 |     3|
+|3     |LUT3 |     5|
+|4     |LUT4 |     1|
+|5     |LUT5 |     4|
+|6     |LUT6 |     5|
+|7     |FDRE |    43|
++------+-----+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:38 ; elapsed = 00:01:12 . Memory (MB): peak = 2624.008 ; gain = 985.070
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 75 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:01:08 . Memory (MB): peak = 2624.008 ; gain = 902.531
+Synthesis Optimization Complete : Time (s): cpu = 00:00:38 ; elapsed = 00:01:13 . Memory (MB): peak = 2624.008 ; gain = 985.070
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 2624.008 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2624.008 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 8e78382b
+INFO: [Common 17-83] Releasing license: Synthesis
+31 Infos, 106 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:46 ; elapsed = 00:01:40 . Memory (MB): peak = 2624.008 ; gain = 2008.727
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2624.008 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'S:/projects/mi400-eam-poc/proj-mcu/mi400-eam-poc-mcu.runs/MicroBlazeCore_Axi4FabricBridge_0_0_synth_1/MicroBlazeCore_Axi4FabricBridge_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP MicroBlazeCore_Axi4FabricBridge_0_0, cache-ID = df628c2dd7576ada
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2624.008 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'S:/projects/mi400-eam-poc/proj-mcu/mi400-eam-poc-mcu.runs/MicroBlazeCore_Axi4FabricBridge_0_0_synth_1/MicroBlazeCore_Axi4FabricBridge_0_0.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file MicroBlazeCore_Axi4FabricBridge_0_0_utilization_synth.rpt -pb MicroBlazeCore_Axi4FabricBridge_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Oct  2 16:43:25 2024...

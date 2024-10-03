@@ -1,0 +1,315 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Thu Oct  3 15:22:08 2024
+# Process ID: 75120
+# Current directory: S:/projects/mi400-eam-poc/proj-golden/mi400-eam-poc-golden.runs/PcieBridge_axis_dwidth_converter_0_0_synth_1
+# Command line: vivado.exe -log PcieBridge_axis_dwidth_converter_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source PcieBridge_axis_dwidth_converter_0_0.tcl
+# Log file: S:/projects/mi400-eam-poc/proj-golden/mi400-eam-poc-golden.runs/PcieBridge_axis_dwidth_converter_0_0_synth_1/PcieBridge_axis_dwidth_converter_0_0.vds
+# Journal file: S:/projects/mi400-eam-poc/proj-golden/mi400-eam-poc-golden.runs/PcieBridge_axis_dwidth_converter_0_0_synth_1\vivado.jou
+# Running On        :BDCGEHARRIS01
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :22621
+# Processor Detail  :AMD Ryzen 7 PRO 7840U w/ Radeon 780M Graphics  
+# CPU Frequency     :3294 MHz
+# CPU Physical cores:8
+# CPU Logical cores :16
+# Host memory       :33585 MB
+# Swap memory       :29100 MB
+# Total Virtual     :62685 MB
+# Available Virtual :20474 MB
+#-----------------------------------------------------------
+source PcieBridge_axis_dwidth_converter_0_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 555.270 ; gain = 196.145
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 's:/projects/mi400-eam-poc/source/Axi4FabricBridge.ipgen'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2024.1/data/ip'.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: PcieBridge_axis_dwidth_converter_0_0
+Command: synth_design -top PcieBridge_axis_dwidth_converter_0_0 -part xcau25p-ffvb676-2-e -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xcau25p'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xcau25p'
+INFO: [Device 21-403] Loading part xcau25p-ffvb676-2-e
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 67080
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 2076.789 ; gain = 436.523
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'PcieBridge_axis_dwidth_converter_0_0' [s:/projects/mi400-eam-poc/proj-golden/mi400-eam-poc-golden.gen/sources_1/bd/PcieBridge/ip/PcieBridge_axis_dwidth_converter_0_0/synth/PcieBridge_axis_dwidth_converter_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'axis_dwidth_converter_v1_1_30_axis_dwidth_converter' [s:/projects/mi400-eam-poc/proj-golden/mi400-eam-poc-golden.gen/sources_1/bd/PcieBridge/ipshared/411b/hdl/axis_dwidth_converter_v1_1_vl_rfs.v:806]
+INFO: [Synth 8-6157] synthesizing module 'axis_dwidth_converter_v1_1_30_axisc_downsizer' [s:/projects/mi400-eam-poc/proj-golden/mi400-eam-poc-golden.gen/sources_1/bd/PcieBridge/ipshared/411b/hdl/axis_dwidth_converter_v1_1_vl_rfs.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'axis_dwidth_converter_v1_1_30_axisc_downsizer' (0#1) [s:/projects/mi400-eam-poc/proj-golden/mi400-eam-poc-golden.gen/sources_1/bd/PcieBridge/ipshared/411b/hdl/axis_dwidth_converter_v1_1_vl_rfs.v:60]
+INFO: [Synth 8-6157] synthesizing module 'axis_register_slice_v1_1_31_axis_register_slice' [s:/projects/mi400-eam-poc/proj-golden/mi400-eam-poc-golden.gen/sources_1/bd/PcieBridge/ipshared/ca8d/hdl/axis_register_slice_v1_1_vl_rfs.v:2830]
+INFO: [Synth 8-6157] synthesizing module 'axis_infrastructure_v1_1_1_util_axis2vector' [s:/projects/mi400-eam-poc/proj-golden/mi400-eam-poc-golden.gen/sources_1/bd/PcieBridge/ipshared/434f/hdl/axis_infrastructure_v1_1_vl_rfs.v:805]
+INFO: [Synth 8-6155] done synthesizing module 'axis_infrastructure_v1_1_1_util_axis2vector' (0#1) [s:/projects/mi400-eam-poc/proj-golden/mi400-eam-poc-golden.gen/sources_1/bd/PcieBridge/ipshared/434f/hdl/axis_infrastructure_v1_1_vl_rfs.v:805]
+INFO: [Synth 8-6157] synthesizing module 'axis_register_slice_v1_1_31_axisc_register_slice' [s:/projects/mi400-eam-poc/proj-golden/mi400-eam-poc-golden.gen/sources_1/bd/PcieBridge/ipshared/ca8d/hdl/axis_register_slice_v1_1_vl_rfs.v:1929]
+INFO: [Synth 8-6155] done synthesizing module 'axis_register_slice_v1_1_31_axisc_register_slice' (0#1) [s:/projects/mi400-eam-poc/proj-golden/mi400-eam-poc-golden.gen/sources_1/bd/PcieBridge/ipshared/ca8d/hdl/axis_register_slice_v1_1_vl_rfs.v:1929]
+INFO: [Synth 8-6157] synthesizing module 'axis_infrastructure_v1_1_1_util_vector2axis' [s:/projects/mi400-eam-poc/proj-golden/mi400-eam-poc-golden.gen/sources_1/bd/PcieBridge/ipshared/434f/hdl/axis_infrastructure_v1_1_vl_rfs.v:986]
+INFO: [Synth 8-6155] done synthesizing module 'axis_infrastructure_v1_1_1_util_vector2axis' (0#1) [s:/projects/mi400-eam-poc/proj-golden/mi400-eam-poc-golden.gen/sources_1/bd/PcieBridge/ipshared/434f/hdl/axis_infrastructure_v1_1_vl_rfs.v:986]
+INFO: [Synth 8-6155] done synthesizing module 'axis_register_slice_v1_1_31_axis_register_slice' (0#1) [s:/projects/mi400-eam-poc/proj-golden/mi400-eam-poc-golden.gen/sources_1/bd/PcieBridge/ipshared/ca8d/hdl/axis_register_slice_v1_1_vl_rfs.v:2830]
+INFO: [Synth 8-6157] synthesizing module 'axis_register_slice_v1_1_31_axis_register_slice__parameterized0' [s:/projects/mi400-eam-poc/proj-golden/mi400-eam-poc-golden.gen/sources_1/bd/PcieBridge/ipshared/ca8d/hdl/axis_register_slice_v1_1_vl_rfs.v:2830]
+INFO: [Synth 8-6157] synthesizing module 'axis_infrastructure_v1_1_1_util_axis2vector__parameterized0' [s:/projects/mi400-eam-poc/proj-golden/mi400-eam-poc-golden.gen/sources_1/bd/PcieBridge/ipshared/434f/hdl/axis_infrastructure_v1_1_vl_rfs.v:805]
+INFO: [Synth 8-6155] done synthesizing module 'axis_infrastructure_v1_1_1_util_axis2vector__parameterized0' (0#1) [s:/projects/mi400-eam-poc/proj-golden/mi400-eam-poc-golden.gen/sources_1/bd/PcieBridge/ipshared/434f/hdl/axis_infrastructure_v1_1_vl_rfs.v:805]
+INFO: [Synth 8-6157] synthesizing module 'axis_register_slice_v1_1_31_axisc_register_slice__parameterized0' [s:/projects/mi400-eam-poc/proj-golden/mi400-eam-poc-golden.gen/sources_1/bd/PcieBridge/ipshared/ca8d/hdl/axis_register_slice_v1_1_vl_rfs.v:1929]
+INFO: [Synth 8-6155] done synthesizing module 'axis_register_slice_v1_1_31_axisc_register_slice__parameterized0' (0#1) [s:/projects/mi400-eam-poc/proj-golden/mi400-eam-poc-golden.gen/sources_1/bd/PcieBridge/ipshared/ca8d/hdl/axis_register_slice_v1_1_vl_rfs.v:1929]
+INFO: [Synth 8-6157] synthesizing module 'axis_infrastructure_v1_1_1_util_vector2axis__parameterized0' [s:/projects/mi400-eam-poc/proj-golden/mi400-eam-poc-golden.gen/sources_1/bd/PcieBridge/ipshared/434f/hdl/axis_infrastructure_v1_1_vl_rfs.v:986]
+INFO: [Synth 8-6155] done synthesizing module 'axis_infrastructure_v1_1_1_util_vector2axis__parameterized0' (0#1) [s:/projects/mi400-eam-poc/proj-golden/mi400-eam-poc-golden.gen/sources_1/bd/PcieBridge/ipshared/434f/hdl/axis_infrastructure_v1_1_vl_rfs.v:986]
+INFO: [Synth 8-6155] done synthesizing module 'axis_register_slice_v1_1_31_axis_register_slice__parameterized0' (0#1) [s:/projects/mi400-eam-poc/proj-golden/mi400-eam-poc-golden.gen/sources_1/bd/PcieBridge/ipshared/ca8d/hdl/axis_register_slice_v1_1_vl_rfs.v:2830]
+INFO: [Synth 8-6155] done synthesizing module 'axis_dwidth_converter_v1_1_30_axis_dwidth_converter' (0#1) [s:/projects/mi400-eam-poc/proj-golden/mi400-eam-poc-golden.gen/sources_1/bd/PcieBridge/ipshared/411b/hdl/axis_dwidth_converter_v1_1_vl_rfs.v:806]
+INFO: [Synth 8-6155] done synthesizing module 'PcieBridge_axis_dwidth_converter_0_0' (0#1) [s:/projects/mi400-eam-poc/proj-golden/mi400-eam-poc-golden.gen/sources_1/bd/PcieBridge/ip/PcieBridge_axis_dwidth_converter_0_0/synth/PcieBridge_axis_dwidth_converter_0_0.v:53]
+WARNING: [Synth 8-7129] Port ACLK in module axis_register_slice_v1_1_31_axisc_register_slice__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ACLK2X in module axis_register_slice_v1_1_31_axisc_register_slice__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ARESET in module axis_register_slice_v1_1_31_axisc_register_slice__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ACLKEN in module axis_register_slice_v1_1_31_axisc_register_slice__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port TSTRB[3] in module axis_infrastructure_v1_1_1_util_axis2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port TSTRB[2] in module axis_infrastructure_v1_1_1_util_axis2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port TSTRB[1] in module axis_infrastructure_v1_1_1_util_axis2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port TSTRB[0] in module axis_infrastructure_v1_1_1_util_axis2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port TID[0] in module axis_infrastructure_v1_1_1_util_axis2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port TDEST[0] in module axis_infrastructure_v1_1_1_util_axis2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port TUSER[3] in module axis_infrastructure_v1_1_1_util_axis2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port TUSER[2] in module axis_infrastructure_v1_1_1_util_axis2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port TUSER[1] in module axis_infrastructure_v1_1_1_util_axis2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port TUSER[0] in module axis_infrastructure_v1_1_1_util_axis2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ACLK in module axis_register_slice_v1_1_31_axisc_register_slice is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ACLK2X in module axis_register_slice_v1_1_31_axisc_register_slice is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ARESET in module axis_register_slice_v1_1_31_axisc_register_slice is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ACLKEN in module axis_register_slice_v1_1_31_axisc_register_slice is either unconnected or has no load
+WARNING: [Synth 8-7129] Port TSTRB[7] in module axis_infrastructure_v1_1_1_util_axis2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port TSTRB[6] in module axis_infrastructure_v1_1_1_util_axis2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port TSTRB[5] in module axis_infrastructure_v1_1_1_util_axis2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port TSTRB[4] in module axis_infrastructure_v1_1_1_util_axis2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port TSTRB[3] in module axis_infrastructure_v1_1_1_util_axis2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port TSTRB[2] in module axis_infrastructure_v1_1_1_util_axis2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port TSTRB[1] in module axis_infrastructure_v1_1_1_util_axis2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port TSTRB[0] in module axis_infrastructure_v1_1_1_util_axis2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port TID[0] in module axis_infrastructure_v1_1_1_util_axis2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port TDEST[0] in module axis_infrastructure_v1_1_1_util_axis2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port TUSER[7] in module axis_infrastructure_v1_1_1_util_axis2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port TUSER[6] in module axis_infrastructure_v1_1_1_util_axis2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port TUSER[5] in module axis_infrastructure_v1_1_1_util_axis2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port TUSER[4] in module axis_infrastructure_v1_1_1_util_axis2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port TUSER[3] in module axis_infrastructure_v1_1_1_util_axis2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port TUSER[2] in module axis_infrastructure_v1_1_1_util_axis2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port TUSER[1] in module axis_infrastructure_v1_1_1_util_axis2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port TUSER[0] in module axis_infrastructure_v1_1_1_util_axis2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tuser[0] in module axis_dwidth_converter_v1_1_30_axis_dwidth_converter is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 2194.777 ; gain = 554.512
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 2194.777 ; gain = 554.512
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 2194.777 ; gain = 554.512
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 2194.777 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [s:/projects/mi400-eam-poc/proj-golden/mi400-eam-poc-golden.gen/sources_1/bd/PcieBridge/ip/PcieBridge_axis_dwidth_converter_0_0/PcieBridge_axis_dwidth_converter_0_0_ooc.xdc] for cell 'inst'
+create_clock: Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 2290.750 ; gain = 1.133
+Finished Parsing XDC File [s:/projects/mi400-eam-poc/proj-golden/mi400-eam-poc-golden.gen/sources_1/bd/PcieBridge/ip/PcieBridge_axis_dwidth_converter_0_0/PcieBridge_axis_dwidth_converter_0_0_ooc.xdc] for cell 'inst'
+Parsing XDC File [S:/projects/mi400-eam-poc/proj-golden/mi400-eam-poc-golden.runs/PcieBridge_axis_dwidth_converter_0_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [S:/projects/mi400-eam-poc/proj-golden/mi400-eam-poc-golden.runs/PcieBridge_axis_dwidth_converter_0_0_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2290.750 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 2290.773 ; gain = 0.023
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:22 . Memory (MB): peak = 2290.773 ; gain = 650.508
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xcau25p-ffvb676-2-e
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:22 . Memory (MB): peak = 2290.773 ; gain = 650.508
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for inst. (constraint file  S:/projects/mi400-eam-poc/proj-golden/mi400-eam-poc-golden.runs/PcieBridge_axis_dwidth_converter_0_0_synth_1/dont_touch.xdc, line 9).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:22 . Memory (MB): peak = 2290.773 ; gain = 650.508
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4490] FSM extraction disabled for register 'state_reg' through user attribute
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:22 . Memory (MB): peak = 2290.773 ; gain = 650.508
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    1 Bit       Adders := 1     
++---Registers : 
+	               64 Bit    Registers := 1     
+	               32 Bit    Registers := 1     
+	                8 Bit    Registers := 3     
+	                4 Bit    Registers := 3     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 11    
++---Muxes : 
+	   4 Input    3 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 1     
+	   3 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 1200 (col length:96)
+BRAMs: 600 (col length: RAMB18 96 RAMB36 48)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7129] Port s_axis_tstrb[7] in module axis_dwidth_converter_v1_1_30_axis_dwidth_converter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tstrb[6] in module axis_dwidth_converter_v1_1_30_axis_dwidth_converter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tstrb[5] in module axis_dwidth_converter_v1_1_30_axis_dwidth_converter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tstrb[4] in module axis_dwidth_converter_v1_1_30_axis_dwidth_converter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tstrb[3] in module axis_dwidth_converter_v1_1_30_axis_dwidth_converter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tstrb[2] in module axis_dwidth_converter_v1_1_30_axis_dwidth_converter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tstrb[1] in module axis_dwidth_converter_v1_1_30_axis_dwidth_converter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tstrb[0] in module axis_dwidth_converter_v1_1_30_axis_dwidth_converter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tid[0] in module axis_dwidth_converter_v1_1_30_axis_dwidth_converter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tdest[0] in module axis_dwidth_converter_v1_1_30_axis_dwidth_converter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_tuser[0] in module axis_dwidth_converter_v1_1_30_axis_dwidth_converter is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:24 . Memory (MB): peak = 2290.773 ; gain = 650.508
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:34 . Memory (MB): peak = 2599.609 ; gain = 959.344
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:34 . Memory (MB): peak = 2620.109 ; gain = 979.844
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:34 . Memory (MB): peak = 2620.109 ; gain = 979.844
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:38 . Memory (MB): peak = 2626.730 ; gain = 986.465
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:38 . Memory (MB): peak = 2626.730 ; gain = 986.465
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:38 . Memory (MB): peak = 2626.730 ; gain = 986.465
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:38 . Memory (MB): peak = 2626.730 ; gain = 986.465
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:38 . Memory (MB): peak = 2626.730 ; gain = 986.465
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:38 . Memory (MB): peak = 2626.730 ; gain = 986.465
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |LUT1 |     1|
+|2     |LUT2 |     1|
+|3     |LUT3 |    39|
+|4     |LUT5 |     3|
+|5     |LUT6 |     3|
+|6     |FDRE |   116|
++------+-----+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:38 . Memory (MB): peak = 2626.730 ; gain = 986.465
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 12 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:32 . Memory (MB): peak = 2626.730 ; gain = 890.469
+Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:00:39 . Memory (MB): peak = 2626.730 ; gain = 986.465
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 2626.730 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2626.730 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 34ee0f60
+INFO: [Common 17-83] Releasing license: Synthesis
+41 Infos, 49 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:50 . Memory (MB): peak = 2626.730 ; gain = 2010.684
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2626.730 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'S:/projects/mi400-eam-poc/proj-golden/mi400-eam-poc-golden.runs/PcieBridge_axis_dwidth_converter_0_0_synth_1/PcieBridge_axis_dwidth_converter_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP PcieBridge_axis_dwidth_converter_0_0, cache-ID = 2784bcb6a8a5c0fc
+INFO: [Coretcl 2-1174] Renamed 2 cell refs.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2626.730 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'S:/projects/mi400-eam-poc/proj-golden/mi400-eam-poc-golden.runs/PcieBridge_axis_dwidth_converter_0_0_synth_1/PcieBridge_axis_dwidth_converter_0_0.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file PcieBridge_axis_dwidth_converter_0_0_utilization_synth.rpt -pb PcieBridge_axis_dwidth_converter_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Oct  3 15:23:11 2024...

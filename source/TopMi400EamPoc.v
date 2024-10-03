@@ -113,7 +113,7 @@ module TopMi400EamPoc
     //############################################################
     // Core Clock
     //############################################################
-    // IBUFDS CORE_IBUFDS (.I(FPGA_CLK_100MHZ_P), .IB(FPGA_CLK_100MHZ_N), .O(Clock_DiffOut));
+    IBUFDS CORE_IBUFDS (.I(FPGA_CLK_100MHZ_P), .IB(FPGA_CLK_100MHZ_N), .O(Clock_DiffOut));
     // BUFG CORE_BUFG (.I(Clock_DiffOut), .O(Clock));
     //############################################################
     // PCIe Clock Buffer
@@ -137,8 +137,7 @@ module TopMi400EamPoc
     //############################################################
     Top_DFX_Main  Top_DFX_Main_inst (
         .AxiBusClock(AxiBusClock),
-        .fixed_fabric_100mhz_clk_p(FPGA_CLK_100MHZ_P),
-        .fixed_fabric_100mhz_clk_n(FPGA_CLK_100MHZ_N),
+        .Clock_DiffOut(Clock_DiffOut),
         .McuAxiClock(McuAxiClock),
         .aUART_rxd(aMICROBLAZE_UART_RX),
         .aUART_txd(aMICROBLAZE_UART_TX),
@@ -199,7 +198,7 @@ module TopMi400EamPoc
     //############################################################
     // PCIe Bridge
     //############################################################
-    PcieBridge_wrapper  PcieBridge_wrapper_inst (
+    PcieBridge  PcieBridge_i (
         .AxiBusClock(AxiBusClock),
         .McuAxiClock(McuAxiClock),
         .PCIE_CLOCK_clk_n(PCIE_CLOCK_N),
