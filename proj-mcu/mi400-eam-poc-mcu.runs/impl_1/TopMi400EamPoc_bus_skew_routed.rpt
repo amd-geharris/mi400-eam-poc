@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version      : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-| Date              : Thu Oct  3 15:09:05 2024
+| Date              : Mon Oct  7 17:19:19 2024
 | Host              : BDCGEHARRIS01 running 64-bit major release  (build 9200)
 | Command           : report_bus_skew -warn_on_violation -file TopMi400EamPoc_bus_skew_routed.rpt -pb TopMi400EamPoc_bus_skew_routed.pb -rpx TopMi400EamPoc_bus_skew_routed.rpx
 | Design            : TopMi400EamPoc
@@ -23,7 +23,7 @@ Table of Contents
 
 Id  Position  From                            To                              Corner  Requirement(ns)  Actual(ns)  Slack(ns)
 --  --------  ------------------------------  ------------------------------  ------  ---------------  ----------  ---------
-1   84        [get_cells [list {Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/src_hsdata_ff_reg[3]} \
+1   83        [get_cells [list {Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/src_hsdata_ff_reg[3]} \
           {Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/src_hsdata_ff_reg[8]} \
           {Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/src_hsdata_ff_reg[7]} \
           {Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/src_hsdata_ff_reg[12]} \
@@ -77,8 +77,8 @@ Id  Position  From                            To                              Co
           {Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/dest_hsdata_ff_reg[31]} \
           {Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/dest_hsdata_ff_reg[5]} \
           {Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/dest_hsdata_ff_reg[4]}]]
-                                                                              Slow             30.000       0.793     29.207
-2   86        [get_cells [list {Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/src_hsdata_ff_reg[0]} \
+                                                                              Slow             30.000       0.660     29.340
+2   85        [get_cells [list {Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/src_hsdata_ff_reg[0]} \
           {Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/src_hsdata_ff_reg[10]} \
           {Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/src_hsdata_ff_reg[11]} \
           {Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/src_hsdata_ff_reg[12]} \
@@ -150,8 +150,8 @@ Id  Position  From                            To                              Co
           {Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/dest_hsdata_ff_reg[7]} \
           {Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/dest_hsdata_ff_reg[8]} \
           {Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/dest_hsdata_ff_reg[9]}]]
-                                                                              Slow             30.000       0.734     29.266
-3   90        [get_cells [list {Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/src_hsdata_ff_reg[0]} \
+                                                                              Slow             30.000       0.675     29.325
+3   89        [get_cells [list {Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/src_hsdata_ff_reg[0]} \
           {Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/src_hsdata_ff_reg[10]} \
           {Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/src_hsdata_ff_reg[11]} \
           {Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/src_hsdata_ff_reg[12]} \
@@ -219,8 +219,8 @@ Id  Position  From                            To                              Co
           {Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/dest_hsdata_ff_reg[7]} \
           {Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/dest_hsdata_ff_reg[8]} \
           {Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/dest_hsdata_ff_reg[9]}]]
-                                                                              Slow             24.000       0.690     23.310
-4   92        [get_cells [list {Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/src_hsdata_ff_reg[3]} \
+                                                                              Slow             24.000       1.034     22.966
+4   91        [get_cells [list {Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/src_hsdata_ff_reg[3]} \
           {Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/src_hsdata_ff_reg[8]} \
           {Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/src_hsdata_ff_reg[7]} \
           {Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/src_hsdata_ff_reg[12]} \
@@ -274,7 +274,7 @@ Id  Position  From                            To                              Co
           {Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/dest_hsdata_ff_reg[31]} \
           {Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/dest_hsdata_ff_reg[5]} \
           {Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/dest_hsdata_ff_reg[4]}]]
-                                                                              Slow             30.000       0.723     29.277
+                                                                              Slow             30.000       0.488     29.512
 
 
 2. Bus Skew Report Per Constraint
@@ -339,26 +339,26 @@ Endpoints: 27
 
 From Clock            To Clock              Endpoint Pin                    Reference Pin                   Corner  Actual(ns)  Slack(ns)
 --------------------  --------------------  ------------------------------  ------------------------------  ------  ----------  ---------
-AxiBusClock           McuClock              Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/dest_hsdata_ff_reg[29]/D
-                                                                            Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/dest_hsdata_ff_reg[2]/D
-                                                                                                            Slow         0.793     29.207
+AxiBusClock           McuClock_unbuffed     Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/dest_hsdata_ff_reg[17]/D
+                                                                            Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/dest_hsdata_ff_reg[3]/D
+                                                                                                            Slow         0.660     29.340
 
 
-Slack (MET) :             29.207ns  (requirement - actual skew)
-  Endpoint Source:        Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/src_hsdata_ff_reg[29]/C
+Slack (MET) :             29.340ns  (requirement - actual skew)
+  Endpoint Source:        Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/src_hsdata_ff_reg[17]/C
                             (rising edge-triggered cell FDRE clocked by AxiBusClock)
-  Endpoint Destination:   Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/dest_hsdata_ff_reg[29]/D
-                            (rising edge-triggered cell FDRE clocked by McuClock)
-  Reference Source:       Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/src_hsdata_ff_reg[2]/C
+  Endpoint Destination:   Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/dest_hsdata_ff_reg[17]/D
+                            (rising edge-triggered cell FDRE clocked by McuClock_unbuffed)
+  Reference Source:       Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/src_hsdata_ff_reg[3]/C
                             (rising edge-triggered cell FDRE clocked by AxiBusClock)
-  Reference Destination:  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/dest_hsdata_ff_reg[2]/D
-                            (rising edge-triggered cell FDRE clocked by McuClock)
+  Reference Destination:  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/dest_hsdata_ff_reg[3]/D
+                            (rising edge-triggered cell FDRE clocked by McuClock_unbuffed)
   Path Type:              Bus Skew (Max at Slow Process Corner)
   Requirement:            30.000ns
-  Endpoint Relative Delay:   -0.713ns
-  Reference Relative Delay:  -1.151ns
-  Relative CRPR:             -0.356ns
-  Actual Bus Skew:            0.793ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR)
+  Endpoint Relative Delay:   -0.684ns
+  Reference Relative Delay:  -1.135ns
+  Relative CRPR:             -0.209ns
+  Actual Bus Skew:            0.660ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR)
 
 Endpoint path:
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -369,40 +369,40 @@ Endpoint path:
                          net (fo=6, routed)           0.085     0.085    PcieBridge_i/xdma_0/inst/pcie4_ip_i/inst/PcieBridge_xdma_0_0_pcie4_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_clk_i/CLK_TXOUTCLK
     BUFG_GT_X0Y24        BUFG_GT (Prop_BUFG_GT_I_O)
                                                       0.130     0.215 r  PcieBridge_i/xdma_0/inst/pcie4_ip_i/inst/PcieBridge_xdma_0_0_pcie4_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_clk_i/bufg_gt_userclk/O
-    X2Y0 (CLOCK_ROOT)    net (fo=13355, routed)       1.924     2.139    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/src_clk
-    SLICE_X86Y61         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/src_hsdata_ff_reg[29]/C
+    X2Y0 (CLOCK_ROOT)    net (fo=13355, routed)       1.843     2.058    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/src_clk
+    SLICE_X81Y57         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/src_hsdata_ff_reg[17]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X86Y61         FDRE (Prop_CFF_SLICEM_C_Q)
-                                                      0.078     2.217 r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/src_hsdata_ff_reg[29]/Q
-                         net (fo=1, routed)           0.479     2.696    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/src_hsdata_ff[29]
-    SLICE_X86Y61         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/dest_hsdata_ff_reg[29]/D
+    SLICE_X81Y57         FDRE (Prop_CFF_SLICEM_C_Q)
+                                                      0.078     2.136 r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/src_hsdata_ff_reg[17]/Q
+                         net (fo=1, routed)           0.599     2.735    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/src_hsdata_ff[17]
+    SLICE_X81Y57         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/dest_hsdata_ff_reg[17]/D
   -------------------------------------------------------------------    -------------------
 
-                         (clock McuClock rise edge)
+                         (clock McuClock_unbuffed rise edge)
                                                       0.000     0.000 r  
     T24                                               0.000     0.000 r  FPGA_CLK_100MHZ_P (IN)
-                         net (fo=0)                   0.079     0.079    CORE_IBUFDS/I
+                         net (fo=0)                   0.079     0.079    Top_DFX_Main_inst/CORE_IBUFDS/I
     HPIOBDIFFINBUF_X0Y36 DIFFINBUF (Prop_DIFFINBUF_HPIOBDIFFINBUF_DIFF_IN_P_O)
-                                                      0.500     0.579 r  CORE_IBUFDS/DIFFINBUF_INST/O
-                         net (fo=1, routed)           0.040     0.619    CORE_IBUFDS/OUT
+                                                      0.500     0.579 r  Top_DFX_Main_inst/CORE_IBUFDS/DIFFINBUF_INST/O
+                         net (fo=1, routed)           0.040     0.619    Top_DFX_Main_inst/CORE_IBUFDS/OUT
     T24                  IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
-                                                      0.000     0.619 r  CORE_IBUFDS/IBUFCTRL_INST/O
+                                                      0.000     0.619 r  Top_DFX_Main_inst/CORE_IBUFDS/IBUFCTRL_INST/O
                          net (fo=1, routed)           0.333     0.952    Top_DFX_Main_inst/Clock_DiffOut
     MMCM_X0Y1            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
                                                       0.630     1.582 r  Top_DFX_Main_inst/mmcme4_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.216     1.798    Top_DFX_Main_inst/McuClock_unbuffed
     BUFGCE_X0Y29         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
                                                       0.024     1.822 r  Top_DFX_Main_inst/CORE_BUFG/O
-    X1Y1 (CLOCK_ROOT)    net (fo=3868, routed)        1.562     3.384    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/dest_clk
-    SLICE_X86Y61         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/dest_hsdata_ff_reg[29]/C
-                         clock pessimism              0.000     3.384    
-    SLICE_X86Y61         FDRE (Setup_GFF_SLICEM_C_D)
-                                                      0.025     3.409    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/dest_hsdata_ff_reg[29]
+    X1Y1 (CLOCK_ROOT)    net (fo=3868, routed)        1.572     3.394    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/dest_clk
+    SLICE_X81Y57         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/dest_hsdata_ff_reg[17]/C
+                         clock pessimism              0.000     3.394    
+    SLICE_X81Y57         FDRE (Setup_HFF_SLICEM_C_D)
+                                                      0.025     3.419    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/dest_hsdata_ff_reg[17]
   -------------------------------------------------------------------
-                         data arrival                           2.696    
-                         clock arrival                          3.409    
+                         data arrival                           2.735    
+                         clock arrival                          3.419    
   -------------------------------------------------------------------
-                         relative delay                        -0.713    
+                         relative delay                        -0.684    
 
 Reference path:
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -413,40 +413,40 @@ Reference path:
                          net (fo=6, routed)           0.078     0.078    PcieBridge_i/xdma_0/inst/pcie4_ip_i/inst/PcieBridge_xdma_0_0_pcie4_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_clk_i/CLK_TXOUTCLK
     BUFG_GT_X0Y24        BUFG_GT (Prop_BUFG_GT_I_O)
                                                       0.114     0.192 r  PcieBridge_i/xdma_0/inst/pcie4_ip_i/inst/PcieBridge_xdma_0_0_pcie4_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_clk_i/bufg_gt_userclk/O
-    X2Y0 (CLOCK_ROOT)    net (fo=13355, routed)       1.635     1.827    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/src_clk
-    SLICE_X82Y53         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/src_hsdata_ff_reg[2]/C
+    X2Y0 (CLOCK_ROOT)    net (fo=13355, routed)       1.628     1.820    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/src_clk
+    SLICE_X83Y55         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/src_hsdata_ff_reg[3]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X82Y53         FDRE (Prop_DFF_SLICEM_C_Q)
-                                                      0.058     1.885 r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/src_hsdata_ff_reg[2]/Q
-                         net (fo=1, routed)           0.115     2.000    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/src_hsdata_ff[2]
-    SLICE_X83Y54         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/dest_hsdata_ff_reg[2]/D
+    SLICE_X83Y55         FDRE (Prop_AFF2_SLICEL_C_Q)
+                                                      0.060     1.880 r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/src_hsdata_ff_reg[3]/Q
+                         net (fo=1, routed)           0.115     1.995    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/src_hsdata_ff[3]
+    SLICE_X81Y55         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/dest_hsdata_ff_reg[3]/D
   -------------------------------------------------------------------    -------------------
 
-                         (clock McuClock rise edge)
+                         (clock McuClock_unbuffed rise edge)
                                                       0.000     0.000 r  
     T24                                               0.000     0.000 r  FPGA_CLK_100MHZ_P (IN)
-                         net (fo=0)                   0.100     0.100    CORE_IBUFDS/I
+                         net (fo=0)                   0.100     0.100    Top_DFX_Main_inst/CORE_IBUFDS/I
     HPIOBDIFFINBUF_X0Y36 DIFFINBUF (Prop_DIFFINBUF_HPIOBDIFFINBUF_DIFF_IN_P_O)
-                                                      0.610     0.710 r  CORE_IBUFDS/DIFFINBUF_INST/O
-                         net (fo=1, routed)           0.050     0.760    CORE_IBUFDS/OUT
+                                                      0.610     0.710 r  Top_DFX_Main_inst/CORE_IBUFDS/DIFFINBUF_INST/O
+                         net (fo=1, routed)           0.050     0.760    Top_DFX_Main_inst/CORE_IBUFDS/OUT
     T24                  IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
-                                                      0.000     0.760 r  CORE_IBUFDS/IBUFCTRL_INST/O
+                                                      0.000     0.760 r  Top_DFX_Main_inst/CORE_IBUFDS/IBUFCTRL_INST/O
                          net (fo=1, routed)           0.384     1.144    Top_DFX_Main_inst/Clock_DiffOut
     MMCM_X0Y1            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
                                                      -0.127     1.017 r  Top_DFX_Main_inst/mmcme4_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.245     1.262    Top_DFX_Main_inst/McuClock_unbuffed
     BUFGCE_X0Y29         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
                                                       0.028     1.290 r  Top_DFX_Main_inst/CORE_BUFG/O
-    X1Y1 (CLOCK_ROOT)    net (fo=3868, routed)        1.801     3.091    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/dest_clk
-    SLICE_X83Y54         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/dest_hsdata_ff_reg[2]/C
-                         clock pessimism              0.000     3.091    
-    SLICE_X83Y54         FDRE (Hold_EFF_SLICEL_C_D)
-                                                      0.060     3.151    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/dest_hsdata_ff_reg[2]
+    X1Y1 (CLOCK_ROOT)    net (fo=3868, routed)        1.778     3.068    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/dest_clk
+    SLICE_X81Y55         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/dest_hsdata_ff_reg[3]/C
+                         clock pessimism              0.000     3.068    
+    SLICE_X81Y55         FDRE (Hold_HFF2_SLICEM_C_D)
+                                                      0.062     3.130    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_ar/handshake/dest_hsdata_ff_reg[3]
   -------------------------------------------------------------------
-                         data arrival                           2.000    
-                         clock arrival                          3.151    
+                         data arrival                           1.995    
+                         clock arrival                          3.130    
   -------------------------------------------------------------------
-                         relative delay                        -1.151    
+                         relative delay                        -1.135    
 
 
 
@@ -527,26 +527,26 @@ Endpoints: 36
 
 From Clock            To Clock              Endpoint Pin                    Reference Pin                   Corner  Actual(ns)  Slack(ns)
 --------------------  --------------------  ------------------------------  ------------------------------  ------  ----------  ---------
-AxiBusClock           McuClock              Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/dest_hsdata_ff_reg[6]/D
-                                                                            Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/dest_hsdata_ff_reg[29]/D
-                                                                                                            Slow         0.734     29.266
+AxiBusClock           McuClock_unbuffed     Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/dest_hsdata_ff_reg[26]/D
+                                                                            Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/dest_hsdata_ff_reg[2]/D
+                                                                                                            Slow         0.675     29.325
 
 
-Slack (MET) :             29.266ns  (requirement - actual skew)
-  Endpoint Source:        Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/src_hsdata_ff_reg[6]/C
+Slack (MET) :             29.325ns  (requirement - actual skew)
+  Endpoint Source:        Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/src_hsdata_ff_reg[26]/C
                             (rising edge-triggered cell FDRE clocked by AxiBusClock)
-  Endpoint Destination:   Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/dest_hsdata_ff_reg[6]/D
-                            (rising edge-triggered cell FDRE clocked by McuClock)
-  Reference Source:       Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/src_hsdata_ff_reg[29]/C
+  Endpoint Destination:   Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/dest_hsdata_ff_reg[26]/D
+                            (rising edge-triggered cell FDRE clocked by McuClock_unbuffed)
+  Reference Source:       Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/src_hsdata_ff_reg[2]/C
                             (rising edge-triggered cell FDRE clocked by AxiBusClock)
-  Reference Destination:  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/dest_hsdata_ff_reg[29]/D
-                            (rising edge-triggered cell FDRE clocked by McuClock)
+  Reference Destination:  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/dest_hsdata_ff_reg[2]/D
+                            (rising edge-triggered cell FDRE clocked by McuClock_unbuffed)
   Path Type:              Bus Skew (Max at Slow Process Corner)
   Requirement:            30.000ns
-  Endpoint Relative Delay:   -0.688ns
-  Reference Relative Delay:  -1.159ns
-  Relative CRPR:             -0.263ns
-  Actual Bus Skew:            0.734ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR)
+  Endpoint Relative Delay:   -0.580ns
+  Reference Relative Delay:  -1.149ns
+  Relative CRPR:             -0.106ns
+  Actual Bus Skew:            0.675ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR)
 
 Endpoint path:
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -557,40 +557,40 @@ Endpoint path:
                          net (fo=6, routed)           0.085     0.085    PcieBridge_i/xdma_0/inst/pcie4_ip_i/inst/PcieBridge_xdma_0_0_pcie4_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_clk_i/CLK_TXOUTCLK
     BUFG_GT_X0Y24        BUFG_GT (Prop_BUFG_GT_I_O)
                                                       0.130     0.215 r  PcieBridge_i/xdma_0/inst/pcie4_ip_i/inst/PcieBridge_xdma_0_0_pcie4_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_clk_i/bufg_gt_userclk/O
-    X2Y0 (CLOCK_ROOT)    net (fo=13355, routed)       1.829     2.044    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/src_clk
-    SLICE_X79Y51         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/src_hsdata_ff_reg[6]/C
+    X2Y0 (CLOCK_ROOT)    net (fo=13355, routed)       1.847     2.062    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/src_clk
+    SLICE_X83Y54         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/src_hsdata_ff_reg[26]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X79Y51         FDRE (Prop_CFF2_SLICEM_C_Q)
-                                                      0.077     2.121 r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/src_hsdata_ff_reg[6]/Q
-                         net (fo=1, routed)           0.598     2.719    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/src_hsdata_ff[6]
-    SLICE_X79Y51         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/dest_hsdata_ff_reg[6]/D
+    SLICE_X83Y54         FDRE (Prop_CFF_SLICEL_C_Q)
+                                                      0.079     2.141 r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/src_hsdata_ff_reg[26]/Q
+                         net (fo=1, routed)           0.704     2.845    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/src_hsdata_ff[26]
+    SLICE_X83Y54         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/dest_hsdata_ff_reg[26]/D
   -------------------------------------------------------------------    -------------------
 
-                         (clock McuClock rise edge)
+                         (clock McuClock_unbuffed rise edge)
                                                       0.000     0.000 r  
     T24                                               0.000     0.000 r  FPGA_CLK_100MHZ_P (IN)
-                         net (fo=0)                   0.079     0.079    CORE_IBUFDS/I
+                         net (fo=0)                   0.079     0.079    Top_DFX_Main_inst/CORE_IBUFDS/I
     HPIOBDIFFINBUF_X0Y36 DIFFINBUF (Prop_DIFFINBUF_HPIOBDIFFINBUF_DIFF_IN_P_O)
-                                                      0.500     0.579 r  CORE_IBUFDS/DIFFINBUF_INST/O
-                         net (fo=1, routed)           0.040     0.619    CORE_IBUFDS/OUT
+                                                      0.500     0.579 r  Top_DFX_Main_inst/CORE_IBUFDS/DIFFINBUF_INST/O
+                         net (fo=1, routed)           0.040     0.619    Top_DFX_Main_inst/CORE_IBUFDS/OUT
     T24                  IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
-                                                      0.000     0.619 r  CORE_IBUFDS/IBUFCTRL_INST/O
+                                                      0.000     0.619 r  Top_DFX_Main_inst/CORE_IBUFDS/IBUFCTRL_INST/O
                          net (fo=1, routed)           0.333     0.952    Top_DFX_Main_inst/Clock_DiffOut
     MMCM_X0Y1            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
                                                       0.630     1.582 r  Top_DFX_Main_inst/mmcme4_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.216     1.798    Top_DFX_Main_inst/McuClock_unbuffed
     BUFGCE_X0Y29         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
                                                       0.024     1.822 r  Top_DFX_Main_inst/CORE_BUFG/O
-    X1Y1 (CLOCK_ROOT)    net (fo=3868, routed)        1.560     3.382    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/dest_clk
-    SLICE_X79Y51         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/dest_hsdata_ff_reg[6]/C
-                         clock pessimism              0.000     3.382    
-    SLICE_X79Y51         FDRE (Setup_EFF2_SLICEM_C_D)
-                                                      0.025     3.407    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/dest_hsdata_ff_reg[6]
+    X1Y1 (CLOCK_ROOT)    net (fo=3868, routed)        1.578     3.400    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/dest_clk
+    SLICE_X83Y54         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/dest_hsdata_ff_reg[26]/C
+                         clock pessimism              0.000     3.400    
+    SLICE_X83Y54         FDRE (Setup_GFF_SLICEL_C_D)
+                                                      0.025     3.425    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/dest_hsdata_ff_reg[26]
   -------------------------------------------------------------------
-                         data arrival                           2.719    
-                         clock arrival                          3.407    
+                         data arrival                           2.845    
+                         clock arrival                          3.425    
   -------------------------------------------------------------------
-                         relative delay                        -0.688    
+                         relative delay                        -0.580    
 
 Reference path:
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -601,40 +601,40 @@ Reference path:
                          net (fo=6, routed)           0.078     0.078    PcieBridge_i/xdma_0/inst/pcie4_ip_i/inst/PcieBridge_xdma_0_0_pcie4_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_clk_i/CLK_TXOUTCLK
     BUFG_GT_X0Y24        BUFG_GT (Prop_BUFG_GT_I_O)
                                                       0.114     0.192 r  PcieBridge_i/xdma_0/inst/pcie4_ip_i/inst/PcieBridge_xdma_0_0_pcie4_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_clk_i/bufg_gt_userclk/O
-    X2Y0 (CLOCK_ROOT)    net (fo=13355, routed)       1.605     1.797    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/src_clk
-    SLICE_X75Y46         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/src_hsdata_ff_reg[29]/C
+    X2Y0 (CLOCK_ROOT)    net (fo=13355, routed)       1.628     1.820    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/src_clk
+    SLICE_X83Y54         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/src_hsdata_ff_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X75Y46         FDRE (Prop_EFF2_SLICEM_C_Q)
-                                                      0.060     1.857 r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/src_hsdata_ff_reg[29]/Q
-                         net (fo=1, routed)           0.116     1.973    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/src_hsdata_ff[29]
-    SLICE_X75Y47         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/dest_hsdata_ff_reg[29]/D
+    SLICE_X83Y54         FDRE (Prop_CFF2_SLICEL_C_Q)
+                                                      0.059     1.879 r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/src_hsdata_ff_reg[2]/Q
+                         net (fo=1, routed)           0.103     1.982    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/src_hsdata_ff[2]
+    SLICE_X83Y54         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/dest_hsdata_ff_reg[2]/D
   -------------------------------------------------------------------    -------------------
 
-                         (clock McuClock rise edge)
+                         (clock McuClock_unbuffed rise edge)
                                                       0.000     0.000 r  
     T24                                               0.000     0.000 r  FPGA_CLK_100MHZ_P (IN)
-                         net (fo=0)                   0.100     0.100    CORE_IBUFDS/I
+                         net (fo=0)                   0.100     0.100    Top_DFX_Main_inst/CORE_IBUFDS/I
     HPIOBDIFFINBUF_X0Y36 DIFFINBUF (Prop_DIFFINBUF_HPIOBDIFFINBUF_DIFF_IN_P_O)
-                                                      0.610     0.710 r  CORE_IBUFDS/DIFFINBUF_INST/O
-                         net (fo=1, routed)           0.050     0.760    CORE_IBUFDS/OUT
+                                                      0.610     0.710 r  Top_DFX_Main_inst/CORE_IBUFDS/DIFFINBUF_INST/O
+                         net (fo=1, routed)           0.050     0.760    Top_DFX_Main_inst/CORE_IBUFDS/OUT
     T24                  IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
-                                                      0.000     0.760 r  CORE_IBUFDS/IBUFCTRL_INST/O
+                                                      0.000     0.760 r  Top_DFX_Main_inst/CORE_IBUFDS/IBUFCTRL_INST/O
                          net (fo=1, routed)           0.384     1.144    Top_DFX_Main_inst/Clock_DiffOut
     MMCM_X0Y1            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
                                                      -0.127     1.017 r  Top_DFX_Main_inst/mmcme4_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.245     1.262    Top_DFX_Main_inst/McuClock_unbuffed
     BUFGCE_X0Y29         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
                                                       0.028     1.290 r  Top_DFX_Main_inst/CORE_BUFG/O
-    X1Y1 (CLOCK_ROOT)    net (fo=3868, routed)        1.780     3.070    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/dest_clk
-    SLICE_X75Y47         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/dest_hsdata_ff_reg[29]/C
-                         clock pessimism              0.000     3.070    
-    SLICE_X75Y47         FDRE (Hold_GFF2_SLICEM_C_D)
-                                                      0.062     3.132    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/dest_hsdata_ff_reg[29]
+    X1Y1 (CLOCK_ROOT)    net (fo=3868, routed)        1.779     3.069    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/dest_clk
+    SLICE_X83Y54         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/dest_hsdata_ff_reg[2]/C
+                         clock pessimism              0.000     3.069    
+    SLICE_X83Y54         FDRE (Hold_GFF2_SLICEL_C_D)
+                                                      0.062     3.131    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/dest_hsdata_ff_reg[2]
   -------------------------------------------------------------------
-                         data arrival                           1.973    
-                         clock arrival                          3.132    
+                         data arrival                           1.982    
+                         clock arrival                          3.131    
   -------------------------------------------------------------------
-                         relative delay                        -1.159    
+                         relative delay                        -1.149    
 
 
 
@@ -711,52 +711,52 @@ Endpoints: 34
 
 From Clock            To Clock              Endpoint Pin                    Reference Pin                   Corner  Actual(ns)  Slack(ns)
 --------------------  --------------------  ------------------------------  ------------------------------  ------  ----------  ---------
-McuClock              AxiBusClock           Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/dest_hsdata_ff_reg[3]/D
-                                                                            Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/dest_hsdata_ff_reg[23]/D
-                                                                                                            Slow         0.690     23.310
+McuClock_unbuffed     AxiBusClock           Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/dest_hsdata_ff_reg[24]/D
+                                                                            Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/dest_hsdata_ff_reg[11]/D
+                                                                                                            Slow         1.034     22.966
 
 
-Slack (MET) :             23.310ns  (requirement - actual skew)
-  Endpoint Source:        Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/src_hsdata_ff_reg[3]/C
-                            (rising edge-triggered cell FDRE clocked by McuClock)
-  Endpoint Destination:   Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/dest_hsdata_ff_reg[3]/D
+Slack (MET) :             22.966ns  (requirement - actual skew)
+  Endpoint Source:        Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/src_hsdata_ff_reg[24]/C
+                            (rising edge-triggered cell FDRE clocked by McuClock_unbuffed)
+  Endpoint Destination:   Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/dest_hsdata_ff_reg[24]/D
                             (rising edge-triggered cell FDRE clocked by AxiBusClock)
-  Reference Source:       Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/src_hsdata_ff_reg[23]/C
-                            (rising edge-triggered cell FDRE clocked by McuClock)
-  Reference Destination:  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/dest_hsdata_ff_reg[23]/D
+  Reference Source:       Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/src_hsdata_ff_reg[11]/C
+                            (rising edge-triggered cell FDRE clocked by McuClock_unbuffed)
+  Reference Destination:  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/dest_hsdata_ff_reg[11]/D
                             (rising edge-triggered cell FDRE clocked by AxiBusClock)
   Path Type:              Bus Skew (Max at Slow Process Corner)
   Requirement:            24.000ns
-  Endpoint Relative Delay:    1.958ns
-  Reference Relative Delay:   1.425ns
-  Relative CRPR:             -0.157ns
-  Actual Bus Skew:            0.690ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR)
+  Endpoint Relative Delay:    2.203ns
+  Reference Relative Delay:   1.432ns
+  Relative CRPR:             -0.263ns
+  Actual Bus Skew:            1.034ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR)
 
 Endpoint path:
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock McuClock rise edge)
+                         (clock McuClock_unbuffed rise edge)
                                                       0.000     0.000 r  
     T24                                               0.000     0.000 r  FPGA_CLK_100MHZ_P (IN)
-                         net (fo=0)                   0.100     0.100    CORE_IBUFDS/I
+                         net (fo=0)                   0.100     0.100    Top_DFX_Main_inst/CORE_IBUFDS/I
     HPIOBDIFFINBUF_X0Y36 DIFFINBUF (Prop_DIFFINBUF_HPIOBDIFFINBUF_DIFF_IN_P_O)
-                                                      0.610     0.710 r  CORE_IBUFDS/DIFFINBUF_INST/O
-                         net (fo=1, routed)           0.050     0.760    CORE_IBUFDS/OUT
+                                                      0.610     0.710 r  Top_DFX_Main_inst/CORE_IBUFDS/DIFFINBUF_INST/O
+                         net (fo=1, routed)           0.050     0.760    Top_DFX_Main_inst/CORE_IBUFDS/OUT
     T24                  IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
-                                                      0.000     0.760 r  CORE_IBUFDS/IBUFCTRL_INST/O
+                                                      0.000     0.760 r  Top_DFX_Main_inst/CORE_IBUFDS/IBUFCTRL_INST/O
                          net (fo=1, routed)           0.384     1.144    Top_DFX_Main_inst/Clock_DiffOut
     MMCM_X0Y1            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
                                                      -0.127     1.017 r  Top_DFX_Main_inst/mmcme4_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.245     1.262    Top_DFX_Main_inst/McuClock_unbuffed
     BUFGCE_X0Y29         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
                                                       0.028     1.290 r  Top_DFX_Main_inst/CORE_BUFG/O
-    X1Y1 (CLOCK_ROOT)    net (fo=3868, routed)        1.746     3.036    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/src_clk
-    SLICE_X79Y40         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/src_hsdata_ff_reg[3]/C
+    X1Y1 (CLOCK_ROOT)    net (fo=3868, routed)        1.773     3.063    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/src_clk
+    SLICE_X73Y48         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/src_hsdata_ff_reg[24]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X79Y40         FDRE (Prop_HFF_SLICEM_C_Q)
-                                                      0.079     3.115 r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/src_hsdata_ff_reg[3]/Q
-                         net (fo=1, routed)           0.666     3.781    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/src_hsdata_ff[3]
-    SLICE_X79Y40         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/dest_hsdata_ff_reg[3]/D
+    SLICE_X73Y48         FDRE (Prop_GFF_SLICEL_C_Q)
+                                                      0.079     3.142 r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/src_hsdata_ff_reg[24]/Q
+                         net (fo=1, routed)           0.895     4.037    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/src_hsdata_ff[24]
+    SLICE_X80Y48         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/dest_hsdata_ff_reg[24]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock AxiBusClock rise edge)
@@ -765,42 +765,42 @@ Endpoint path:
                          net (fo=6, routed)           0.078     0.078    PcieBridge_i/xdma_0/inst/pcie4_ip_i/inst/PcieBridge_xdma_0_0_pcie4_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_clk_i/CLK_TXOUTCLK
     BUFG_GT_X0Y24        BUFG_GT (Prop_BUFG_GT_I_O)
                                                       0.114     0.192 r  PcieBridge_i/xdma_0/inst/pcie4_ip_i/inst/PcieBridge_xdma_0_0_pcie4_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_clk_i/bufg_gt_userclk/O
-    X2Y0 (CLOCK_ROOT)    net (fo=13355, routed)       1.606     1.798    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/dest_clk
-    SLICE_X79Y40         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/dest_hsdata_ff_reg[3]/C
-                         clock pessimism              0.000     1.798    
-    SLICE_X79Y40         FDRE (Setup_DFF_SLICEM_C_D)
-                                                      0.025     1.823    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/dest_hsdata_ff_reg[3]
+    X2Y0 (CLOCK_ROOT)    net (fo=13355, routed)       1.617     1.809    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/dest_clk
+    SLICE_X80Y48         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/dest_hsdata_ff_reg[24]/C
+                         clock pessimism              0.000     1.809    
+    SLICE_X80Y48         FDRE (Setup_CFF_SLICEL_C_D)
+                                                      0.025     1.834    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/dest_hsdata_ff_reg[24]
   -------------------------------------------------------------------
-                         data arrival                           3.781    
-                         clock arrival                          1.823    
+                         data arrival                           4.037    
+                         clock arrival                          1.834    
   -------------------------------------------------------------------
-                         relative delay                         1.958    
+                         relative delay                         2.203    
 
 Reference path:
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock McuClock rise edge)
+                         (clock McuClock_unbuffed rise edge)
                                                       0.000     0.000 r  
     T24                                               0.000     0.000 r  FPGA_CLK_100MHZ_P (IN)
-                         net (fo=0)                   0.079     0.079    CORE_IBUFDS/I
+                         net (fo=0)                   0.079     0.079    Top_DFX_Main_inst/CORE_IBUFDS/I
     HPIOBDIFFINBUF_X0Y36 DIFFINBUF (Prop_DIFFINBUF_HPIOBDIFFINBUF_DIFF_IN_P_O)
-                                                      0.500     0.579 r  CORE_IBUFDS/DIFFINBUF_INST/O
-                         net (fo=1, routed)           0.040     0.619    CORE_IBUFDS/OUT
+                                                      0.500     0.579 r  Top_DFX_Main_inst/CORE_IBUFDS/DIFFINBUF_INST/O
+                         net (fo=1, routed)           0.040     0.619    Top_DFX_Main_inst/CORE_IBUFDS/OUT
     T24                  IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
-                                                      0.000     0.619 r  CORE_IBUFDS/IBUFCTRL_INST/O
+                                                      0.000     0.619 r  Top_DFX_Main_inst/CORE_IBUFDS/IBUFCTRL_INST/O
                          net (fo=1, routed)           0.333     0.952    Top_DFX_Main_inst/Clock_DiffOut
     MMCM_X0Y1            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
                                                       0.630     1.582 r  Top_DFX_Main_inst/mmcme4_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.216     1.798    Top_DFX_Main_inst/McuClock_unbuffed
     BUFGCE_X0Y29         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
                                                       0.024     1.822 r  Top_DFX_Main_inst/CORE_BUFG/O
-    X1Y1 (CLOCK_ROOT)    net (fo=3868, routed)        1.561     3.383    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/src_clk
-    SLICE_X79Y43         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/src_hsdata_ff_reg[23]/C
+    X1Y1 (CLOCK_ROOT)    net (fo=3868, routed)        1.559     3.381    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/src_clk
+    SLICE_X79Y50         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/src_hsdata_ff_reg[11]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X79Y43         FDRE (Prop_DFF2_SLICEM_C_Q)
-                                                      0.061     3.444 r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/src_hsdata_ff_reg[23]/Q
-                         net (fo=1, routed)           0.079     3.523    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/src_hsdata_ff[23]
-    SLICE_X79Y42         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/dest_hsdata_ff_reg[23]/D
+    SLICE_X79Y50         FDRE (Prop_EFF_SLICEM_C_Q)
+                                                      0.058     3.439 r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/src_hsdata_ff_reg[11]/Q
+                         net (fo=1, routed)           0.097     3.536    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/src_hsdata_ff[11]
+    SLICE_X79Y50         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/dest_hsdata_ff_reg[11]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock AxiBusClock rise edge)
@@ -809,16 +809,16 @@ Reference path:
                          net (fo=6, routed)           0.085     0.085    PcieBridge_i/xdma_0/inst/pcie4_ip_i/inst/PcieBridge_xdma_0_0_pcie4_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_clk_i/CLK_TXOUTCLK
     BUFG_GT_X0Y24        BUFG_GT (Prop_BUFG_GT_I_O)
                                                       0.130     0.215 r  PcieBridge_i/xdma_0/inst/pcie4_ip_i/inst/PcieBridge_xdma_0_0_pcie4_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_clk_i/bufg_gt_userclk/O
-    X2Y0 (CLOCK_ROOT)    net (fo=13355, routed)       1.821     2.036    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/dest_clk
-    SLICE_X79Y42         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/dest_hsdata_ff_reg[23]/C
-                         clock pessimism              0.000     2.036    
-    SLICE_X79Y42         FDRE (Hold_EFF2_SLICEM_C_D)
-                                                      0.062     2.098    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/dest_hsdata_ff_reg[23]
+    X2Y0 (CLOCK_ROOT)    net (fo=13355, routed)       1.829     2.044    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/dest_clk
+    SLICE_X79Y50         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/dest_hsdata_ff_reg[11]/C
+                         clock pessimism              0.000     2.044    
+    SLICE_X79Y50         FDRE (Hold_AFF_SLICEM_C_D)
+                                                      0.060     2.104    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_resp_r/handshake/dest_hsdata_ff_reg[11]
   -------------------------------------------------------------------
-                         data arrival                           3.523    
-                         clock arrival                          2.098    
+                         data arrival                           3.536    
+                         clock arrival                          2.104    
   -------------------------------------------------------------------
-                         relative delay                         1.425    
+                         relative delay                         1.432    
 
 
 
@@ -881,26 +881,26 @@ Endpoints: 27
 
 From Clock            To Clock              Endpoint Pin                    Reference Pin                   Corner  Actual(ns)  Slack(ns)
 --------------------  --------------------  ------------------------------  ------------------------------  ------  ----------  ---------
-AxiBusClock           McuClock              Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/dest_hsdata_ff_reg[20]/D
-                                                                            Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/dest_hsdata_ff_reg[4]/D
-                                                                                                            Slow         0.723     29.277
+AxiBusClock           McuClock_unbuffed     Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/dest_hsdata_ff_reg[2]/D
+                                                                            Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/dest_hsdata_ff_reg[18]/D
+                                                                                                            Slow         0.488     29.512
 
 
-Slack (MET) :             29.277ns  (requirement - actual skew)
-  Endpoint Source:        Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/src_hsdata_ff_reg[20]/C
+Slack (MET) :             29.512ns  (requirement - actual skew)
+  Endpoint Source:        Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/src_hsdata_ff_reg[2]/C
                             (rising edge-triggered cell FDRE clocked by AxiBusClock)
-  Endpoint Destination:   Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/dest_hsdata_ff_reg[20]/D
-                            (rising edge-triggered cell FDRE clocked by McuClock)
-  Reference Source:       Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/src_hsdata_ff_reg[4]/C
+  Endpoint Destination:   Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/dest_hsdata_ff_reg[2]/D
+                            (rising edge-triggered cell FDRE clocked by McuClock_unbuffed)
+  Reference Source:       Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/src_hsdata_ff_reg[18]/C
                             (rising edge-triggered cell FDRE clocked by AxiBusClock)
-  Reference Destination:  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/dest_hsdata_ff_reg[4]/D
-                            (rising edge-triggered cell FDRE clocked by McuClock)
+  Reference Destination:  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/dest_hsdata_ff_reg[18]/D
+                            (rising edge-triggered cell FDRE clocked by McuClock_unbuffed)
   Path Type:              Bus Skew (Max at Slow Process Corner)
   Requirement:            30.000ns
-  Endpoint Relative Delay:   -0.762ns
-  Reference Relative Delay:  -1.130ns
-  Relative CRPR:             -0.356ns
-  Actual Bus Skew:            0.723ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR)
+  Endpoint Relative Delay:   -0.878ns
+  Reference Relative Delay:  -1.155ns
+  Relative CRPR:             -0.211ns
+  Actual Bus Skew:            0.488ns  (Endpoint Relative Delay - Reference Relative Delay - Relative CRPR)
 
 Endpoint path:
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -911,40 +911,40 @@ Endpoint path:
                          net (fo=6, routed)           0.085     0.085    PcieBridge_i/xdma_0/inst/pcie4_ip_i/inst/PcieBridge_xdma_0_0_pcie4_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_clk_i/CLK_TXOUTCLK
     BUFG_GT_X0Y24        BUFG_GT (Prop_BUFG_GT_I_O)
                                                       0.130     0.215 r  PcieBridge_i/xdma_0/inst/pcie4_ip_i/inst/PcieBridge_xdma_0_0_pcie4_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_clk_i/bufg_gt_userclk/O
-    X2Y0 (CLOCK_ROOT)    net (fo=13355, routed)       1.912     2.127    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/src_clk
-    SLICE_X86Y60         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/src_hsdata_ff_reg[20]/C
+    X2Y0 (CLOCK_ROOT)    net (fo=13355, routed)       1.859     2.074    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/src_clk
+    SLICE_X83Y56         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/src_hsdata_ff_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X86Y60         FDRE (Prop_BFF2_SLICEM_C_Q)
-                                                      0.080     2.207 r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/src_hsdata_ff_reg[20]/Q
-                         net (fo=1, routed)           0.444     2.651    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/src_hsdata_ff[20]
-    SLICE_X86Y60         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/dest_hsdata_ff_reg[20]/D
+    SLICE_X83Y56         FDRE (Prop_AFF_SLICEL_C_Q)
+                                                      0.079     2.153 r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/src_hsdata_ff_reg[2]/Q
+                         net (fo=1, routed)           0.393     2.546    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/src_hsdata_ff[2]
+    SLICE_X81Y56         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/dest_hsdata_ff_reg[2]/D
   -------------------------------------------------------------------    -------------------
 
-                         (clock McuClock rise edge)
+                         (clock McuClock_unbuffed rise edge)
                                                       0.000     0.000 r  
     T24                                               0.000     0.000 r  FPGA_CLK_100MHZ_P (IN)
-                         net (fo=0)                   0.079     0.079    CORE_IBUFDS/I
+                         net (fo=0)                   0.079     0.079    Top_DFX_Main_inst/CORE_IBUFDS/I
     HPIOBDIFFINBUF_X0Y36 DIFFINBUF (Prop_DIFFINBUF_HPIOBDIFFINBUF_DIFF_IN_P_O)
-                                                      0.500     0.579 r  CORE_IBUFDS/DIFFINBUF_INST/O
-                         net (fo=1, routed)           0.040     0.619    CORE_IBUFDS/OUT
+                                                      0.500     0.579 r  Top_DFX_Main_inst/CORE_IBUFDS/DIFFINBUF_INST/O
+                         net (fo=1, routed)           0.040     0.619    Top_DFX_Main_inst/CORE_IBUFDS/OUT
     T24                  IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
-                                                      0.000     0.619 r  CORE_IBUFDS/IBUFCTRL_INST/O
+                                                      0.000     0.619 r  Top_DFX_Main_inst/CORE_IBUFDS/IBUFCTRL_INST/O
                          net (fo=1, routed)           0.333     0.952    Top_DFX_Main_inst/Clock_DiffOut
     MMCM_X0Y1            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
                                                       0.630     1.582 r  Top_DFX_Main_inst/mmcme4_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.216     1.798    Top_DFX_Main_inst/McuClock_unbuffed
     BUFGCE_X0Y29         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
                                                       0.024     1.822 r  Top_DFX_Main_inst/CORE_BUFG/O
-    X1Y1 (CLOCK_ROOT)    net (fo=3868, routed)        1.567     3.389    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/dest_clk
-    SLICE_X86Y60         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/dest_hsdata_ff_reg[20]/C
-                         clock pessimism              0.000     3.389    
-    SLICE_X86Y60         FDRE (Setup_FFF2_SLICEM_C_D)
-                                                      0.025     3.414    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/dest_hsdata_ff_reg[20]
+    X1Y1 (CLOCK_ROOT)    net (fo=3868, routed)        1.577     3.399    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/dest_clk
+    SLICE_X81Y56         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/dest_hsdata_ff_reg[2]/C
+                         clock pessimism              0.000     3.399    
+    SLICE_X81Y56         FDRE (Setup_HFF_SLICEM_C_D)
+                                                      0.025     3.424    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/dest_hsdata_ff_reg[2]
   -------------------------------------------------------------------
-                         data arrival                           2.651    
-                         clock arrival                          3.414    
+                         data arrival                           2.546    
+                         clock arrival                          3.424    
   -------------------------------------------------------------------
-                         relative delay                        -0.762    
+                         relative delay                        -0.878    
 
 Reference path:
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -955,40 +955,40 @@ Reference path:
                          net (fo=6, routed)           0.078     0.078    PcieBridge_i/xdma_0/inst/pcie4_ip_i/inst/PcieBridge_xdma_0_0_pcie4_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_clk_i/CLK_TXOUTCLK
     BUFG_GT_X0Y24        BUFG_GT (Prop_BUFG_GT_I_O)
                                                       0.114     0.192 r  PcieBridge_i/xdma_0/inst/pcie4_ip_i/inst/PcieBridge_xdma_0_0_pcie4_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_clk_i/bufg_gt_userclk/O
-    X2Y0 (CLOCK_ROOT)    net (fo=13355, routed)       1.633     1.825    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/src_clk
-    SLICE_X84Y57         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/src_hsdata_ff_reg[4]/C
+    X2Y0 (CLOCK_ROOT)    net (fo=13355, routed)       1.635     1.827    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/src_clk
+    SLICE_X82Y58         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/src_hsdata_ff_reg[18]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X84Y57         FDRE (Prop_BFF_SLICEL_C_Q)
-                                                      0.059     1.884 r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/src_hsdata_ff_reg[4]/Q
-                         net (fo=1, routed)           0.106     1.990    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/src_hsdata_ff[4]
-    SLICE_X84Y57         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/dest_hsdata_ff_reg[4]/D
+    SLICE_X82Y58         FDRE (Prop_GFF_SLICEM_C_Q)
+                                                      0.058     1.885 r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/src_hsdata_ff_reg[18]/Q
+                         net (fo=1, routed)           0.079     1.964    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/src_hsdata_ff[18]
+    SLICE_X83Y58         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/dest_hsdata_ff_reg[18]/D
   -------------------------------------------------------------------    -------------------
 
-                         (clock McuClock rise edge)
+                         (clock McuClock_unbuffed rise edge)
                                                       0.000     0.000 r  
     T24                                               0.000     0.000 r  FPGA_CLK_100MHZ_P (IN)
-                         net (fo=0)                   0.100     0.100    CORE_IBUFDS/I
+                         net (fo=0)                   0.100     0.100    Top_DFX_Main_inst/CORE_IBUFDS/I
     HPIOBDIFFINBUF_X0Y36 DIFFINBUF (Prop_DIFFINBUF_HPIOBDIFFINBUF_DIFF_IN_P_O)
-                                                      0.610     0.710 r  CORE_IBUFDS/DIFFINBUF_INST/O
-                         net (fo=1, routed)           0.050     0.760    CORE_IBUFDS/OUT
+                                                      0.610     0.710 r  Top_DFX_Main_inst/CORE_IBUFDS/DIFFINBUF_INST/O
+                         net (fo=1, routed)           0.050     0.760    Top_DFX_Main_inst/CORE_IBUFDS/OUT
     T24                  IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
-                                                      0.000     0.760 r  CORE_IBUFDS/IBUFCTRL_INST/O
+                                                      0.000     0.760 r  Top_DFX_Main_inst/CORE_IBUFDS/IBUFCTRL_INST/O
                          net (fo=1, routed)           0.384     1.144    Top_DFX_Main_inst/Clock_DiffOut
     MMCM_X0Y1            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
                                                      -0.127     1.017 r  Top_DFX_Main_inst/mmcme4_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.245     1.262    Top_DFX_Main_inst/McuClock_unbuffed
     BUFGCE_X0Y29         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
                                                       0.028     1.290 r  Top_DFX_Main_inst/CORE_BUFG/O
-    X1Y1 (CLOCK_ROOT)    net (fo=3868, routed)        1.770     3.060    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/dest_clk
-    SLICE_X84Y57         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/dest_hsdata_ff_reg[4]/C
-                         clock pessimism              0.000     3.060    
-    SLICE_X84Y57         FDRE (Hold_HFF_SLICEL_C_D)
-                                                      0.060     3.120    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/dest_hsdata_ff_reg[4]
+    X1Y1 (CLOCK_ROOT)    net (fo=3868, routed)        1.769     3.059    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/dest_clk
+    SLICE_X83Y58         FDRE                                         r  Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/dest_hsdata_ff_reg[18]/C
+                         clock pessimism              0.000     3.059    
+    SLICE_X83Y58         FDRE (Hold_HFF_SLICEL_C_D)
+                                                      0.060     3.119    Top_DFX_Main_inst/MicroBlazeCore_i/microblaze_0_axi_periph/s01_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_aw/handshake/dest_hsdata_ff_reg[18]
   -------------------------------------------------------------------
-                         data arrival                           1.990    
-                         clock arrival                          3.120    
+                         data arrival                           1.964    
+                         clock arrival                          3.119    
   -------------------------------------------------------------------
-                         relative delay                        -1.130    
+                         relative delay                        -1.155    
 
 
 

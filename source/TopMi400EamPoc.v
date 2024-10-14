@@ -103,6 +103,12 @@ module TopMi400EamPoc
     wire mDebugSysRst;
     wire [0:0]mMcuAxiReset;
     wire    Clock_DiffOut;
+
+
+    wire    McuClock;
+    wire    mPllLocked;
+    wire    clkfbout;
+    wire    McuClock_unbuffed;
 //=====================================================================================================================
 //                                      X.X -- Module Parameters
 //=====================================================================================================================
@@ -113,8 +119,69 @@ module TopMi400EamPoc
     //############################################################
     // Core Clock
     //############################################################
+    // Input Buffer
     IBUFDS CORE_IBUFDS (.I(FPGA_CLK_100MHZ_P), .IB(FPGA_CLK_100MHZ_N), .O(Clock_DiffOut));
-    // BUFG CORE_BUFG (.I(Clock_DiffOut), .O(Clock));
+    // PLL
+    MMCME4_ADV #(
+        .BANDWIDTH           ("OPTIMIZED"),
+        .CLKOUT4_CASCADE     ("FALSE"),
+        .COMPENSATION        ("AUTO"),
+        .STARTUP_WAIT        ("FALSE"),
+        .DIVCLK_DIVIDE       (1),
+        .CLKFBOUT_MULT_F     (12.000),
+        .CLKFBOUT_PHASE      (0.000),
+        .CLKFBOUT_USE_FINE_PS("FALSE"),
+        .CLKOUT0_DIVIDE_F    (12.000),
+        .CLKOUT0_PHASE       (0.000),
+        .CLKOUT0_DUTY_CYCLE  (0.500),
+        .CLKOUT0_USE_FINE_PS ("FALSE"),
+        .CLKIN1_PERIOD       (10.000)
+    ) mmcme4_adv_inst
+    // Output clocks
+    (
+        .CLKFBOUT    (clkfbout),
+        .CLKFBOUTB   (),
+        .CLKOUT0     (McuClock_unbuffed),
+        .CLKOUT0B    (),
+        .CLKOUT1     (),
+        .CLKOUT1B    (),
+        .CLKOUT2B    (),
+        .CLKOUT2     (),
+        .CLKOUT3     (),
+        .CLKOUT3B    (),
+        .CLKOUT4     (),
+        .CLKOUT5     (),
+        .CLKOUT6     (),
+        // Input clock control
+        .CLKFBIN     (clkfbout),
+        .CLKIN1      (Clock_DiffOut),
+        .CLKIN2      (1'b0),
+        // Tied to always select the primary input clock
+        .CLKINSEL    (1'b1),
+        // Ports for dynamic reconfiguration
+        .DADDR       (7'h0),
+        .DCLK        (1'b0),
+        .DEN         (1'b0),
+        .DI          (16'h0),
+        .DO          (),
+        .DRDY        (),
+        .DWE         (1'b0),
+        .CDDCDONE    (),
+        .CDDCREQ     (1'b0),
+        // Ports for dynamic phase shift
+        .PSCLK       (1'b0),
+        .PSEN        (1'b0),
+        .PSINCDEC    (1'b0),
+        .PSDONE      (),
+        // Other control and status signals
+        .LOCKED      (mPllLocked),
+        .CLKINSTOPPED(),
+        .CLKFBSTOPPED(),
+        .PWRDWN      (1'b0),
+        .RST         (1'b0)
+    );
+    // Clock Buffer
+    BUFG CORE_BUFG (.I(McuClock_unbuffed), .O(McuClock));
     //############################################################
     // PCIe Clock Buffer
     //############################################################
@@ -137,7 +204,7 @@ module TopMi400EamPoc
     //############################################################
     Top_DFX_Main  Top_DFX_Main_inst (
         .AxiBusClock(AxiBusClock),
-        .Clock_DiffOut(Clock_DiffOut),
+        .McuClock(McuClock),
         .McuAxiClock(McuAxiClock),
         .aUART_rxd(aMICROBLAZE_UART_RX),
         .aUART_txd(aMICROBLAZE_UART_TX),

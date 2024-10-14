@@ -7,3 +7,4 @@ set_property PULLTYPE PULLUP [get_ports MICROBLAZE_UART_TX]
 set_property -dict {PACKAGE_PIN T7} [get_ports PCIE_CLOCK_P]
 set_property -dict {PACKAGE_PIN T24 IOSTANDARD LVDS} [get_ports FPGA_CLK_100MHZ_P]
 
+

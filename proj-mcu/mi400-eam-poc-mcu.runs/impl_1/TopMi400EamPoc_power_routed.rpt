@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-| Date             : Thu Oct  3 15:09:01 2024
+| Date             : Mon Oct  7 17:19:17 2024
 | Host             : BDCGEHARRIS01 running 64-bit major release  (build 9200)
 | Command          : report_power -file TopMi400EamPoc_power_routed.rpt -pb TopMi400EamPoc_power_summary_routed.pb -rpx TopMi400EamPoc_power_routed.rpx
 | Design           : TopMi400EamPoc
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.627        |
+| Total On-Chip Power (W)  | 1.622        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.086        |
+| Dynamic (W)              | 1.080        |
 | Device Static (W)        | 0.541        |
 | Effective TJA (C/W)      | 1.7          |
 | Max Ambient (C)          | 97.2         |
@@ -52,16 +52,16 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.087 |       18 |       --- |             --- |
-| CLB Logic                |     0.052 |    37480 |       --- |             --- |
-|   LUT as Logic           |     0.036 |    12462 |    141000 |            8.84 |
+| Clocks                   |     0.084 |       18 |       --- |             --- |
+| CLB Logic                |     0.051 |    37480 |       --- |             --- |
+|   LUT as Logic           |     0.035 |    12465 |    141000 |            8.84 |
 |   LUT as Distributed RAM |     0.010 |     1364 |     99840 |            1.37 |
 |   Register               |     0.005 |    16942 |    282000 |            6.01 |
 |   CARRY8                 |     0.001 |      391 |     27120 |            1.44 |
 |   LUT as Shift Register  |    <0.001 |      140 |     99840 |            0.14 |
 |   Others                 |    <0.001 |     1372 |       --- |             --- |
 |   F7/F8 Muxes            |     0.000 |      334 |    216960 |            0.15 |
-| Signals                  |     0.097 |    38709 |       --- |             --- |
+| Signals                  |     0.096 |    38707 |       --- |             --- |
 | Block RAM                |     0.249 |      287 |       300 |           95.67 |
 | MMCM                     |     0.097 |        0 |       --- |             --- |
 | DSPs                     |    <0.001 |        5 |      1200 |            0.42 |
@@ -70,7 +70,7 @@ Table of Contents
 | Hard IPs                 |     0.116 |        1 |       --- |             --- |
 |   PCIE                   |     0.116 |        1 |       --- |             --- |
 | Static Power             |     0.541 |          |           |                 |
-| Total                    |     1.627 |          |           |                 |
+| Total                    |     1.622 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -80,7 +80,7 @@ Table of Contents
 +------------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source     | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +------------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint     |       0.850 |     0.875 |       0.724 |      0.151 |       NA    | Unspecified | NA         |
+| Vccint     |       0.850 |     0.869 |       0.718 |      0.151 |       NA    | Unspecified | NA         |
 | Vccint_io  |       0.850 |     0.037 |       0.001 |      0.036 |       NA    | Unspecified | NA         |
 | Vccbram    |       0.850 |     0.030 |       0.027 |      0.002 |       NA    | Unspecified | NA         |
 | Vccaux     |       1.800 |     0.182 |       0.054 |      0.128 |       NA    | Unspecified | NA         |
@@ -141,7 +141,7 @@ Table of Contents
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
 | AxiBusClock                                                                                                                                                                                                                                                                                                                                                                                                                                                       | PcieBridge_i/xdma_0/inst/pcie4_ip_i/inst/PcieBridge_xdma_0_0_pcie4_ip_gt_top_i/diablo_gt.diablo_gt_phy_wrapper/phy_clk_i/CLK_USERCLK                                                                                                                                                                                                                                                                                                               |             8.0 |
 | FPGA_CLK_100MHZ_P                                                                                                                                                                                                                                                                                                                                                                                                                                                 | FPGA_CLK_100MHZ_P                                                                                                                                                                                                                                                                                                                                                                                                                                  |            10.0 |
-| McuClock                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Top_DFX_Main_inst/McuClock_unbuffed                                                                                                                                                                                                                                                                                                                                                                                                                |            10.0 |
+| McuClock_unbuffed                                                                                                                                                                                                                                                                                                                                                                                                                                                 | Top_DFX_Main_inst/McuClock_unbuffed                                                                                                                                                                                                                                                                                                                                                                                                                |            10.0 |
 | PCIE_CLOCK_P                                                                                                                                                                                                                                                                                                                                                                                                                                                      | PCIE_CLOCK_P                                                                                                                                                                                                                                                                                                                                                                                                                                       |            10.0 |
 | PcieBridge_i/mdm_0/U0/Use_E2.BSCAN_I/Use_E2.BSCANE2_I/DRCK                                                                                                                                                                                                                                                                                                                                                                                                        | PcieBridge_i/mdm_0/U0/Use_E2.BSCAN_I/DRCK                                                                                                                                                                                                                                                                                                                                                                                                          |            33.3 |
 | PcieBridge_i/mdm_0/U0/Use_E2.BSCAN_I/Use_E2.BSCANE2_I/UPDATE                                                                                                                                                                                                                                                                                                                                                                                                      | PcieBridge_i/mdm_0/U0/Use_E2.BSCAN_I/Dbg_Update_0                                                                                                                                                                                                                                                                                                                                                                                                  |            66.7 |
@@ -166,20 +166,21 @@ Table of Contents
 +---------------------------------+-----------+
 | Name                            | Power (W) |
 +---------------------------------+-----------+
-| TopMi400EamPoc                  |     1.086 |
-|   CORE_IBUFDS                   |     0.002 |
-|   PcieBridge_i                  |     0.838 |
+| TopMi400EamPoc                  |     1.080 |
+|   PcieBridge_i                  |     0.833 |
 |     axis_dwidth_converter_0     |     0.001 |
 |       inst                      |     0.001 |
 |     util_ds_buf                 |     0.006 |
 |       U0                        |     0.006 |
-|     xdma_0                      |     0.830 |
-|       inst                      |     0.830 |
-|   Top_DFX_Main_inst             |     0.245 |
-|     MicroBlazeCore_i            |     0.148 |
+|     xdma_0                      |     0.825 |
+|       inst                      |     0.825 |
+|   Top_DFX_Main_inst             |     0.247 |
+|     CORE_IBUFDS                 |     0.002 |
+|     MicroBlazeCore_i            |     0.147 |
 |       axi_timer_0               |     0.003 |
 |       axi_timer_1               |     0.003 |
-|       microblaze_0              |     0.049 |
+|       axi_uartlite_0            |     0.001 |
+|       microblaze_0              |     0.048 |
 |       microblaze_0_axi_intc     |     0.002 |
 |       microblaze_0_axi_periph   |     0.003 |
 |       microblaze_0_local_memory |     0.086 |

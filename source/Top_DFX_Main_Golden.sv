@@ -17,7 +17,7 @@ module Top_DFX_Main #(
 )
 (
     input AxiBusClock,
-    input Clock_DiffOut,
+    input McuClock,
     output McuAxiClock,
     input aUART_rxd,
     output aUART_txd,
@@ -81,10 +81,7 @@ module Top_DFX_Main #(
     //############################################################
     // Local Variables
     //############################################################
-    wire    McuClock;
-    wire    mPllLocked;
-    wire    clkfbout;
-    wire    McuClock_unbuffed;
+    
 //=====================================================================================================================
 //                                      X.X -- Section
 //=====================================================================================================================
@@ -118,68 +115,7 @@ module Top_DFX_Main #(
     //############################################################
     // Default MMCM
     //############################################################
-    MMCME4_ADV #(
-        .BANDWIDTH           ("OPTIMIZED"),
-        .CLKOUT4_CASCADE     ("FALSE"),
-        .COMPENSATION        ("AUTO"),
-        .STARTUP_WAIT        ("FALSE"),
-        .DIVCLK_DIVIDE       (1),
-        .CLKFBOUT_MULT_F     (12.000),
-        .CLKFBOUT_PHASE      (0.000),
-        .CLKFBOUT_USE_FINE_PS("FALSE"),
-        .CLKOUT0_DIVIDE_F    (12.000),
-        .CLKOUT0_PHASE       (0.000),
-        .CLKOUT0_DUTY_CYCLE  (0.500),
-        .CLKOUT0_USE_FINE_PS ("FALSE"),
-        .CLKIN1_PERIOD       (10.000)
-    ) mmcme4_adv_inst
-    // Output clocks
-    (
-        .CLKFBOUT    (clkfbout),
-        .CLKFBOUTB   (),
-        .CLKOUT0     (McuClock_unbuffed),
-        .CLKOUT0B    (),
-        .CLKOUT1     (),
-        .CLKOUT1B    (),
-        .CLKOUT2B    (),
-        .CLKOUT2     (),
-        .CLKOUT3     (),
-        .CLKOUT3B    (),
-        .CLKOUT4     (),
-        .CLKOUT5     (),
-        .CLKOUT6     (),
-        // Input clock control
-        .CLKFBIN     (clkfbout),
-        .CLKIN1      (Clock_DiffOut),
-        .CLKIN2      (1'b0),
-        // Tied to always select the primary input clock
-        .CLKINSEL    (1'b1),
-        // Ports for dynamic reconfiguration
-        .DADDR       (7'h0),
-        .DCLK        (1'b0),
-        .DEN         (1'b0),
-        .DI          (16'h0),
-        .DO          (),
-        .DRDY        (),
-        .DWE         (1'b0),
-        .CDDCDONE    (),
-        .CDDCREQ     (1'b0),
-        // Ports for dynamic phase shift
-        .PSCLK       (1'b0),
-        .PSEN        (1'b0),
-        .PSINCDEC    (1'b0),
-        .PSDONE      (),
-        // Other control and status signals
-        .LOCKED      (mPllLocked),
-        .CLKINSTOPPED(),
-        .CLKFBSTOPPED(),
-        .PWRDWN      (1'b0),
-        .RST         (1'b0)
-    );
-  
-    BUFG CORE_BUFG (.I(McuClock_unbuffed), .O(McuClock));
-
-
+ 
 
 //=====================================================================================================================
 endmodule
