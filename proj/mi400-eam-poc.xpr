@@ -7,7 +7,7 @@
 <Project Product="Vivado" Version="7" Minor="67" Path="S:/projects/mi400-eam-poc/proj/mi400-eam-poc.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="683d3a53f1494be5b30c34a9a34c8c13"/>
+    <Option Name="Id" Val="e90d6843609a4bb9b71b9cf4c53ab72c"/>
     <Option Name="Part" Val="xcau25p-ffvb676-2-e"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -45,11 +45,13 @@
     <Option Name="SimulatorGccVersionActiveHdl" Val="9.3.0"/>
     <Option Name="BoardPart" Val="opalkelly.com:xem8320-au25p:part0:1.2"/>
     <Option Name="BoardPartRepoPaths" Val="C:/Users/geharris/AppData/Roaming/Xilinx/Vivado/2024.1/xhub/board_store/xilinx_board_store"/>
+    <Option Name="BoardPartRepoPaths" Val="C:/Xilinx/XilinxBoardStore-2024.1"/>
+    <Option Name="BoardConnections" Val="szg_port_e opalkelly.com:szg_pciex4:szg_port_txr4:1.0"/>
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
     <Option Name="PRFlow" Val="TRUE"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../source/Axi4FabricBridge.ipgen"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../source/ip/Axi4FabricBridge.ipgen"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPDefaultOutputPath" Val="$PGENDIR/sources_1"/>
     <Option Name="IPCachePermission" Val="read"/>
@@ -61,7 +63,7 @@
     <Option Name="IPUserFilesDir" Val="$PIPUSERFILESDIR"/>
     <Option Name="IPStaticSourceDir" Val="$PIPUSERFILESDIR/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
-    <Option Name="DSABoardId" Val="xem8320-au25p"/>
+    <Option Name="DSABoardId" Val="xem8320-au25p_szg_port_e_szg_pciex4_szg_port_txr4"/>
     <Option Name="WTXSimLaunchSim" Val="0"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
@@ -69,13 +71,13 @@
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="2"/>
-    <Option Name="WTModelSimExportSim" Val="2"/>
-    <Option Name="WTQuestaExportSim" Val="2"/>
+    <Option Name="WTXSimExportSim" Val="1"/>
+    <Option Name="WTModelSimExportSim" Val="1"/>
+    <Option Name="WTQuestaExportSim" Val="1"/>
     <Option Name="WTIesExportSim" Val="0"/>
-    <Option Name="WTVcsExportSim" Val="2"/>
-    <Option Name="WTRivieraExportSim" Val="2"/>
-    <Option Name="WTActivehdlExportSim" Val="2"/>
+    <Option Name="WTVcsExportSim" Val="1"/>
+    <Option Name="WTRivieraExportSim" Val="1"/>
+    <Option Name="WTActivehdlExportSim" Val="1"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -93,15 +95,12 @@
   <FileSets Version="1" Minor="32">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PSRCDIR/sources_1/bd/PcieBridge/PcieBridge.bd">
+      <File Path="$PPRDIR/../source/bp/PcieBridge/PcieBridge.bd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="PcieBridge.bd" FileRelPathName="ip/PcieBridge_axis_dwidth_converter_0_0/PcieBridge_axis_dwidth_converter_0_0.xci">
-          <Proxy FileSetName="PcieBridge_axis_dwidth_converter_0_0"/>
-        </CompFileExtendedInfo>
       </File>
       <File Path="$PPRDIR/../source/TopMi400EamPoc.v">
         <FileInfo>
@@ -118,32 +117,29 @@
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
       <Filter Type="Constrs"/>
-      <File Path="$PPRDIR/../source/clock_constraints.xdc">
+      <File Path="$PPRDIR/../source/constraints/clock_constraints.xdc">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../source/io_constraints.xdc">
+      <File Path="$PPRDIR/../source/constraints/io_constraints.xdc">
         <FileInfo>
-          <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="ProcessingOrder" Val="LATE"/>
+          <Attr Name="UsedIn" Val="implementation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../source/dfx_pblock.xdc">
+      <File Path="$PPRDIR/../source/constraints/dfx_pblock.xdc">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
         </FileInfo>
       </File>
       <Config>
-        <Option Name="TargetConstrsFile" Val="$PPRDIR/../source/dfx_pblock.xdc"/>
         <Option Name="ConstrsType" Val="XDC"/>
       </Config>
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1" RelGenDir="$PGENDIR/sim_1">
-      <Filter Type="Srcs"/>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="TopMi400EamPoc"/>
@@ -188,18 +184,12 @@
       </Config>
     </FileSet>
     <FileSet Name="MCU" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MCU" RelGenDir="$PGENDIR/MCU">
-      <File Path="$PSRCDIR/sources_1/bd/MicroBlazeCore/MicroBlazeCore.bd">
+      <File Path="$PPRDIR/../source/bp/MicroBlazeCore/MicroBlazeCore.bd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="MicroBlazeCore.bd" FileRelPathName="ip/MicroBlazeCore_microblaze_0_0/MicroBlazeCore_microblaze_0_0.xci">
-          <Proxy FileSetName="MicroBlazeCore_microblaze_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="MicroBlazeCore.bd" FileRelPathName="ip/MicroBlazeCore_rst_clk_wiz_1_100M_0/MicroBlazeCore_rst_clk_wiz_1_100M_0.xci">
-          <Proxy FileSetName="MicroBlazeCore_rst_clk_wiz_1_100M_0"/>
-        </CompFileExtendedInfo>
       </File>
       <File Path="$PPRDIR/../source/Top_DFX_Main.sv">
         <FileInfo>
@@ -210,24 +200,6 @@
       </File>
       <Config>
         <Option Name="TopModule" Val="Top_DFX_Main"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="MicroBlazeCore_microblaze_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MicroBlazeCore_microblaze_0_0" RelGenDir="$PGENDIR/MicroBlazeCore_microblaze_0_0">
-      <Config>
-        <Option Name="TopModule" Val="MicroBlazeCore_microblaze_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="MicroBlazeCore_rst_clk_wiz_1_100M_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/MicroBlazeCore_rst_clk_wiz_1_100M_0" RelGenDir="$PGENDIR/MicroBlazeCore_rst_clk_wiz_1_100M_0">
-      <Config>
-        <Option Name="TopModule" Val="MicroBlazeCore_rst_clk_wiz_1_100M_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="PcieBridge_axis_dwidth_converter_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/PcieBridge_axis_dwidth_converter_0_0" RelGenDir="$PGENDIR/PcieBridge_axis_dwidth_converter_0_0">
-      <Config>
-        <Option Name="TopModule" Val="PcieBridge_axis_dwidth_converter_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -253,7 +225,9 @@
   <Runs Version="1" Minor="22">
     <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xcau25p-ffvb676-2-e" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="true" IncrementalCheckpoint="$PSRCDIR/utils_1/imports/synth_1/TopMi400EamPoc.dcp" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -263,7 +237,9 @@
     </Run>
     <Run Id="Golden_synth_1" Type="Ft3:Synth" SrcSet="Golden" Part="xcau25p-ffvb676-2-e" ConstrsSet="Golden" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/Golden_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/Top_DFX_Main_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/Top_DFX_Main_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -273,37 +249,9 @@
     </Run>
     <Run Id="MCU_synth_1" Type="Ft3:Synth" SrcSet="MCU" Part="xcau25p-ffvb676-2-e" ConstrsSet="MCU" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MCU_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MCU_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MCU_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2024"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="MicroBlazeCore_microblaze_0_0_synth_1" Type="Ft3:Synth" SrcSet="MicroBlazeCore_microblaze_0_0" Part="xcau25p-ffvb676-2-e" ConstrsSet="MicroBlazeCore_microblaze_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MicroBlazeCore_microblaze_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeCore_microblaze_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MicroBlazeCore_microblaze_0_0_synth_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2024"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="MicroBlazeCore_rst_clk_wiz_1_100M_0_synth_1" Type="Ft3:Synth" SrcSet="MicroBlazeCore_rst_clk_wiz_1_100M_0" Part="xcau25p-ffvb676-2-e" ConstrsSet="MicroBlazeCore_rst_clk_wiz_1_100M_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/MicroBlazeCore_rst_clk_wiz_1_100M_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeCore_rst_clk_wiz_1_100M_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MicroBlazeCore_rst_clk_wiz_1_100M_0_synth_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2024"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="PcieBridge_axis_dwidth_converter_0_0_synth_1" Type="Ft3:Synth" SrcSet="PcieBridge_axis_dwidth_converter_0_0" Part="xcau25p-ffvb676-2-e" ConstrsSet="PcieBridge_axis_dwidth_converter_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/PcieBridge_axis_dwidth_converter_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/PcieBridge_axis_dwidth_converter_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/PcieBridge_axis_dwidth_converter_0_0_synth_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -313,7 +261,9 @@
     </Run>
     <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xcau25p-ffvb676-2-e" ConstrsSet="constrs_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true" IsChild="false" PRConfiguration="Golden" DFXMode="STANDARD" ConfigurationChanged="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/impl_1" LaunchOptions="-jobs 8 " AutoRQSDir="$PSRCDIR/utils_1/imports/impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -331,7 +281,9 @@
     </Run>
     <Run Id="Golden_impl_1" Type="Ft2:EntireDesign" Part="xcau25p-ffvb676-2-e" ConstrsSet="Golden" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="Golden_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/Top_DFX_Main_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/Golden_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -348,7 +300,9 @@
     </Run>
     <Run Id="MCU_impl_1" Type="Ft2:EntireDesign" Part="xcau25p-ffvb676-2-e" ConstrsSet="MCU" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MCU_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MCU_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MCU_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -365,7 +319,9 @@
     </Run>
     <Run Id="child_0_impl_1" Type="Ft2:EntireDesign" Part="xcau25p-ffvb676-2-e" ConstrsSet="constrs_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/child_0_impl_1" SynthRun="impl_1" IncludeInArchive="true" IsChild="false" PRConfiguration="MCU" DFXMode="STANDARD" ConfigurationChanged="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/child_0_impl_1" LaunchOptions="-jobs 8 " AutoRQSDir="$PSRCDIR/utils_1/imports/child_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -381,57 +337,6 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="MicroBlazeCore_microblaze_0_0_impl_1" Type="Ft2:EntireDesign" Part="xcau25p-ffvb676-2-e" ConstrsSet="MicroBlazeCore_microblaze_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MicroBlazeCore_microblaze_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeCore_microblaze_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MicroBlazeCore_microblaze_0_0_impl_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2024"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="MicroBlazeCore_rst_clk_wiz_1_100M_0_impl_1" Type="Ft2:EntireDesign" Part="xcau25p-ffvb676-2-e" ConstrsSet="MicroBlazeCore_rst_clk_wiz_1_100M_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="MicroBlazeCore_rst_clk_wiz_1_100M_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/MicroBlazeCore_rst_clk_wiz_1_100M_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/MicroBlazeCore_rst_clk_wiz_1_100M_0_impl_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2024"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="PcieBridge_axis_dwidth_converter_0_0_impl_1" Type="Ft2:EntireDesign" Part="xcau25p-ffvb676-2-e" ConstrsSet="PcieBridge_axis_dwidth_converter_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="PcieBridge_axis_dwidth_converter_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/PcieBridge_axis_dwidth_converter_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/PcieBridge_axis_dwidth_converter_0_0_impl_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2024"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
   </Runs>
   <Board>
     <Jumpers/>
@@ -440,10 +345,7 @@
     <PartitionDefs>
       <PartitionDef Name="TopDFX" DefaultRM="Golden" ModuleName="Top_DFX_Main" LibraryName="xil_defaultlib" Type="NONE">
         <ReconfigModule Name="Golden" Top="Top_DFX_Main" SrcSet="Golden" SynthRun="Golden_synth_1" ImplRun="Golden_impl_1"/>
-        <ReconfigModule Name="MCU" Top="Top_DFX_Main" SrcSet="MCU" SynthRun="MCU_synth_1" ImplRun="MCU_impl_1">
-          <SubDesignFileset Name="MicroBlazeCore_microblaze_0_0"/>
-          <SubDesignFileset Name="MicroBlazeCore_rst_clk_wiz_1_100M_0"/>
-        </ReconfigModule>
+        <ReconfigModule Name="MCU" Top="Top_DFX_Main" SrcSet="MCU" SynthRun="MCU_synth_1" ImplRun="MCU_impl_1"/>
       </PartitionDef>
     </PartitionDefs>
     <PRConfigurations>

@@ -8,9 +8,7 @@
   <device name="xcau25p_0" gui_info=""/>
   <ObjectList object_type="hw_device" gui_info="">
     <Object name="xcau25p_0" gui_info="">
-      <Properties Property="FULL_PROBES.FILE" value=""/>
-      <Properties Property="PROBES.FILE" value=""/>
-      <Properties Property="PROGRAM.HW_BITSTREAM" value="$_project_name_.runs/impl_1/Top_DFX_Main_inst_Golden_partial.bit"/>
+      <Properties Property="PROGRAM.HW_BITSTREAM" value="$_project_name_.runs/impl_1/TopMi400EamPoc.bit"/>
       <Properties Property="SLR.COUNT" value="1"/>
     </Object>
   </ObjectList>

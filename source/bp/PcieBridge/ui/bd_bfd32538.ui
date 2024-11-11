@@ -1,0 +1,47 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"1.0",
+   "Default View_TopLeft":"-826,-179",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.7.1 2023-07-26 3bc4126617 VDI=43 GEI=38 GUI=JA:21.0
+#  -string -flagsOSRD
+preplace port aPCIE -pg 1 -lvl 4 -x 1020 -y 20 -defaultsOSRD
+preplace port pPcieToDfx_AXI -pg 1 -lvl 4 -x 1020 -y 320 -defaultsOSRD
+preplace port mDebugMcu_AXI -pg 1 -lvl 0 -x 0 -y 400 -defaultsOSRD
+preplace port mDebugPort -pg 1 -lvl 4 -x 1020 -y 400 -defaultsOSRD
+preplace port pPcieAxiMM_AXI -pg 1 -lvl 4 -x 1020 -y 170 -defaultsOSRD
+preplace port aPCIE_CLOCK -pg 1 -lvl 0 -x 0 -y 270 -defaultsOSRD
+preplace port mPcieToICAP_AXI -pg 1 -lvl 4 -x 1020 -y 190 -defaultsOSRD
+preplace port port-id_aPERST_N -pg 1 -lvl 0 -x 0 -y 200 -defaultsOSRD
+preplace port port-id_pPcieLinkUp -pg 1 -lvl 4 -x 1020 -y 340 -defaultsOSRD
+preplace port port-id_McuAxiClock -pg 1 -lvl 0 -x 0 -y 420 -defaultsOSRD
+preplace port port-id_mMcuAxiReset_n -pg 1 -lvl 0 -x 0 -y 440 -defaultsOSRD
+preplace port port-id_mDebugSysRst -pg 1 -lvl 4 -x 1020 -y 440 -defaultsOSRD
+preplace port port-id_PcieAxiClock -pg 1 -lvl 4 -x 1020 -y 40 -defaultsOSRD
+preplace port port-id_pPcieAxiReset_n -pg 1 -lvl 4 -x 1020 -y 60 -defaultsOSRD
+preplace inst xdma_0 -pg 1 -lvl 2 -x 490 -y 180 -defaultsOSRD
+preplace inst mdm_0 -pg 1 -lvl 3 -x 830 -y 420 -defaultsOSRD
+preplace inst util_ds_buf -pg 1 -lvl 1 -x 170 -y 270 -defaultsOSRD
+preplace inst axi_interconnect_0 -pg 1 -lvl 3 -x 830 -y 180 -defaultsOSRD
+preplace netloc McuAxiClock 1 0 3 NJ 420 NJ 420 660
+preplace netloc PcieAxiClock 1 2 2 670 10 1000J
+preplace netloc mMcuAxiReset_n 1 0 3 NJ 440 NJ 440 680
+preplace netloc mdm_0_Debug_SYS_Rst 1 3 1 NJ 440
+preplace netloc pPcieAxiReset_n 1 2 2 680 30 990J
+preplace netloc pPcieLinkUp 1 2 2 650J 340 NJ
+preplace netloc pPcieSysRst_n 1 0 2 NJ 200 NJ
+preplace netloc util_ds_buf_IBUF_DS_ODIV2 1 1 1 320 160n
+preplace netloc util_ds_buf_IBUF_OUT 1 1 1 330 180n
+preplace netloc aPCIE_CLOCK_1 1 0 1 NJ 270
+preplace netloc axi_interconnect_0_M00_AXI 1 3 1 NJ 170
+preplace netloc axi_interconnect_0_M01_AXI 1 3 1 NJ 190
+preplace netloc mDebugMcu_AXI_1 1 0 3 NJ 400 NJ 400 NJ
+preplace netloc mdm_0_MBDEBUG_0 1 3 1 NJ 400
+preplace netloc xdma_0_M_AXI 1 2 1 N 100
+preplace netloc xdma_0_M_AXI_LITE 1 2 2 660J 40 980J
+preplace netloc xdma_0_pcie_mgt 1 2 2 650J 20 NJ
+levelinfo -pg 1 0 170 490 830 1020
+pagesize -pg 1 -db -bbox -sgen -170 0 1190 500
+"
+}
+

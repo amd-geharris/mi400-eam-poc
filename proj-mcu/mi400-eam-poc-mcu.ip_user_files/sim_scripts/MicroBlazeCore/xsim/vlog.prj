@@ -1,0 +1,13 @@
+verilog xil_defaultlib --include "../../../../mi400-eam-poc-mcu.gen/sources_1/bd/MicroBlazeCore/ipshared/ec67/hdl" \
+"../../../bd/MicroBlazeCore/ip/MicroBlazeCore_lmb_bram_0/sim/MicroBlazeCore_lmb_bram_0.v" \
+"../../../bd/MicroBlazeCore/ip/MicroBlazeCore_xbar_0/sim/MicroBlazeCore_xbar_0.v" \
+"../../../bd/MicroBlazeCore/ip/MicroBlazeCore_microblaze_0_xlconcat_0/sim/MicroBlazeCore_microblaze_0_xlconcat_0.v" \
+"../../../bd/MicroBlazeCore/ipshared/cbb1/src/Axi4FabricBridge.v" \
+"../../../bd/MicroBlazeCore/ip/MicroBlazeCore_Axi4FabricBridge_0_0/sim/MicroBlazeCore_Axi4FabricBridge_0_0.v" \
+"../../../bd/MicroBlazeCore/ip/MicroBlazeCore_auto_cc_0/sim/MicroBlazeCore_auto_cc_0.v" \
+"../../../bd/MicroBlazeCore/sim/MicroBlazeCore.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

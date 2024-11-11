@@ -1,0 +1,14 @@
+vhdl xil_defaultlib  \
+"../../../bd/MicroBlazeCore/ip/MicroBlazeCore_microblaze_0_0/sim/MicroBlazeCore_microblaze_0_0.vhd" \
+"../../../bd/MicroBlazeCore/ip/MicroBlazeCore_axi_timer_0_0/sim/MicroBlazeCore_axi_timer_0_0.vhd" \
+"../../../bd/MicroBlazeCore/ip/MicroBlazeCore_axi_timer_1_0/sim/MicroBlazeCore_axi_timer_1_0.vhd" \
+"../../../bd/MicroBlazeCore/ip/MicroBlazeCore_axi_uartlite_0_0/sim/MicroBlazeCore_axi_uartlite_0_0.vhd" \
+"../../../bd/MicroBlazeCore/ip/MicroBlazeCore_dlmb_v10_0/sim/MicroBlazeCore_dlmb_v10_0.vhd" \
+"../../../bd/MicroBlazeCore/ip/MicroBlazeCore_ilmb_v10_0/sim/MicroBlazeCore_ilmb_v10_0.vhd" \
+"../../../bd/MicroBlazeCore/ip/MicroBlazeCore_dlmb_bram_if_cntlr_0/sim/MicroBlazeCore_dlmb_bram_if_cntlr_0.vhd" \
+"../../../bd/MicroBlazeCore/ip/MicroBlazeCore_ilmb_bram_if_cntlr_0/sim/MicroBlazeCore_ilmb_bram_if_cntlr_0.vhd" \
+"../../../bd/MicroBlazeCore/ip/MicroBlazeCore_microblaze_0_axi_intc_0/sim/MicroBlazeCore_microblaze_0_axi_intc_0.vhd" \
+"../../../bd/MicroBlazeCore/ip/MicroBlazeCore_rst_clk_wiz_1_100M_0/sim/MicroBlazeCore_rst_clk_wiz_1_100M_0.vhd" \
+
+# Do not sort compile order
+nosort
